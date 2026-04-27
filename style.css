@@ -349,3 +349,75 @@ input[type="email"]:focus {
     border-bottom: none;
     padding-bottom: 8rem;
 }
+
+/* LEAD MAGNET EXTREMO */
+.lead-magnet-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lead-magnet-text {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    text-align: left;
+    background-color: var(--bg-dark-alt);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (min-width: 768px) {
+    .lead-magnet-text {
+        padding: 4rem;
+    }
+}
+
+.lm-intro {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.lead-magnet-text p {
+    margin-bottom: 1rem;
+}
+
+.lm-bold-intro {
+    font-weight: 800;
+    color: var(--text-main);
+    margin-top: 1.5rem;
+}
+
+.lm-bullets {
+    margin: 1.5rem 0 2rem 0;
+}
+
+.lm-bullets li {
+    font-size: 1.25rem;
+    color: var(--text-main);
+}
+
+.lm-warning {
+    margin-top: 2rem !important;
+    font-size: 1.25rem;
+}
+
+.reinforcement-text {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .reinforcement-text {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
