@@ -9,82 +9,103 @@
     <meta name="description" content="Descubre por qué tu negocio no vende. Aprende cómo validar tu idea de negocio desde cero, validar tu startup y crear un negocio que genere dinero.">
     <meta name="keywords" content="validar idea de negocio, por qué mi negocio no vende, crear negocio desde cero, validar startup, cómo empezar un negocio">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="Lagosolutions">
+    
+    <!-- Open Graph para Redes Sociales -->
+    <meta property="og:title" content="Tu idea de negocio no funciona. Y nadie te lo va a decir.">
+    <meta property="og:description" content="Te digo qué está mal, qué deberías vender realmente y construyo el sistema para que empieces a generar dinero.">
+    <meta property="og:type" content="website">
     
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Markup para Negocio de Servicios -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Lagosolutions Business Validation",
+      "description": "Servicio experto de validación de ideas de negocio y creación de sistemas de ventas orientados a la conversión real.",
+      "url": "https://github.com/israelandreslagosrocha-jpg/LAGOSOLUTIONS"
+    }
+    </script>
 </head>
 <body>
 
     <!-- STICKY CTA BUTTON -->
-    <a href="#hero" class="sticky-cta">Validar mi idea ahora</a>
+    <a href="#hero" class="sticky-cta" id="stickyCta">Validar mi idea ahora</a>
 
     <!-- 1. HERO -->
     <header id="hero" class="hero section">
-        <div class="container">
-            <h1 class="hero-title">Tu negocio no está fallando&hellip;<br><span class="highlight">está mal planteado desde el inicio.</span></h1>
-            <h2 class="hero-subtitle">No tienes un problema de esfuerzo. Tienes un problema de enfoque.<br>Te digo qué está mal y cómo convertir tu idea en algo que sí genere dinero.</h2>
-            
-            <ul class="hero-bullets bullets">
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    Estás construyendo algo que nadie necesita
-                </li>
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    No sabes quién te va a pagar
-                </li>
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    No tienes un sistema para vender
-                </li>
-            </ul>
+        <div class="container hero-grid">
+            <div class="hero-content reveal fade-bottom">
+                <h1 class="hero-title">Tu negocio no está fallando&hellip;<br><span class="highlight">está mal planteado desde el inicio.</span></h1>
+                <h2 class="hero-subtitle">No tienes un problema de esfuerzo. Tienes un problema de enfoque.<br>Te digo qué está mal y cómo convertir tu idea en algo que sí genere dinero.</h2>
+                
+                <ul class="hero-bullets bullets">
+                    <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Estás construyendo algo que nadie necesita</li>
+                    <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> No sabes quién te va a pagar</li>
+                    <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> No tienes un sistema para vender</li>
+                </ul>
 
-            <form class="lead-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Formulario enviado correctamente');">
-                <input type="email" name="email" placeholder="Ingresa tu email aquí" required>
-                <button type="submit" class="btn-primary">Quiero saber si mi negocio sirve</button>
-            </form>
+                <form class="lead-form leadFormAction" action="#" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Ingresa tu email aquí" required>
+                    </div>
+                    <button type="submit" class="btn-primary glow-effect">Quiero saber si mi negocio sirve</button>
+                </form>
+                
+                <p class="urgency-text pulse-text">Si no lo corriges ahora, vas a seguir perdiendo tiempo y dinero.</p>
+            </div>
             
-            <p class="urgency-text">Si no lo corriges ahora, vas a seguir perdiendo tiempo y dinero.</p>
+            <div class="hero-visual reveal fade-left delay-1">
+                <!-- SUGERENCIA DE VIDEO PARA DOLOR -->
+                <div class="video-suggestion-box">
+                    <div class="video-icon">🎥</div>
+                    <h4>[ Sugerencia de Video ]</h4>
+                    <p><strong>Visual:</strong> Video B-Roll (en bucle, oscuro, calidad cinematográfica) mostrando a un emprendedor frustrado, agarrándose la cabeza frente al portátil a las 3 AM viendo gráficos en rojo.</p>
+                    <p><strong>Objetivo CRO:</strong> Generar espejo neuronal. El usuario ve su propio estrés reflejado inmediatamente antes de leer la solución en el copy.</p>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- 2. GOLPE DE REALIDAD -->
     <section class="reality-check section dark-alt">
         <div class="container">
-            <h2>Por eso tu negocio no está vendiendo</h2>
+            <h2 class="reveal fade-bottom">Por eso tu negocio no está vendiendo</h2>
             
-            <ul class="bullets reality-bullets">
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    Estás vendiendo algo que nadie necesita
-                </li>
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    No sabes quién paga
-                </li>
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    No tienes sistema de ventas
-                </li>
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    Solo tienes una idea, no un negocio
-                </li>
-            </ul>
+            <div class="reality-grid">
+                <ul class="bullets reality-bullets reveal fade-right">
+                    <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Estás vendiendo algo que nadie necesita</li>
+                    <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> No sabes quién paga</li>
+                    <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> No tienes sistema de ventas</li>
+                    <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Solo tienes una idea, no un negocio</li>
+                </ul>
+                
+                <div class="visual-box reveal fade-left delay-1">
+                     <div class="video-suggestion-box">
+                        <div class="video-icon">📱</div>
+                        <h4>[ Sugerencia Visual ]</h4>
+                        <p><strong>Visual:</strong> Una animación en After Effects tipo "ticker" o contador que muestre una cantidad de dinero bajando rápidamente, o notificaciones en rojo de "Carrito Abandonado" apilándose en pantalla.</p>
+                        <p><strong>Objetivo CRO:</strong> Tangibilizar la pérdida de dinero invisible que sufre por no tener el sistema adecuado.</p>
+                    </div>
+                </div>
+            </div>
 
-            <p class="section-desc closing-desc">No es falta de ganas. Es falta de estructura real de negocio.</p>
+            <p class="section-desc closing-desc reveal fade-bottom">No es falta de ganas. Es falta de estructura real de negocio.</p>
         </div>
     </section>
 
     <!-- 3. DIFERENCIACIÓN -->
     <section class="differentiation section">
-        <div class="container text-center">
+        <div class="container text-center reveal scale-up">
             <h2>No soy una agencia. No vendo webs.</h2>
             <div class="diff-text">
                 <p>Soy el filtro que separa ideas que venden…</p>
-                <p class="highlight-strong">de ideas que fracasan.</p>
+                <p class="highlight-strong glitch-effect" data-text="de ideas que fracasan.">de ideas que fracasan.</p>
             </div>
         </div>
     </section>
@@ -92,52 +113,40 @@
     <!-- 4. MÉTODO -->
     <section class="method section dark-alt">
         <div class="container">
-            <h2>Así funciona</h2>
+            <h2 class="reveal fade-bottom">Así funciona</h2>
             <div class="timeline">
-                <div class="step">
+                <div class="step reveal fade-bottom">
                     <span class="step-num">01</span>
                     <h3>Destruyo tu idea actual</h3>
                 </div>
-                <div class="step">
+                <div class="step reveal fade-bottom delay-1">
                     <span class="step-num">02</span>
                     <h3>Defino qué deberías vender</h3>
                 </div>
-                <div class="step">
+                <div class="step reveal fade-bottom delay-2">
                     <span class="step-num">03</span>
                     <h3>Construyo sistema (web/app + funnel)</h3>
                 </div>
-                <div class="step">
+                <div class="step reveal fade-bottom delay-3">
                     <span class="step-num">04</span>
                     <h3>Hago que lleguen clientes</h3>
                 </div>
             </div>
             
-            <p class="section-desc method-closing text-center">Esto no es teoría. Es ejecución.</p>
+            <p class="section-desc method-closing text-center reveal fade-bottom">Esto no es teoría. Es ejecución.</p>
         </div>
     </section>
 
     <!-- 5. RESULTADO -->
     <section class="results section">
         <div class="container">
-            <h2>Esto es lo que obtienes</h2>
-            <div class="benefits-grid">
+            <h2 class="reveal fade-bottom">Esto es lo que obtienes</h2>
+            <div class="benefits-grid reveal fade-bottom">
                 <ul class="bullets">
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> 
-                        Sabes si tu idea vale dinero o no
-                    </li>
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> 
-                        Sabes exactamente qué vender
-                    </li>
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> 
-                        Tienes un sistema real para captar clientes
-                    </li>
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> 
-                        Dejas de perder tiempo probando cosas al azar
-                    </li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> Sabes si tu idea vale dinero o no</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> Sabes exactamente qué vender</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> Tienes un sistema real para captar clientes</li>
+                    <li><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> Dejas de perder tiempo probando cosas al azar</li>
                 </ul>
             </div>
         </div>
@@ -146,29 +155,20 @@
     <!-- 7. NUEVA SECCIÓN PRUEBA / REALIDAD -->
     <section class="reality-proof section dark-alt">
         <div class="container">
-            <h2>Lo que veo todos los días</h2>
-            <ul class="bullets reality-bullets">
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    Gente con ideas buenas… que no saben venderlas
-                </li>
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    Personas que crean webs… sin clientes
-                </li>
-                <li>
-                    <svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> 
-                    Negocios que parecen sólidos… pero nadie paga
-                </li>
+            <h2 class="reveal fade-bottom">Lo que veo todos los días</h2>
+            <ul class="bullets reality-bullets reveal fade-right">
+                <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Gente con ideas buenas… que no saben venderlas</li>
+                <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Personas que crean webs… sin clientes</li>
+                <li><svg class="icon-cross" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Negocios que parecen sólidos… pero nadie paga</li>
             </ul>
-            <p class="section-desc closing-desc">El problema no es la idea. Es cómo la estás ejecutando.</p>
+            <p class="section-desc closing-desc reveal fade-bottom">El problema no es la idea. Es cómo la estás ejecutando.</p>
         </div>
     </section>
 
     <!-- 6. LEAD MAGNET EXTREMO (CRO) -->
     <section class="lead-magnet section">
         <div class="container">
-            <div class="lead-magnet-content text-center">
+            <div class="lead-magnet-content text-center reveal scale-up">
                 <h2>Esto te va a ahorrar meses (o años) de errores</h2>
                 
                 <div class="lead-magnet-text">
@@ -181,28 +181,21 @@
                     <p class="lm-bold-intro">Te va a decir:</p>
                     
                     <ul class="lm-bullets bullets">
-                        <li>
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> 
-                            Qué estás haciendo mal
-                        </li>
-                        <li>
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> 
-                            Por qué no estás vendiendo
-                        </li>
-                        <li>
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> 
-                            Qué deberías cambiar para generar dinero
-                        </li>
+                        <li><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> Qué estás haciendo mal</li>
+                        <li><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> Por qué no estás vendiendo</li>
+                        <li><svg class="icon" viewBox="0 0 24 24"><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L7 15.59l-2.89-2.89a.996.996 0 1 0-1.41 1.41l3.59 3.59c.39.39 1.02.39 1.41 0L19.7 6.29c.39-.39.39-1.02 0-1.41z"/></svg> Qué deberías cambiar para generar dinero</li>
                     </ul>
                     
                     <p>Y sí, te lo doy gratis.</p>
                     <p>Pero no es para curiosos.</p>
-                    <p class="highlight-strong lm-warning">Es para gente que ya se dio cuenta de que está perdiendo tiempo.</p>
+                    <p class="highlight-strong lm-warning pulse-text">Es para gente que ya se dio cuenta de que está perdiendo tiempo.</p>
                 </div>
 
-                <form class="lead-form center-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Formulario enviado correctamente');">
-                    <input type="email" name="email" placeholder="Ingresa tu email aquí" required>
-                    <button type="submit" class="btn-primary btn-large">Quiero el diagnóstico ahora</button>
+                <form class="lead-form center-form leadFormAction" action="#" method="POST">
+                    <div class="input-group" style="width: 100%;">
+                        <input type="email" name="email" placeholder="Ingresa tu email aquí" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large glow-effect">Quiero el diagnóstico ahora</button>
                 </form>
                 
                 <div class="reinforcement-text">
@@ -215,15 +208,16 @@
 
     <!-- 8. CIERRE CON PRESIÓN -->
     <section class="closing section dark-alt">
-        <div class="container text-center">
+        <div class="container text-center reveal fade-bottom">
             <h2>Nadie te va a decir esto. Pero alguien tiene que hacerlo.</h2>
             <div class="diff-text">
                 <p>Puedes seguir probando solo…</p>
                 <p class="highlight-strong">o puedes hacerlo bien desde ahora.</p>
             </div>
-            <a href="#hero" class="btn-primary btn-large">Validar mi idea ahora</a>
+            <a href="#hero" class="btn-primary btn-large glow-effect">Validar mi idea ahora</a>
         </div>
     </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
