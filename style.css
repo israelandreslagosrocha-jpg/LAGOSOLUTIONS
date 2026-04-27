@@ -32,7 +32,7 @@ body {
 /* TYPOGRAPHY */
 h1, h2, h3 {
     font-family: 'Inter', sans-serif;
-    font-weight: 900; /* Bold fuerte en títulos */
+    font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     letter-spacing: -0.04em;
@@ -222,17 +222,33 @@ input[type="email"]:focus {
     margin-top: 2rem;
 }
 
-/* HERO INDICATORS */
-.hero-indicators {
+/* URGENCY & CLOSING DESCS */
+.urgency-text {
     margin-top: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    font-weight: 600;
+    color: var(--error-red);
+    font-size: 1.125rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
+}
+
+.closing-desc {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2.5rem;
+    max-width: 800px;
+}
+
+.method-closing {
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cta-color);
 }
 
 /* DIFFERENTIATION TEXT */
