@@ -59,15 +59,21 @@ p {
 }
 
 .hero-subtitle {
-    font-size: clamp(1.125rem, 2vw, 1.35rem);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
     font-weight: 400;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.8);
     margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
-    max-width: 90%;
+    margin-bottom: 3rem;
+    max-width: 95%;
+    line-height: 1.6;
 }
 
-.highlight { color: var(--cta-color); }
+.highlight {
+    background: linear-gradient(90deg, var(--cta-color), #00FFCC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
 .highlight-strong { color: var(--cta-color); font-weight: 800; }
 
 .section-desc {
@@ -136,23 +142,24 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--cta-color);
+    background: linear-gradient(135deg, var(--cta-color), var(--cta-hover));
     color: var(--bg-dark);
     font-weight: 800;
     font-size: 1.125rem;
     padding: 1.25rem 2.5rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.05em;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: var(--cta-hover);
     transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 255, 136, 0.3);
 }
 
 .btn-outline {
@@ -254,10 +261,10 @@ p {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: 6px;
+    border-radius: 8px;
     background: var(--cta-color);
-    filter: blur(20px);
-    opacity: 0;
+    filter: blur(25px);
+    opacity: 0.15;
     z-index: -1;
     transition: opacity 0.3s ease;
 }
@@ -269,8 +276,19 @@ p {
 
 /* GRIDS */
 .hero {
-    padding-top: 10rem;
-    padding-bottom: 6rem;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 60vw; height: 60vw;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.04) 0%, transparent 60%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .hero-grid {
@@ -286,7 +304,7 @@ p {
 }
 
 @media (min-width: 992px) {
-    .hero-grid { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
+    .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 5rem; }
     .reality-grid { grid-template-columns: 1fr 1fr; align-items: center; }
     .hero-content { text-align: left; }
     .reality-content { text-align: left; }
@@ -297,11 +315,12 @@ p {
 .bullets li {
     display: flex;
     align-items: flex-start;
-    font-size: 1.125rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
     font-weight: 500;
-    color: var(--text-main);
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    padding: 0.25rem 0;
 }
 
 .icon, .icon-cross {
@@ -353,12 +372,30 @@ input[type="email"]:focus { border-color: var(--cta-color); background-color: rg
 .error-shake { animation: shakeError 0.5s ease; }
 
 .urgency-text {
-    margin-top: 1.5rem;
-    color: var(--error-red);
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-top: 1.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.urgency-text::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--error-red);
+    box-shadow: 0 0 12px var(--error-red);
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 /* TIMELINE (METHOD) */
