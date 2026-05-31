@@ -1,258 +1,243 @@
-// CRO & Advanced Space Theme Interactions - script.js
+// B2B Command Center Interactions - script.js
 
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================
-    // 1. INTERACTIVE COSMIC CANVAS STARFIELD
+    // 1. INTERACTIVE RADAR GRID CANVAS BACKGROUND
     // ==========================================
-    const canvas = document.getElementById("space-canvas");
+    const canvas = document.getElementById("radar-canvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
-        let stars = [];
-        let numStars = 120;
-        let mouse = { x: null, y: null, radius: 100 };
+        let gridSpacing = 40;
+        let sweepAngle = 0;
+        let radarLines = [];
+        let mouse = { x: null, y: null };
 
         // Handle Resize
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            initStars();
         };
 
-        // Initialize Stars
-        const initStars = () => {
-            stars = [];
-            for (let i = 0; i < numStars; i++) {
-                stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    size: Math.random() * 1.8 + 0.4,
-                    speedX: (Math.random() - 0.5) * 0.12,
-                    speedY: (Math.random() - 0.5) * 0.12,
-                    alpha: Math.random() * 0.8 + 0.2,
-                    alphaSpeed: (Math.random() - 0.5) * 0.015,
-                    color: getRandomStarColor()
-                });
-            }
-        };
-
-        // Star Colors: White, faint blue, faint green
-        const getRandomStarColor = () => {
-            const colors = [
-                "rgba(255, 255, 255,",
-                "rgba(0, 176, 255,", // Cyber Blue
-                "rgba(0, 230, 118,", // Neon Green
-                "rgba(213, 0, 249,"  // Cyber Purple
-            ];
-            const weight = [0.75, 0.12, 0.08, 0.05];
-            const random = Math.random();
-            let sum = 0;
-            for (let i = 0; i < colors.length; i++) {
-                sum += weight[i];
-                if (random <= sum) return colors[i];
-            }
-            return colors[0];
-        };
-
-        // Track Mouse Movement
+        // Track Mouse
         window.addEventListener("mousemove", (e) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
         });
 
-        // Clear Mouse position on leave
-        window.addEventListener("mouseout", () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
         // Animation Loop
-        const animateStars = () => {
+        const drawGrid = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // Draw & Update stars
-            stars.forEach(star => {
-                // Gentle twinking / alpha cycle
-                star.alpha += star.alphaSpeed;
-                if (star.alpha > 1 || star.alpha < 0.2) {
-                    star.alphaSpeed = -star.alphaSpeed;
-                }
-                
-                // Normal Drift
-                star.x += star.speedX;
-                star.y += star.speedY;
+            // Draw fine grid lines
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.015)";
+            ctx.lineWidth = 1;
 
-                // Mouse Repulsion (Interactive Drift)
-                if (mouse.x !== null && mouse.y !== null) {
-                    const dx = star.x - mouse.x;
-                    const dy = star.y - mouse.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < mouse.radius) {
-                        const force = (mouse.radius - distance) / mouse.radius;
-                        const forceX = (dx / distance) * force * 1.5;
-                        const forceY = (dy / distance) * force * 1.5;
-                        
-                        // Push star away gently, but return to normal path when mouse moves
-                        star.x += forceX;
-                        star.y += forceY;
-                    }
-                }
-
-                // Wrap around edges
-                if (star.x < 0) star.x = canvas.width;
-                if (star.x > canvas.width) star.x = 0;
-                if (star.y < 0) star.y = canvas.height;
-                if (star.y > canvas.height) star.y = 0;
-
-                // Draw
+            // Vertical lines
+            for (let x = 0; x < canvas.width; x += gridSpacing) {
                 ctx.beginPath();
-                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-                ctx.fillStyle = star.color + star.alpha + ")";
-                ctx.fill();
-            });
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
 
-            requestAnimationFrame(animateStars);
+            // Horizontal lines
+            for (let y = 0; y < canvas.height; y += gridSpacing) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+
+            // Mouse coordinate crosshair tracking
+            if (mouse.x !== null && mouse.y !== null) {
+                ctx.strokeStyle = "rgba(16, 185, 129, 0.04)";
+                ctx.beginPath();
+                ctx.moveTo(mouse.x, 0);
+                ctx.lineTo(mouse.x, canvas.height);
+                ctx.moveTo(0, mouse.y);
+                ctx.lineTo(canvas.width, mouse.y);
+                ctx.stroke();
+
+                // Draw coordinates text in monospace style
+                ctx.fillStyle = "rgba(16, 185, 129, 0.25)";
+                ctx.font = "9px 'JetBrains Mono', monospace";
+                ctx.fillText(`[LOC: ${mouse.x}px, ${mouse.y}px]`, mouse.x + 10, mouse.y - 10);
+            }
+
+            requestAnimationFrame(drawGrid);
         };
 
-        // Start Canvas
         window.addEventListener("resize", resizeCanvas);
         resizeCanvas();
-        animateStars();
+        drawGrid();
     }
 
     // ==========================================
-    // 2. ROCKET ORBIT TRAJECTORY ANIMATION
+    // 2. RADAR SWEEP TARGET BEACON DETECTION
     // ==========================================
-    const rocketPath = document.getElementById("rocketPath");
-    const activePath = document.getElementById("rocketPathActive");
-    const rocketIcon = document.getElementById("rocketIcon");
-    const nodes = document.querySelectorAll(".trajectory-node");
+    // Calculate node angles relative to center of radar to align beacon flares
+    const targetNodes = document.querySelectorAll(".radar-target-node");
+    const radarScope = document.querySelector(".radar-scope-wrapper");
+    
+    if (radarScope && targetNodes.length > 0) {
+        let currentSweepAngle = 0;
 
-    if (rocketPath && activePath && rocketIcon) {
-        // Initialize path lengths
-        const pathLength = rocketPath.getTotalLength();
-        activePath.style.strokeDasharray = pathLength;
-        activePath.style.strokeDashoffset = pathLength;
-
-        let animProgress = 0;
-        let targetProgress = 1;
-        let duration = 2500; // 2.5 seconds
-        let startTime = null;
-
-        // Custom easing function (Cubic Out)
-        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-        const updateRocketPosition = (progress) => {
-            // 1. Draw Active Path
-            activePath.style.strokeDashoffset = pathLength - (pathLength * progress);
-
-            // 2. Move & Rotate Rocket
-            const currentDistance = progress * pathLength;
-            const pt = rocketPath.getPointAtLength(currentDistance);
+        // Calculate polar coordinates of each target node
+        const targets = Array.from(targetNodes).map(node => {
+            // Read left and top styles as percentages
+            const leftPct = parseFloat(node.style.left);
+            const topPct = parseFloat(node.style.top);
             
-            // Percentage coordinates mapped to the viewBox="0 0 500 500"
-            const pctX = (pt.x / 500) * 100;
-            const pctY = (pt.y / 500) * 100;
+            // Vector relative to center (50%, 50%)
+            const dx = leftPct - 50;
+            const dy = topPct - 50;
             
-            rocketIcon.style.left = `${pctX}%`;
-            rocketIcon.style.top = `${pctY}%`;
-            rocketIcon.style.opacity = progress > 0.01 ? 1 : 0;
+            // Calculate polar angle (0 to 360)
+            let angle = Math.atan2(dy, dx) * 180 / Math.PI;
+            angle = (angle + 90 + 360) % 360; // Offset +90 to align with CSS conic-gradient start
 
-            // Calculate rotation angle relative to trajectory direction
-            const aheadDistance = Math.min(pathLength, currentDistance + 2);
-            const ptAhead = rocketPath.getPointAtLength(aheadDistance);
-            const angle = Math.atan2(ptAhead.y - pt.y, ptAhead.x - pt.x) * 180 / Math.PI;
-            
-            // Rotate rocket SVG (compensated +45deg for rocket orientation)
-            rocketIcon.style.transform = `translate(-50%, -50%) rotate(${angle + 45}deg)`;
+            return {
+                element: node,
+                angle: angle,
+                activated: false
+            };
+        });
 
-            // 3. Highlight milestones as the rocket passes them
-            // Map progress to activation triggers
-            if (progress >= 0.12) nodes[0].classList.add("active");
-            if (progress >= 0.44) nodes[1].classList.add("active");
-            if (progress >= 0.68) nodes[2].classList.add("active");
-            if (progress >= 0.85) nodes[3].classList.add("active");
+        // Run detection loops in sync with CSS conic sweep (6000ms duration)
+        const checkRadarScan = () => {
+            // Estimate angle based on time (6s cycle)
+            const ms = new Date().getTime();
+            currentSweepAngle = ((ms % 6000) / 6000) * 360;
+
+            targets.forEach(target => {
+                // Calculate angular distance
+                const diff = (currentSweepAngle - target.angle + 360) % 360;
+                
+                // If sweep line is passing over target (within 12 degree window)
+                if (diff < 15) {
+                    if (!target.activated) {
+                        target.element.classList.add("swept-active");
+                        target.activated = true;
+                        
+                        // Briefly pulse/blink node
+                        const ping = target.element.querySelector(".target-ping");
+                        if (ping) {
+                            ping.style.transform = "scale(1.5)";
+                            setTimeout(() => {
+                                ping.style.transform = "scale(1)";
+                            }, 400);
+                        }
+                    }
+                } else {
+                    target.element.classList.remove("swept-active");
+                    target.activated = false;
+                }
+            });
+
+            requestAnimationFrame(checkRadarScan);
         };
 
-        // Animate rocket entry
-        const playRocketAnimation = (timestamp) => {
-            if (!startTime) startTime = timestamp;
-            const elapsed = timestamp - startTime;
-            const timeProgress = Math.min(elapsed / duration, 1);
-            
-            animProgress = easeOutCubic(timeProgress);
-            updateRocketPosition(animProgress);
-
-            if (timeProgress < 1) {
-                requestAnimationFrame(playRocketAnimation);
-            }
-        };
-
-        // Trigger animation after brief delay
-        setTimeout(() => {
-            requestAnimationFrame(playRocketAnimation);
-        }, 300);
+        checkRadarScan();
     }
 
     // ==========================================
-    // 3. DYNAMIC COUNTER NUMBERS
+    // 3. STATISTICAL COUNTER ANIMATIONS
     // ==========================================
-    const counterElements = document.querySelectorAll(".counter-number, .badge-percentage");
+    const counterElements = document.querySelectorAll(".metric-value, .c-stat-val, .badge-percentage");
     
     const countUp = (el) => {
-        const target = parseInt(el.getAttribute("data-target"), 10);
+        // Parse numerical target from text
+        const text = el.innerText;
+        const targetNumber = parseInt(text.replace(/[^0-9]/g, ''), 10);
+        if (isNaN(targetNumber)) return;
+
+        const isPercentage = text.includes("%");
+        const hasPlus = text.includes("+");
         const duration = 2000; // 2 seconds
         let startTime = null;
 
-        const animateCount = (timestamp) => {
+        const animate = (timestamp) => {
             if (!startTime) startTime = timestamp;
             const elapsed = timestamp - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
             // Ease out cubic
             const easedProgress = 1 - Math.pow(1 - progress, 3);
-            const currentValue = Math.floor(easedProgress * target);
+            const currentValue = Math.floor(easedProgress * targetNumber);
 
-            // Maintain formatting suffixes
-            if (el.classList.contains("badge-percentage") || el.innerText.includes("%") || el.getAttribute("data-target") === "300" || el.getAttribute("data-target") === "200" || el.getAttribute("data-target") === "320") {
-                el.innerText = `+${currentValue}%`;
-            } else if (el.innerText.includes("+")) {
-                el.innerText = `+${currentValue}`;
-            } else {
-                el.innerText = `+${currentValue}`;
+            // Construct string
+            let formatted = "";
+            if (hasPlus) formatted += "+";
+            formatted += currentValue;
+            if (isPercentage) formatted += "%";
+            
+            // Special exception for Top #1
+            if (text.includes("TOP")) {
+                el.innerText = "TOP #1";
+                return;
             }
 
+            el.innerText = formatted;
+
             if (progress < 1) {
-                requestAnimationFrame(animateCount);
+                requestAnimationFrame(animate);
             } else {
-                // Ensure exact target value is written at the end
-                if (el.classList.contains("badge-percentage") || el.getAttribute("data-target") === "300" || el.getAttribute("data-target") === "200" || el.getAttribute("data-target") === "320") {
-                    el.innerText = `+${target}%`;
-                } else {
-                    el.innerText = `+${target}`;
-                }
+                el.innerText = text; // Set final format
             }
         };
 
-        requestAnimationFrame(animateCount);
+        requestAnimationFrame(animate);
     };
 
     const counterObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 countUp(entry.target);
-                observer.unobserve(entry.target); // Animate once
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
     counterElements.forEach(el => {
         counterObserver.observe(el);
     });
 
     // ==========================================
-    // 4. SECTIONS REVEAL ON SCROLL
+    // 4. FAQ ACCORDION HANDLER
+    // ==========================================
+    const faqItems = document.querySelectorAll(".faq-item");
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+
+        if (question && answer) {
+            question.addEventListener("click", () => {
+                const isActive = item.classList.contains("active");
+
+                // Close all other active items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains("active")) {
+                        otherItem.classList.remove("active");
+                        otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+                    }
+                });
+
+                // Toggle selected item
+                if (isActive) {
+                    item.classList.remove("active");
+                    answer.style.maxHeight = "0";
+                } else {
+                    item.classList.add("active");
+                    answer.style.maxHeight = `${answer.scrollHeight}px`;
+                }
+            });
+        }
+    });
+
+    // ==========================================
+    // 5. SECTIONS REVEAL ON SCROLL
     // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -269,23 +254,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 5. MODAL DIALOG CONTROLLER (DIAGNÓSTICO)
+    // 6. DIAGNOSTIC MODAL DIALOG MANAGER
     // ==========================================
     const modalOverlay = document.getElementById("diagnostic-modal");
     const triggerButtons = document.querySelectorAll(".trigger-modal");
     const closeButton = document.querySelector(".modal-close-btn");
 
     if (modalOverlay) {
-        // Open Modal
+        // Open
         triggerButtons.forEach(btn => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
                 modalOverlay.classList.add("active");
-                document.body.style.overflow = "hidden"; // Disable scroll when modal open
+                document.body.style.overflow = "hidden";
             });
         });
 
-        // Close Modal
+        // Close
         const closeModal = () => {
             modalOverlay.classList.remove("active");
             document.body.style.overflow = "";
@@ -295,14 +280,12 @@ document.addEventListener("DOMContentLoaded", () => {
             closeButton.addEventListener("click", closeModal);
         }
 
-        // Close when clicking backdrop overlay
         modalOverlay.addEventListener("click", (e) => {
             if (e.target === modalOverlay) {
                 closeModal();
             }
         });
 
-        // Close on Escape key press
         window.addEventListener("keydown", (e) => {
             if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
                 closeModal();
@@ -311,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 6. INTERACTIVE CONVERSION FORMS LOGIC
+    // 7. B2B MULTI-STAGE DIAGNOSTIC FORM SUBMISSION
     // ==========================================
     const forms = document.querySelectorAll('.leadFormAction');
     
@@ -321,58 +304,59 @@ document.addEventListener("DOMContentLoaded", () => {
             const emailInput = form.querySelector('input[type="email"]');
             const submitBtn = form.querySelector('button[type="submit"]');
             
-            // Basic Email Regex validation
+            // Validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
             if (!emailRegex.test(emailInput.value)) {
-                // CRO shake error feedback
                 emailInput.classList.add('error-shake');
                 setTimeout(() => emailInput.classList.remove('error-shake'), 500);
                 return;
             }
 
-            // Processing UI State (expectancy generator)
-            const originalText = submitBtn.innerText;
-            submitBtn.innerText = "Analizando negocio...";
-            submitBtn.style.opacity = "0.7";
+            // Disable button
             submitBtn.style.pointerEvents = "none";
+            submitBtn.style.opacity = "0.75";
+            const originalText = submitBtn.innerText;
 
-            // Simulated asynchronous API process
-            setTimeout(() => {
-                // Success feedback state
-                submitBtn.innerText = "¡Diagnóstico Enviado!";
-                submitBtn.style.backgroundColor = "#FFFFFF";
-                submitBtn.style.color = "#03070C";
-                submitBtn.style.boxShadow = "0 0 20px rgba(255, 255, 255, 0.4)";
-                
-                // Clear input field
-                emailInput.value = '';
-                
-                // Restore form to initial state after 3.5 seconds
+            // Multi-stage audit feedback simulation (Generates high perceived technical value)
+            const stages = [
+                { text: "Conectando crawlers...", delay: 600 },
+                { text: "Analizando indexación móvil...", delay: 1200 },
+                { text: "Auditando mapas y cobertura local...", delay: 1800 },
+                { text: "Resolviendo referencias IA...", delay: 2400 },
+                { text: "¡Diagnóstico Completado!", delay: 3000 }
+            ];
+
+            stages.forEach(stage => {
                 setTimeout(() => {
-                    submitBtn.innerText = originalText;
-                    submitBtn.style.opacity = "1";
-                    submitBtn.style.pointerEvents = "auto";
+                    submitBtn.innerText = stage.text;
                     
-                    // Reset styling to primary/theme style depending on source
-                    if (submitBtn.classList.contains("btn-primary-neon")) {
-                        submitBtn.style.backgroundColor = "var(--color-neon-green)";
-                        submitBtn.style.color = "var(--bg-dark)";
-                        submitBtn.style.boxShadow = "0 10px 30px var(--color-neon-green-glow)";
-                    } else {
-                        submitBtn.style.backgroundColor = "";
-                        submitBtn.style.color = "";
-                        submitBtn.style.boxShadow = "";
-                    }
+                    // Final Success State styling
+                    if (stage.text === "¡Diagnóstico Completado!") {
+                        submitBtn.style.backgroundColor = "#FFFFFF";
+                        submitBtn.style.color = "#050811";
+                        submitBtn.style.boxShadow = "0 0 20px rgba(255, 255, 255, 0.4)";
+                        
+                        // Clear input fields inside this form
+                        form.reset();
 
-                    // Auto-close modal if form was submitted inside one
-                    if (modalOverlay && modalOverlay.classList.contains("active")) {
-                        modalOverlay.classList.remove("active");
-                        document.body.style.overflow = "";
-                    }
-                }, 3500);
+                        // Restore form to initial state after delay
+                        setTimeout(() => {
+                            submitBtn.innerText = originalText;
+                            submitBtn.style.pointerEvents = "auto";
+                            submitBtn.style.opacity = "1";
+                            submitBtn.style.backgroundColor = "";
+                            submitBtn.style.color = "";
+                            submitBtn.style.boxShadow = "";
 
-            }, 1800);
+                            // Close modal if open
+                            if (modalOverlay && modalOverlay.classList.contains("active")) {
+                                modalOverlay.classList.remove("active");
+                                document.body.style.overflow = "";
+                            }
+                        }, 3000);
+                    }
+                }, stage.delay);
+            });
         });
     });
 });
