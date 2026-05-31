@@ -391,14 +391,15 @@ h1, h2, h3, h4 {
 .hero-visual-container {
     position: relative;
     width: 100%;
-    min-height: 480px;
+    min-height: 440px;
 }
 
 .radar-scope-wrapper {
     position: relative;
     width: 100%;
     max-width: 440px;
-    height: 440px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     margin: 0 auto;
     background: rgba(6, 11, 23, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.04);
@@ -441,6 +442,12 @@ h1, h2, h3, h4 {
     pointer-events: none;
 }
 
+@media (max-width: 375px) {
+    .radar-telemetry {
+        font-size: 7px;
+    }
+}
+
 .radar-telemetry.tl { top: 20px; left: 35px; text-align: left; }
 .radar-telemetry.tr { top: 20px; right: 35px; text-align: right; }
 .radar-telemetry.bl { bottom: 20px; left: 35px; text-align: left; }
@@ -458,7 +465,7 @@ h1, h2, h3, h4 {
     height: 8px;
     border-radius: 50%;
     position: relative;
-    transition: background-color 0.4s ease;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .target-ping.amber { background-color: var(--color-amber); }

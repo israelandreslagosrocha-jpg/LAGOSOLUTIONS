@@ -3,26 +3,51 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================
+    // 0. CYBERSECURITY: INPUT SANITIZATION UTILITY
+    // ==========================================
+    // Prevents Cross-Site Scripting (XSS) reflection or injection attacks on B2B forms
+    const sanitizeInput = (str) => {
+        if (typeof str !== 'string') return '';
+        return str.trim()
+                  .replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;")
+                  .replace(/'/g, "&#x27;")
+                  .replace(/\//g, "&#x2F;");
+    };
+
+    // ==========================================
     // 1. INTERACTIVE RADAR GRID CANVAS BACKGROUND
     // ==========================================
     const canvas = document.getElementById("radar-canvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
-        let gridSpacing = 40;
-        let sweepAngle = 0;
-        let radarLines = [];
+        const gridSpacing = 40;
         let mouse = { x: null, y: null };
+        let resizeTimeout;
 
-        // Handle Resize
+        // Optimized Resize Handler (Debounced to prevent performance drops)
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+        };
+
+        const onResize = () => {
+            if (resizeTimeout) clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resizeCanvas, 100);
         };
 
         // Track Mouse
         window.addEventListener("mousemove", (e) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
+        });
+
+        // Clear coordinates when mouse leaves window
+        document.addEventListener("mouseleave", () => {
+            mouse.x = null;
+            mouse.y = null;
         });
 
         // Animation Loop
@@ -51,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Mouse coordinate crosshair tracking
             if (mouse.x !== null && mouse.y !== null) {
-                ctx.strokeStyle = "rgba(16, 185, 129, 0.04)";
+                ctx.strokeStyle = "rgba(16, 185, 129, 0.035)";
                 ctx.beginPath();
                 ctx.moveTo(mouse.x, 0);
                 ctx.lineTo(mouse.x, canvas.height);
@@ -62,13 +87,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Draw coordinates text in monospace style
                 ctx.fillStyle = "rgba(16, 185, 129, 0.25)";
                 ctx.font = "9px 'JetBrains Mono', monospace";
-                ctx.fillText(`[LOC: ${mouse.x}px, ${mouse.y}px]`, mouse.x + 10, mouse.y - 10);
+                
+                // Sanitize coordinates just in case
+                const labelX = Math.round(mouse.x);
+                const labelY = Math.round(mouse.y);
+                ctx.fillText(`[LOC: ${labelX}px, ${labelY}px]`, mouse.x + 10, mouse.y - 10);
             }
 
             requestAnimationFrame(drawGrid);
         };
 
-        window.addEventListener("resize", resizeCanvas);
+        window.addEventListener("resize", onResize);
         resizeCanvas();
         drawGrid();
     }
@@ -76,26 +105,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 2. RADAR SWEEP TARGET BEACON DETECTION
     // ==========================================
-    // Calculate node angles relative to center of radar to align beacon flares
     const targetNodes = document.querySelectorAll(".radar-target-node");
     const radarScope = document.querySelector(".radar-scope-wrapper");
     
     if (radarScope && targetNodes.length > 0) {
         let currentSweepAngle = 0;
 
-        // Calculate polar coordinates of each target node
+        // Calculate polar coordinates of each target node relative to center (50%, 50%)
         const targets = Array.from(targetNodes).map(node => {
-            // Read left and top styles as percentages
             const leftPct = parseFloat(node.style.left);
             const topPct = parseFloat(node.style.top);
             
-            // Vector relative to center (50%, 50%)
             const dx = leftPct - 50;
             const dy = topPct - 50;
             
-            // Calculate polar angle (0 to 360)
             let angle = Math.atan2(dy, dx) * 180 / Math.PI;
-            angle = (angle + 90 + 360) % 360; // Offset +90 to align with CSS conic-gradient start
+            angle = (angle + 90 + 360) % 360; // Offset +90 to align with CSS conic-gradient sweep
 
             return {
                 element: node,
@@ -104,23 +129,20 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         });
 
-        // Run detection loops in sync with CSS conic sweep (6000ms duration)
+        // Check radar sweep intersections
         const checkRadarScan = () => {
-            // Estimate angle based on time (6s cycle)
             const ms = new Date().getTime();
-            currentSweepAngle = ((ms % 6000) / 6000) * 360;
+            currentSweepAngle = ((ms % 6000) / 6000) * 360; // 6s cycle
 
             targets.forEach(target => {
-                // Calculate angular distance
                 const diff = (currentSweepAngle - target.angle + 360) % 360;
                 
-                // If sweep line is passing over target (within 12 degree window)
+                // Active trigger window (15 degrees)
                 if (diff < 15) {
                     if (!target.activated) {
                         target.element.classList.add("swept-active");
                         target.activated = true;
                         
-                        // Briefly pulse/blink node
                         const ping = target.element.querySelector(".target-ping");
                         if (ping) {
                             ping.style.transform = "scale(1.5)";
@@ -147,14 +169,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const counterElements = document.querySelectorAll(".metric-value, .c-stat-val, .badge-percentage");
     
     const countUp = (el) => {
-        // Parse numerical target from text
         const text = el.innerText;
         const targetNumber = parseInt(text.replace(/[^0-9]/g, ''), 10);
         if (isNaN(targetNumber)) return;
 
         const isPercentage = text.includes("%");
         const hasPlus = text.includes("+");
-        const duration = 2000; // 2 seconds
+        const duration = 2000;
         let startTime = null;
 
         const animate = (timestamp) => {
@@ -162,17 +183,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const elapsed = timestamp - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Ease out cubic
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const easedProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
             const currentValue = Math.floor(easedProgress * targetNumber);
 
-            // Construct string
             let formatted = "";
             if (hasPlus) formatted += "+";
             formatted += currentValue;
             if (isPercentage) formatted += "%";
             
-            // Special exception for Top #1
             if (text.includes("TOP")) {
                 el.innerText = "TOP #1";
                 return;
@@ -183,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (progress < 1) {
                 requestAnimationFrame(animate);
             } else {
-                el.innerText = text; // Set final format
+                el.innerText = text;
             }
         };
 
@@ -216,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
             question.addEventListener("click", () => {
                 const isActive = item.classList.contains("active");
 
-                // Close all other active items
+                // Close other open accordions
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item && otherItem.classList.contains("active")) {
                         otherItem.classList.remove("active");
@@ -224,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
-                // Toggle selected item
+                // Toggle current item
                 if (isActive) {
                     item.classList.remove("active");
                     answer.style.maxHeight = "0";
@@ -301,10 +319,11 @@ document.addEventListener("DOMContentLoaded", () => {
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+            
             const emailInput = form.querySelector('input[type="email"]');
             const submitBtn = form.querySelector('button[type="submit"]');
             
-            // Validation
+            // Basic email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(emailInput.value)) {
                 emailInput.classList.add('error-shake');
@@ -312,31 +331,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+            // Sanitizing user inputs for cybersecurity
+            const nameInput = form.querySelector('input[name="name"]');
+            const websiteInput = form.querySelector('input[name="website"]');
+            const sectorInput = form.querySelector('select[name="sector"]');
+
+            const sanitizedName = nameInput ? sanitizeInput(nameInput.value) : "";
+            const sanitizedEmail = sanitizeInput(emailInput.value);
+            const sanitizedWebsite = websiteInput ? sanitizeInput(websiteInput.value) : "";
+            const sanitizedSector = sectorInput ? sanitizeInput(sectorInput.value) : "";
+
             // Disable button
             submitBtn.style.pointerEvents = "none";
             submitBtn.style.opacity = "0.75";
             const originalText = submitBtn.innerText;
 
-            // Multi-stage audit feedback simulation (Generates high perceived technical value)
+            // Multi-stage audit feedback (Commercial reality states)
             const stages = [
-                { text: "Conectando crawlers...", delay: 600 },
-                { text: "Analizando indexación móvil...", delay: 1200 },
-                { text: "Auditando mapas y cobertura local...", delay: 1800 },
-                { text: "Resolviendo referencias IA...", delay: 2400 },
-                { text: "¡Diagnóstico Completado!", delay: 3000 }
+                { text: "Conectando rastreador de búsquedas...", delay: 600 },
+                { text: "Evaluando tu posición frente a la competencia...", delay: 1200 },
+                { text: "Analizando mapas y visibilidad local...", delay: 1800 },
+                { text: "Buscando vacíos de demanda...", delay: 2400 },
+                { text: "¡Auditoría de Visibilidad Lista!", delay: 3000 }
             ];
 
             stages.forEach(stage => {
                 setTimeout(() => {
                     submitBtn.innerText = stage.text;
                     
-                    // Final Success State styling
-                    if (stage.text === "¡Diagnóstico Completado!") {
+                    // Final success feedback
+                    if (stage.text === "¡Auditoría de Visibilidad Lista!") {
                         submitBtn.style.backgroundColor = "#FFFFFF";
                         submitBtn.style.color = "#050811";
                         submitBtn.style.boxShadow = "0 0 20px rgba(255, 255, 255, 0.4)";
                         
-                        // Clear input fields inside this form
+                        // Clear input fields
                         form.reset();
 
                         // Restore form to initial state after delay
