@@ -1,4 +1,4 @@
-// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2 PREMIUM REFINEMENT)
+// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2.1 COMERCIAL REAL)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -114,7 +114,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 4. MAPA DE OPORTUNIDADES INTERACTIVO
+    // 4. CONMUTADOR INTERACTIVO DE PROYECTOS REALES (Antes / Intervención / Actual)
+    // ==========================================
+    const caseTabs = document.querySelectorAll(".case-tab");
+    if (caseTabs.length > 0) {
+        caseTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                const cardId = tab.getAttribute("data-card");
+                const state = tab.getAttribute("data-state");
+
+                // Find all tabs for this card
+                const siblingTabs = document.querySelectorAll(`.case-tab[data-card="${cardId}"]`);
+                siblingTabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                // Find panels
+                const cardElement = document.getElementById(`card-${cardId}`);
+                if (cardElement) {
+                    const panels = cardElement.querySelectorAll(".case-state-panel");
+                    panels.forEach(p => p.classList.remove("active"));
+                    const targetPanel = document.getElementById(`${cardId}-${state}`);
+                    if (targetPanel) {
+                        targetPanel.classList.add("active");
+                    }
+                }
+            });
+        });
+    }
+
+    // ==========================================
+    // 5. MAPA DE OPORTUNIDADES INTERACTIVO
     // ==========================================
     const nodeData = {
         clientes: {
@@ -172,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 nodeButtons.forEach(b => b.classList.remove("active"));
                 btn.classList.add("active");
 
-                // Update content with smooth transition
+                // Update content
                 if (nodeTitle) nodeTitle.textContent = data.title;
                 if (nodeInvestigamos) nodeInvestigamos.textContent = data.investigamos;
                 if (nodeEvidencia) nodeEvidencia.textContent = data.evidencia;
@@ -182,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 5. ANIMACIONES REVEAL AL HACER SCROLL
+    // 6. ANIMACIONES REVEAL AL HACER SCROLL
     // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
     if (revealElements.length > 0) {
@@ -201,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 6. ENVIÓ REAL DE FORMULARIO DE DIAGNÓSTICO
+    // 7. ENVIÓ REAL DE FORMULARIO DE DIAGNÓSTICO
     // ==========================================
     const realForm = document.getElementById("real-diagnostic-form");
     const feedbackMsg = document.getElementById("form-feedback-msg");
@@ -213,64 +242,52 @@ document.addEventListener("DOMContentLoaded", () => {
             // Inputs extraction & sanitization
             const nameInput = realForm.querySelector('input[name="name"]');
             const companyInput = realForm.querySelector('input[name="company"]');
-            const emailInput = realForm.querySelector('input[name="email"]');
             const websiteInput = realForm.querySelector('input[name="website"]');
+            const emailInput = realForm.querySelector('input[name="email"]');
             const goalInput = realForm.querySelector('select[name="goal"]');
             const problemInput = realForm.querySelector('textarea[name="problem"]');
             const submitBtn = document.getElementById("submit-form-btn");
 
             const name = sanitizeInput(nameInput ? nameInput.value : "");
             const company = sanitizeInput(companyInput ? companyInput.value : "");
-            const email = sanitizeInput(emailInput ? emailInput.value : "");
             const website = sanitizeInput(websiteInput ? websiteInput.value : "");
-            const goal = sanitizeInput(goalInput ? goalInput.value : "NO LO SÉ TODAVÍA");
+            const email = sanitizeInput(emailInput ? emailInput.value : "");
+            const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro. Quiero entender primero qué necesita mi empresa");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
 
-            // Validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                if (emailInput) {
-                    emailInput.style.borderColor = "#ef4444";
-                    setTimeout(() => emailInput.style.borderColor = "", 1500);
-                }
-                return;
-            }
-
             // Real action: Format a structured lead message for direct commercial routing
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2 - LAGOSOLUTIONS*%0A%0A` +
+            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2.1 - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
-                `*Email:* ${encodeURIComponent(email)}%0A` +
+                `*Contacto (Email/WhatsApp):* ${encodeURIComponent(email)}%0A` +
                 `*Sitio Web:* ${encodeURIComponent(website || "No especificado")}%0A` +
-                `*Prioridad a mejorar:* ${encodeURIComponent(goal)}%0A` +
-                `*Contexto de empresa:* ${encodeURIComponent(problem)}`;
+                `*Objetivo a mejorar:* ${encodeURIComponent(goal)}%0A` +
+                `*Contexto actual:* ${encodeURIComponent(problem)}`;
 
             // Feedback real
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerText = "ABRIENDO ATENCIÓN COMERCIAL...";
+                submitBtn.innerText = "ABRIENDO CANAL COMERCIAL...";
                 submitBtn.style.opacity = "0.75";
             }
 
             if (feedbackMsg) {
                 feedbackMsg.classList.remove("hidden");
                 feedbackMsg.classList.add("success");
-                feedbackMsg.innerText = "✓ Solicitud preparada. Redirigiendo a WhatsApp Business...";
+                feedbackMsg.innerText = "✓ Solicitud preparada. Redirigiendo a atención directa...";
             }
 
-            // Redirecting to WhatsApp / direct commercial channel
+            // Redirecting to WhatsApp Business
             setTimeout(() => {
                 const whatsappNumber = "56990021689"; // Canal oficial de atención
                 const waUrl = `https://wa.me/${whatsappNumber}?text=${messageBody}`;
 
-                // Open WhatsApp channel
                 window.open(waUrl, "_blank");
 
-                // Reset form
                 realForm.reset();
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.innerText = "ENVIAR SOLICITUD DE EVALUACIÓN";
+                    submitBtn.innerText = "SOLICITAR DIAGNÓSTICO";
                     submitBtn.style.opacity = "1";
                 }
 
