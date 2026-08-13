@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LAGOSOLUTIONS STRATEGIC EXPANSION — DESIGN SYSTEM & STYLES (V2.1 COMERCIAL)
+   LAGOSOLUTIONS STRATEGIC EXPANSION — DESIGN SYSTEM & STYLES (V2.2 OPTIMIZED)
    ========================================================================== */
 
 /* 1. TOKENS & VARIABLES */
@@ -72,6 +72,30 @@ svg {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* Accessibility: Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-green);
+    color: #ffffff;
+    padding: 8px 16px;
+    z-index: 3000;
+    font-weight: 700;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Keyboard Focus Visible Indicators */
+:focus-visible {
+    outline: 3px solid var(--color-green-accent);
+    outline-offset: 2px;
 }
 
 .container {
@@ -238,7 +262,7 @@ svg {
     transition: all 0.3s ease;
 }
 
-/* Drawer Móvil Desplegable */
+/* Drawer Móvil Desplegable (Oculto estrictamente cuando no está activo) */
 .mobile-menu-drawer {
     position: fixed;
     top: 0;
@@ -256,7 +280,12 @@ svg {
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
 }
 
+.mobile-menu-drawer:not(.active) {
+    display: none;
+}
+
 .mobile-menu-drawer.active {
+    display: flex;
     right: 0;
 }
 
@@ -401,6 +430,49 @@ svg {
     border-radius: 16px;
 }
 
+/* Grid de Resumen Claro de Oferta */
+.offer-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.offer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.offer-pill {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--color-green);
+    background-color: var(--color-green-light);
+    padding: 3px 10px;
+    border-radius: 50px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.offer-col h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--color-navy);
+
+}
+
+.offer-col p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
 /* 5. SECCIÓN RECONOCIMIENTO DEL VALOR CONSTRUIDO */
 .recognition-section {
     padding: 70px 0;
@@ -423,7 +495,6 @@ svg {
     color: var(--color-navy);
     margin-top: 8px;
     margin-bottom: 16px;
-
 }
 
 .recognition-text {
@@ -668,7 +739,7 @@ svg {
     margin-bottom: 8px;
 }
 
-.ten-step-card h4 {
+.ten-step-card h3 {
     font-size: 1.1rem;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -936,8 +1007,8 @@ svg {
     padding: 28px 32px;
 }
 
-.data-patterns-box h4 {
-    font-size: 0.85rem;
+.data-patterns-box h3 {
+    font-size: 0.9rem;
     font-weight: 800;
     letter-spacing: 1px;
     color: var(--color-navy);
@@ -1120,10 +1191,11 @@ svg {
     margin-bottom: 12px;
 }
 
-.value-title {
+.value-col h3 {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 6px;
+    color: #ffffff;
 }
 
 .value-desc {
@@ -1189,6 +1261,13 @@ svg {
     z-index: 999;
     box-shadow: 0 10px 30px rgba(6, 15, 34, 0.35);
     border-radius: 50px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sticky-mobile-cta.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 20px);
 }
 
 /* 14. DIÁLOGO MODAL NATIVO SIMPLIFICADO (<dialog>) */
@@ -1372,7 +1451,7 @@ dialog {
 
 /* 16. RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
-    .ten-steps-grid, .data-sources-grid, .act-comparison-grid {
+    .ten-steps-grid, .data-sources-grid, .act-comparison-grid, .offer-summary-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1386,7 +1465,7 @@ dialog {
 }
 
 @media (max-width: 991px) {
-    .nav-menu {
+    .nav-menu, .nav-cta {
         display: none;
     }
 

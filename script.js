@@ -1,4 +1,4 @@
-// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2.1 COMERCIAL REAL)
+// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2.2 OPTIMIZED)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -17,25 +17,26 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // ==========================================
-    // 2. NATIVE MODAL DIALOG MANAGER
+    // 2. NATIVE MODAL DIALOG MANAGER & STICKY CTA HIDING
     // ==========================================
     const dialog = document.getElementById("diagnostic-modal");
     const triggerButtons = document.querySelectorAll(".trigger-modal");
     const closeButton = document.querySelector(".modal-close-btn");
+    const stickyCta = document.getElementById("sticky-mobile-cta");
 
     if (dialog) {
         // Open Modal
         triggerButtons.forEach(btn => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
-                // Close mobile drawer if open
                 closeMobileDrawer();
                 dialog.showModal();
-                document.body.style.overflow = "hidden"; // Prevent background scroll
+                document.body.style.overflow = "hidden";
+                if (stickyCta) stickyCta.classList.add("hidden");
             });
         });
 
-        // Close Modal via button
+        // Close Modal
         const closeModal = () => {
             dialog.close();
         };
@@ -44,12 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
             closeButton.addEventListener("click", closeModal);
         }
 
-        // Restore body scroll when dialog closes
         dialog.addEventListener("close", () => {
             document.body.style.overflow = "";
+            checkStickyCtaVisibility();
         });
 
-        // Fallback for backdrop click closure
         dialog.addEventListener("click", (event) => {
             if (event.target !== dialog) return;
             const rect = dialog.getBoundingClientRect();
@@ -66,7 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 3. MENÚ HAMBURGUESA RESPONSIVE MÓVIL
+    // 3. INTELLIGENT STICKY MOBILE CTA VISIBILITY
+    // ==========================================
+    const checkStickyCtaVisibility = () => {
+        if (!stickyCta) return;
+        const scrollY = window.scrollY || window.pageYOffset;
+        const dialogIsOpen = dialog && dialog.hasAttribute("open");
+
+        if (scrollY < 250 || dialogIsOpen) {
+            stickyCta.classList.add("hidden");
+        } else {
+            stickyCta.classList.remove("hidden");
+        }
+    };
+
+    window.addEventListener("scroll", checkStickyCtaVisibility, { passive: true });
+    checkStickyCtaVisibility();
+
+    // ==========================================
+    // 4. MENÚ HAMBURGUESA RESPONSIVE MÓVIL
     // ==========================================
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileDrawer = document.getElementById("mobile-menu-drawer");
@@ -99,14 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileDrawerClose.addEventListener("click", closeMobileDrawer);
     }
 
-    // Close drawer when clicking any nav link
     mobileLinks.forEach(link => {
         link.addEventListener("click", () => {
             closeMobileDrawer();
         });
     });
 
-    // Escape key listener for mobile drawer
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             closeMobileDrawer();
@@ -114,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 4. CONMUTADOR INTERACTIVO DE PROYECTOS REALES (Antes / Intervención / Actual)
+    // 5. CONMUTADOR INTERACTIVO DE PROYECTOS REALES CON ATRIBUTOS ARIA
     // ==========================================
     const caseTabs = document.querySelectorAll(".case-tab");
     if (caseTabs.length > 0) {
@@ -123,12 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const cardId = tab.getAttribute("data-card");
                 const state = tab.getAttribute("data-state");
 
-                // Find all tabs for this card
+                // Update tab ARIA states
                 const siblingTabs = document.querySelectorAll(`.case-tab[data-card="${cardId}"]`);
-                siblingTabs.forEach(t => t.classList.remove("active"));
+                siblingTabs.forEach(t => {
+                    t.classList.remove("active");
+                    t.setAttribute("aria-selected", "false");
+                });
                 tab.classList.add("active");
+                tab.setAttribute("aria-selected", "true");
 
-                // Find panels
+                // Update panels
                 const cardElement = document.getElementById(`card-${cardId}`);
                 if (cardElement) {
                     const panels = cardElement.querySelectorAll(".case-state-panel");
@@ -143,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 5. MAPA DE OPORTUNIDADES INTERACTIVO
+    // 6. MAPA DE OPORTUNIDADES INTERACTIVO
     // ==========================================
     const nodeData = {
         clientes: {
@@ -197,11 +217,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = nodeData[key];
                 if (!data) return;
 
-                // Update active state
-                nodeButtons.forEach(b => b.classList.remove("active"));
+                nodeButtons.forEach(b => {
+                    b.classList.remove("active");
+                    b.setAttribute("aria-pressed", "false");
+                });
                 btn.classList.add("active");
+                btn.setAttribute("aria-pressed", "true");
 
-                // Update content
                 if (nodeTitle) nodeTitle.textContent = data.title;
                 if (nodeInvestigamos) nodeInvestigamos.textContent = data.investigamos;
                 if (nodeEvidencia) nodeEvidencia.textContent = data.evidencia;
@@ -211,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 6. ANIMACIONES REVEAL AL HACER SCROLL
+    // 7. ANIMACIONES REVEAL AL HACER SCROLL
     // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
     if (revealElements.length > 0) {
@@ -230,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 7. ENVIÓ REAL DE FORMULARIO DE DIAGNÓSTICO
+    // 8. ENVIÓ REAL DE FORMULARIO DE DIAGNÓSTICO
     // ==========================================
     const realForm = document.getElementById("real-diagnostic-form");
     const feedbackMsg = document.getElementById("form-feedback-msg");
@@ -239,11 +261,11 @@ document.addEventListener("DOMContentLoaded", () => {
         realForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            // Inputs extraction & sanitization
             const nameInput = realForm.querySelector('input[name="name"]');
             const companyInput = realForm.querySelector('input[name="company"]');
             const websiteInput = realForm.querySelector('input[name="website"]');
             const emailInput = realForm.querySelector('input[name="email"]');
+            const channelInput = realForm.querySelector('select[name="channel"]');
             const goalInput = realForm.querySelector('select[name="goal"]');
             const problemInput = realForm.querySelector('textarea[name="problem"]');
             const submitBtn = document.getElementById("submit-form-btn");
@@ -252,34 +274,33 @@ document.addEventListener("DOMContentLoaded", () => {
             const company = sanitizeInput(companyInput ? companyInput.value : "");
             const website = sanitizeInput(websiteInput ? websiteInput.value : "");
             const email = sanitizeInput(emailInput ? emailInput.value : "");
-            const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro. Quiero entender primero qué necesita mi empresa");
+            const channel = sanitizeInput(channelInput ? channelInput.value : "WhatsApp");
+            const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
 
-            // Real action: Format a structured lead message for direct commercial routing
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2.1 - LAGOSOLUTIONS*%0A%0A` +
+            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2.2 - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
-                `*Contacto (Email/WhatsApp):* ${encodeURIComponent(email)}%0A` +
+                `*Contacto:* ${encodeURIComponent(email)}%0A` +
+                `*Canal Preferido:* ${encodeURIComponent(channel)}%0A` +
                 `*Sitio Web:* ${encodeURIComponent(website || "No especificado")}%0A` +
-                `*Objetivo a mejorar:* ${encodeURIComponent(goal)}%0A` +
-                `*Contexto actual:* ${encodeURIComponent(problem)}`;
+                `*Objetivo:* ${encodeURIComponent(goal)}%0A` +
+                `*Contexto Actual:* ${encodeURIComponent(problem)}`;
 
-            // Feedback real
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerText = "ABRIENDO CANAL COMERCIAL...";
+                submitBtn.innerText = "ABRIENDO CANAL DE ATENCIÓN...";
                 submitBtn.style.opacity = "0.75";
             }
 
             if (feedbackMsg) {
                 feedbackMsg.classList.remove("hidden");
                 feedbackMsg.classList.add("success");
-                feedbackMsg.innerText = "✓ Solicitud preparada. Redirigiendo a atención directa...";
+                feedbackMsg.innerText = "✓ Solicitud registrada. Redirigiendo...";
             }
 
-            // Redirecting to WhatsApp Business
             setTimeout(() => {
-                const whatsappNumber = "56990021689"; // Canal oficial de atención
+                const whatsappNumber = "56990021689";
                 const waUrl = `https://wa.me/${whatsappNumber}?text=${messageBody}`;
 
                 window.open(waUrl, "_blank");

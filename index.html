@@ -5,11 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Anti-Cache Meta Tags for Instant CDN / Browser Refresh -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
     <!-- SEO Meta Tags -->
     <title>LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales</title>
     <meta name="description"
@@ -18,22 +13,22 @@
         content="diagnóstico empresarial, desarrollo web B2B, optimización de procesos, sistemas digitales, arquitectura web, consultoría tecnológica, SEO técnico, automatización">
     <meta name="robots" content="index, follow">
     <meta name="author" content="LAGOSOLUTIONS">
-    <link rel="canonical" href="https://lagosolutions.cl/">
+    <link rel="canonical" href="https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lagosolutions.cl/">
+    <meta property="og:url" content="https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/">
     <meta property="og:title" content="LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales">
     <meta property="og:description"
         content="Antes de construir una solución, entendemos cómo funciona su empresa. Primero entendemos. Después decidimos. Luego construimos.">
-    <meta property="og:image" content="https://lagosolutions.cl/businessman_city_sunrise.png">
+    <meta property="og:image" content="https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/businessman_city_sunrise.jpg">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales">
     <meta name="twitter:description"
         content="Analizamos la operación y canales de tu empresa para construir la infraestructura digital que realmente necesitas.">
-    <meta name="twitter:image" content="https://lagosolutions.cl/businessman_city_sunrise.png">
+    <meta name="twitter:image" content="https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/businessman_city_sunrise.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -43,8 +38,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Stylesheet with Anti-Cache Version -->
-    <link rel="stylesheet" href="style.css?v=2.1.1">
+    <!-- Stylesheet with Cache Buster Version -->
+    <link rel="stylesheet" href="style.css?v=2.2.0">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -53,14 +48,25 @@
       "@type": "ProfessionalService",
       "name": "LAGOSOLUTIONS",
       "description": "Diagnóstico de operaciones, optimización comercial y desarrollo de sistemas digitales adaptados para empresas.",
-      "url": "https://lagosolutions.cl",
-      "logo": "https://lagosolutions.cl/favicon.svg",
+      "url": "https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/",
+      "logo": "https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/favicon.svg",
+      "image": "https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/businessman_city_sunrise.jpg",
+      "areaServed": "CL",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56990021689",
+        "contactType": "Atención Comercial B2B",
+        "availableLanguage": ["Spanish"]
+      },
       "knowsAbout": ["Análisis empresarial", "Optimización de procesos", "Desarrollo web B2B", "SEO técnico", "Integración de sistemas"]
     }
     </script>
 </head>
 
 <body>
+
+    <!-- Skip Link for Keyboard Accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- BARRA DE NAVEGACIÓN -->
     <nav class="navbar">
@@ -86,13 +92,13 @@
             </ul>
 
             <div class="nav-cta">
-                <button class="btn-pill-navy trigger-modal" id="nav-cta-btn">
+                <button type="button" class="btn-pill-navy trigger-modal" id="nav-cta-btn">
                     SOLICITAR DIAGNÓSTICO
                 </button>
             </div>
 
             <!-- Botón Hamburguesa Móvil -->
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
@@ -104,7 +110,7 @@
     <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
         <div class="mobile-drawer-header">
             <span class="logo-title">LAGOSOLUTIONS</span>
-            <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
+            <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
         </div>
         <ul class="mobile-drawer-links">
             <li><a href="#reconocimiento" class="mobile-link">Reconocimiento Previo</a></li>
@@ -115,16 +121,16 @@
             <li><a href="#contacto" class="mobile-link">Contacto & Diagnóstico</a></li>
         </ul>
         <div class="mobile-drawer-footer">
-            <button class="btn-pill-navy btn-full trigger-modal mobile-cta-trigger">
+            <button type="button" class="btn-pill-navy btn-full trigger-modal mobile-cta-trigger">
                 SOLICITAR DIAGNÓSTICO
             </button>
         </div>
     </div>
 
     <!-- MAIN WRAPPER -->
-    <main>
+    <main id="main-content">
 
-        <!-- 1. HERO SECTION V2.1 -->
+        <!-- 1. HERO SECTION V2.2 -->
         <header class="hero-section">
             <div class="container hero-container">
                 <!-- Left Side: Copy -->
@@ -150,7 +156,7 @@
                     </p>
 
                     <div class="hero-actions">
-                        <button class="btn-pill-navy trigger-modal" id="hero-cta-btn">
+                        <button type="button" class="btn-pill-navy trigger-modal" id="hero-cta-btn">
                             SOLICITAR DIAGNÓSTICO
                             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -167,9 +173,33 @@
                     </p>
                 </div>
 
-                <!-- Right Side: Businessman Image -->
+                <!-- Right Side: Businessman Image Optimized (JPEG 208KB) -->
                 <div class="hero-visual-container">
-                    <img src="businessman_city_sunrise.png" alt="Ejecutivo observando la ciudad al amanecer, representando visión de negocios" class="hero-image" width="600" height="400" loading="eager">
+                    <picture>
+                        <source srcset="businessman_city_sunrise.jpg" type="image/jpeg">
+                        <img src="businessman_city_sunrise.jpg" alt="Ejecutivo observando la ciudad al amanecer, representando visión de negocios" class="hero-image" width="600" height="400" loading="eager">
+                    </picture>
+                </div>
+            </div>
+
+            <!-- Resumen Claro de la Oferta -->
+            <div class="container" style="margin-top: 48px;">
+                <div class="offer-summary-grid reveal">
+                    <div class="offer-col">
+                        <span class="offer-pill">OBJETIVO</span>
+                        <h3>Empresas B2B & Pymes</h3>
+                        <p>Pensado para negocios consolidados que buscan optimizar captación, ventas u operación.</p>
+                    </div>
+                    <div class="offer-col">
+                        <span class="offer-pill">ANÁLISIS</span>
+                        <h3>Revisión Integral</h3>
+                        <p>Analizamos procesos, clientes, captación, datos y tecnología sin imponer software.</p>
+                    </div>
+                    <div class="offer-col">
+                        <span class="offer-pill">ENTREGABLE</span>
+                        <h3>Resultados & Propuesta</h3>
+                        <p>Recibes un mapa de oportunidades priorizadas y un plan de implementación proporcional.</p>
+                    </div>
                 </div>
             </div>
         </header>
@@ -208,23 +238,23 @@
                             <p class="portfolio-project-sub">Orquesta Oficial de Cumbia Tropical · Chile</p>
                         </div>
                         
-                        <!-- Conmutador Interactivo 3 Estados -->
-                        <div class="case-tabs">
-                            <button class="case-tab active" data-card="bandabruna" data-state="antes">ANTES</button>
-                            <button class="case-tab" data-card="bandabruna" data-state="intervencion">INTERVENCIÓN</button>
-                            <button class="case-tab" data-card="bandabruna" data-state="actual">SISTEMA ACTUAL</button>
+                        <!-- Conmutador Interactivo 3 Estados con Atributos ARIA -->
+                        <div class="case-tabs" role="tablist" aria-label="Estados de Banda Bruna">
+                            <button type="button" class="case-tab active" data-card="bandabruna" data-state="antes" role="tab" aria-selected="true" aria-controls="bandabruna-antes">ANTES</button>
+                            <button type="button" class="case-tab" data-card="bandabruna" data-state="intervencion" role="tab" aria-selected="false" aria-controls="bandabruna-intervencion">INTERVENCIÓN</button>
+                            <button type="button" class="case-tab" data-card="bandabruna" data-state="actual" role="tab" aria-selected="false" aria-controls="bandabruna-actual">SISTEMA ACTUAL</button>
                         </div>
 
                         <div class="portfolio-card-body">
-                            <div class="case-state-panel active" id="bandabruna-antes">
+                            <div class="case-state-panel active" id="bandabruna-antes" role="tabpanel">
                                 <strong>ESTADO INICIAL (ANTES):</strong>
                                 <p>Presencia digital principalmente visual/fotográfica sin integración comercial ni canalización estructurada de solicitudes de cotización.</p>
                             </div>
-                            <div class="case-state-panel" id="bandabruna-intervencion">
+                            <div class="case-state-panel" id="bandabruna-intervencion" role="tabpanel">
                                 <strong>INTERVENCIÓN DE LAGOSOLUTIONS:</strong>
                                 <p>Desarrollo de plataforma institucional SSG, formularios de cotización, canal de WhatsApp directo, reproductor oficial de sencillos, fotografías, vídeos y SEO orientado a captación de eventos.</p>
                             </div>
-                            <div class="case-state-panel" id="bandabruna-actual">
+                            <div class="case-state-panel" id="bandabruna-actual" role="tabpanel">
                                 <strong>SISTEMA ACTUAL EN PRODUCCIÓN:</strong>
                                 <p>Plataforma preparada para informar, proyectar la experiencia en vivo y facilitar oportunidades de contratación directa.</p>
                             </div>
@@ -262,23 +292,23 @@
                             <p class="portfolio-project-sub">Infraestructura Educacional & Asesoría MINEDUC · Chile</p>
                         </div>
 
-                        <!-- Conmutador Interactivo 3 Estados -->
-                        <div class="case-tabs">
-                            <button class="case-tab active" data-card="logos" data-state="antes">ENFOQUE</button>
-                            <button class="case-tab" data-card="logos" data-state="intervencion">INTERVENCIÓN</button>
-                            <button class="case-tab" data-card="logos" data-state="actual">SISTEMA ACTUAL</button>
+                        <!-- Conmutador Interactivo 3 Estados con Atributos ARIA -->
+                        <div class="case-tabs" role="tablist" aria-label="Estados de Logos Arquitectura">
+                            <button type="button" class="case-tab active" data-card="logos" data-state="antes" role="tab" aria-selected="true" aria-controls="logos-antes">ENFOQUE</button>
+                            <button type="button" class="case-tab" data-card="logos" data-state="intervencion" role="tab" aria-selected="false" aria-controls="logos-intervencion">INTERVENCIÓN</button>
+                            <button type="button" class="case-tab" data-card="logos" data-state="actual" role="tab" aria-selected="false" aria-controls="logos-actual">SISTEMA ACTUAL</button>
                         </div>
 
                         <div class="portfolio-card-body">
-                            <div class="case-state-panel active" id="logos-antes">
+                            <div class="case-state-panel active" id="logos-antes" role="tabpanel">
                                 <strong>DESDE CERO (ENFOQUE DE NICHO):</strong>
                                 <p>Plataforma desarrollada alrededor de un nicho específico de arquitectura educacional y procesos de validación normativa. El conocimiento especializado MINEDUC pertenece al responsable del negocio.</p>
                             </div>
-                            <div class="case-state-panel" id="logos-intervencion">
+                            <div class="case-state-panel" id="logos-intervencion" role="tabpanel">
                                 <strong>INTERVENCIÓN DE LAGOSOLUTIONS:</strong>
                                 <p>Diseño y construcción de arquitectura B2B desde cero, posicionamiento de nicho, contenidos normativos, etiquetas de Google Tag Manager, Google Ads y evaluación de factibilidad a WhatsApp.</p>
                             </div>
-                            <div class="case-state-panel" id="logos-actual">
+                            <div class="case-state-panel" id="logos-actual" role="tabpanel">
                                 <strong>SISTEMA ACTUAL EN PRODUCCIÓN:</strong>
                                 <p>Plataforma orientada a la captación de sostenedores de colegios, jardines e institutos que buscan aprobación de proyectos.</p>
                             </div>
@@ -325,61 +355,61 @@
                 <div class="ten-steps-grid">
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">01</span>
-                        <h4>RECONOCIMIENTO Y DIAGNÓSTICO</h4>
+                        <h3>RECONOCIMIENTO Y DIAGNÓSTICO</h3>
                         <p>Reconocemos la historia, activos y procesos que ya hacen funcionar al negocio antes de sugerir cualquier cambio.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">02</span>
-                        <h4>ESTADO ACTUAL</h4>
+                        <h3>ESTADO ACTUAL</h3>
                         <p>Auditamos la realidad de Captación, Ventas, Operación, Clientes, Datos y Tecnología en la rutina diaria.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">03</span>
-                        <h4>PROBLEMAS DETECTADOS Y FRICCIONES</h4>
+                        <h3>PROBLEMAS DETECTADOS Y FRICCIONES</h3>
                         <p>Identificamos problemas, fricciones, cuellos de botella y procesos que podrían estar limitando capacidad, tiempo, margen o experiencia del cliente.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">04</span>
-                        <h4>COSTE OCULTO DE NO ACTUAR</h4>
+                        <h3>COSTE OCULTO DE NO ACTUAR</h3>
                         <p>Estimamos impacto, coste de no actuar y potencial económico cuando existe evidencia suficiente. Cuando no sea posible cuantificar, indicamos explícitamente la limitación.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">05</span>
-                        <h4>OPORTUNIDADES DE CRECIMIENTO</h4>
+                        <h3>OPORTUNIDADES DE CRECIMIENTO</h3>
                         <p>Detectamos dónde existe evidencia suficiente para mejorar resultados, eficiencia, capacidad, captación, conversión, retención o toma de decisiones.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">06</span>
-                        <h4>VISIÓN FUTURA</h4>
+                        <h3>VISIÓN FUTURA</h3>
                         <p>Proyectamos escenarios alcanzables sustentados en datos y capacidad operativa real.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">07</span>
-                        <h4>PLAN DE IMPLEMENTACIÓN</h4>
+                        <h3>PLAN DE IMPLEMENTACIÓN</h3>
                         <p>Diseñamos un alcance técnico y operativo estrictamente proporcional a la meta de la empresa.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">08</span>
-                        <h4>INVERSIÓN</h4>
+                        <h3>INVERSIÓN</h3>
                         <p>Una vez definida la oportunidad y el alcance, presentamos la inversión necesaria para implementar la solución sin paquetes prefabricados.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">09</span>
-                        <h4>ACTUAR VS. NO ACTUAR</h4>
+                        <h3>ACTUAR VS. NO ACTUAR</h3>
                         <p>Evaluamos transparentemente las alternativas para elegir la opción de mayor sentido estratégico.</p>
                     </div>
 
                     <div class="ten-step-card reveal">
                         <span class="ten-step-num">10</span>
-                        <h4>ALIANZA ESTRATÉGICA</h4>
+                        <h3>ALIANZA ESTRATÉGICA</h3>
                         <p>Cuando existe una oportunidad real de continuidad, LAGOSOLUTIONS puede acompañar la evolución, medición y optimización del sistema.</p>
                     </div>
                 </div>
@@ -418,15 +448,15 @@
                 <div class="map-interactive-container reveal">
                     <!-- Grid Nodos Periféricos -->
                     <div class="nodes-grid">
-                        <button class="node-btn active" data-node="clientes">
+                        <button type="button" class="node-btn active" data-node="clientes" aria-pressed="true">
                             <span class="node-icon">👥</span>
                             <span class="node-label">CLIENTES</span>
                         </button>
-                        <button class="node-btn" data-node="captacion">
+                        <button type="button" class="node-btn" data-node="captacion" aria-pressed="false">
                             <span class="node-icon">🎯</span>
                             <span class="node-label">CAPTACIÓN</span>
                         </button>
-                        <button class="node-btn" data-node="ventas">
+                        <button type="button" class="node-btn" data-node="ventas" aria-pressed="false">
                             <span class="node-icon">💼</span>
                             <span class="node-label">VENTAS</span>
                         </button>
@@ -436,15 +466,15 @@
                             <h3>EMPRESA</h3>
                         </div>
 
-                        <button class="node-btn" data-node="operacion">
+                        <button type="button" class="node-btn" data-node="operacion" aria-pressed="false">
                             <span class="node-icon">⚙️</span>
                             <span class="node-label">OPERACIÓN</span>
                         </button>
-                        <button class="node-btn" data-node="datos">
+                        <button type="button" class="node-btn" data-node="datos" aria-pressed="false">
                             <span class="node-icon">📊</span>
                             <span class="node-label">DATOS</span>
                         </button>
-                        <button class="node-btn" data-node="tecnologia">
+                        <button type="button" class="node-btn" data-node="tecnologia" aria-pressed="false">
                             <span class="node-icon">💻</span>
                             <span class="node-label">TECNOLOGÍA</span>
                         </button>
@@ -517,7 +547,7 @@
 
                 <!-- Bloque de Conversión a Patrones -->
                 <div class="data-patterns-box reveal">
-                    <h4>CUANDO LOS DATOS TIENEN SUFICIENTE CALIDAD, PERMITEN IDENTIFICAR:</h4>
+                    <h3>CUANDO LOS DATOS TIENEN SUFICIENTE CALIDAD, PERMITEN IDENTIFICAR:</h3>
                     <div class="patterns-tags">
                         <span>Segmentos de Alto Valor</span>
                         <span>Estacionalidad & Valles de Demanda</span>
@@ -593,7 +623,7 @@
                             <p class="impact-desc-right">
                                 No necesita saber qué solución necesita. Primero queremos entender cómo funciona actualmente su empresa.
                             </p>
-                            <button class="btn-pill-navy trigger-modal" id="impact-cta-btn">
+                            <button type="button" class="btn-pill-navy trigger-modal" id="impact-cta-btn">
                                 SOLICITAR DIAGNÓSTICO
                                 <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -627,7 +657,7 @@
                             <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
                             <circle cx="12" cy="12" r="3"/>
                         </svg>
-                        <h4 class="value-title">Investigación previa</h4>
+                        <h3>Investigación previa</h3>
                         <p class="value-desc">Analizamos la verdad operativa antes de proponer software.</p>
                     </div>
                     
@@ -636,7 +666,7 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                             <path d="m9 12 2 2 4-4"/>
                         </svg>
-                        <h4 class="value-title">Transparencia total</h4>
+                        <h3>Transparencia total</h3>
                         <p class="value-desc">Sin métricas inventadas ni falsos claims comerciales.</p>
                     </div>
 
@@ -644,7 +674,7 @@
                         <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                         </svg>
-                        <h4 class="value-title">Orientación a resultados</h4>
+                        <h3>Orientación a resultados</h3>
                         <p class="value-desc">Construimos única y exclusivamente lo necesario.</p>
                     </div>
 
@@ -653,7 +683,7 @@
                             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
                             <circle cx="9" cy="7" r="4"/>
                         </svg>
-                        <h4 class="value-title">Capacidad técnica</h4>
+                        <h3>Capacidad técnica</h3>
                         <p class="value-desc">Arquitectura web rápida, limpia e independiente.</p>
                     </div>
                 </div>
@@ -686,14 +716,14 @@
 
     <!-- STICKY CTA FLOTANTE MÓVIL DISCRETO -->
     <div class="sticky-mobile-cta" id="sticky-mobile-cta">
-        <button class="btn-pill-navy trigger-modal btn-full">
+        <button type="button" class="btn-pill-navy trigger-modal btn-full">
             SOLICITAR DIAGNÓSTICO →
         </button>
     </div>
 
     <!-- DIÁLOGO MODAL NATIVO SIMPLIFICADO SIN FRICCIÓN -->
     <dialog id="diagnostic-modal" aria-labelledby="modal-title">
-        <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <button type="button" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
         <div class="modal-header">
             <span class="modal-badge">[ EVALUACIÓN EMPRESARIAL ]</span>
             <h2 id="modal-title">Solicitar Diagnóstico</h2>
@@ -719,6 +749,14 @@
             <div class="input-wrapper">
                 <label for="modal-email" class="sr-only">Email / WhatsApp de Contacto</label>
                 <input type="text" id="modal-email" name="email" placeholder="Email o WhatsApp de contacto" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="modal-channel" class="form-label-bold">Canal preferido de respuesta:</label>
+                <select id="modal-channel" name="channel" class="b2b-select" required>
+                    <option value="WhatsApp" selected>Responder preferentemente vía WhatsApp</option>
+                    <option value="Email">Responder preferentemente vía Email Corporativo</option>
+                </select>
             </div>
 
             <div class="input-wrapper">
@@ -753,7 +791,7 @@
     </dialog>
 
     <!-- SCRIPT PRINCIPAL CON CACHE BUSTER -->
-    <script src="script.js?v=2.1.1"></script>
+    <script src="script.js?v=2.2.0"></script>
 </body>
 
 </html>
