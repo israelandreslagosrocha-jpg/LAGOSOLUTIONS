@@ -1,788 +1,614 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Sistemas de Visibilidad y Posicionamiento Digital | Lagosolutions</title>
+    <title>LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales</title>
     <meta name="description"
-        content="Construimos sistemas de visibilidad comercial para empresas y profesionales que hoy son invisibles en internet. Aparece en Google, Mapas e IA.">
+        content="Analizamos cómo funciona realmente tu empresa para identificar qué merece optimización, qué debe adaptarse y qué conviene construir. Sin soluciones prefabricadas.">
     <meta name="keywords"
-        content="posicionamiento digital, visibilidad empresas, SEO B2B, clientes por internet, aparecer en Google Maps, captacion de clientes">
+        content="diagnóstico empresarial, desarrollo web B2B, optimización de procesos, sistemas digitales, arquitectura web, consultoría tecnológica, SEO técnico, automatización">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Lagosolutions">
+    <meta name="author" content="LAGOSOLUTIONS">
+    <link rel="canonical" href="https://lagosolutions.cl/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Sistemas de Visibilidad Digital para Empresas | Lagosolutions">
-    <meta property="og:description"
-        content="Tu negocio existe, pero tus clientes no lo encuentran. Construimos sistemas para que aparezcas exactamente donde tu cliente potencial ya está buscando.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lagosolutions.cl/">
+    <meta property="og:title" content="LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales">
+    <meta property="og:description"
+        content="Primero entendemos. Después decidimos. Luego construimos. Analizamos la operación real de tu empresa antes de proponer cualquier solución.">
+    <meta property="og:image" content="https://lagosolutions.cl/businessman_city_sunrise.png">
 
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales">
+    <meta name="twitter:description"
+        content="Analizamos la operación y canales de tu empresa para construir la infraestructura digital que realmente necesitas.">
+    <meta name="twitter:image" content="https://lagosolutions.cl/businessman_city_sunrise.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Lagosolutions Visibility Systems",
-      "description": "Sistemas de posicionamiento comercial y captación de clientes para empresas B2B, consultores, abogados y clínicas.",
-      "url": "https://github.com/israelandreslagosrocha-jpg/LAGOSOLUTIONS"
+      "name": "LAGOSOLUTIONS",
+      "description": "Diagnóstico de operaciones, optimización comercial y desarrollo de sistemas digitales adaptados para empresas.",
+      "url": "https://lagosolutions.cl",
+      "logo": "https://lagosolutions.cl/favicon.svg",
+      "knowsAbout": ["Análisis empresarial", "Optimización de procesos", "Desarrollo web B2B", "SEO técnico", "Integración de sistemas"]
     }
     </script>
 </head>
 
 <body>
 
-    <!-- INTERACTIVE RADAR GRID BACKGROUND -->
-    <canvas id="radar-canvas"></canvas>
-
-    <!-- NAVBAR PREMIUM -->
+    <!-- BARRA DE NAVEGACIÓN -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <svg class="logo-icon" viewBox="0 0 50 50">
-                    <circle cx="25" cy="25" r="22" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" fill="none" />
-                    <path d="M 25 3 L 25 47 M 3 25 L 47 25" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-                    <circle cx="25" cy="25" r="14" stroke="#10B981" stroke-width="2" fill="none" />
-                    <circle cx="25" cy="11" r="3" fill="#10B981" />
-                    <circle cx="39" cy="25" r="2" fill="#64748B" />
-                    <circle cx="16" cy="34" r="2" fill="#64748B" />
+                <!-- Square Arrow Logo SVG -->
+                <svg class="logo-icon" viewBox="0 0 40 40" aria-hidden="true">
+                    <rect x="5" y="5" width="30" height="30" rx="6" fill="none" stroke="#060f22" stroke-width="3.5" />
+                    <path d="M12 28L28 12M18 12h10v10" fill="none" stroke="#137752" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <div class="nav-logo-text">
                     <span class="logo-title">LAGOSOLUTIONS</span>
-                    <span class="logo-subtitle">VISIBILITY SYSTEMS</span>
+                    <span class="logo-subtitle">DIAGNÓSTICO & SISTEMAS</span>
                 </div>
             </div>
             
             <ul class="nav-menu">
-                <li><a href="#por-que-invisible">El Problema</a></li>
-                <li><a href="#framework">Metodología</a></li>
-                <li><a href="#sectores">Sectores B2B</a></li>
-                <li><a href="#casos">Casos Reales</a></li>
-                <li><a href="#faq">Preguntas</a></li>
+                <li><a href="#enfoque">PROBLEMA</a></li>
+                <li><a href="#proceso">NUESTRO ENFOQUE</a></li>
+                <li><a href="#dimensiones">QUÉ ANALIZAMOS</a></li>
+                <li><a href="#proyectos">PROYECTOS REALES</a></li>
             </ul>
 
             <div class="nav-cta">
-                <button class="btn-nav-outline trigger-modal">
-                    ANALIZAR VISIBILIDAD 
-                    <svg class="nav-btn-icon" viewBox="0 0 24 24" width="16" height="16">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm0-4h-2V7h2v8z" fill="currentColor"/>
-                    </svg>
+                <button class="btn-pill-navy trigger-modal" id="nav-cta-btn">
+                    ANALIZAR MI EMPRESA
                 </button>
             </div>
+
+            <!-- Botón Hamburguesa Móvil -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
         </div>
     </nav>
 
-    <!-- 1. HERO SECTION -->
-    <header id="hero" class="hero-section">
-        <div class="hero-container">
-            <!-- Left Side: Positioning Copy -->
-            <div class="hero-main-content">
-                <span class="hero-pretitle">[ SISTEMAS DE POSICIONAMIENTO COMERCIAL ]</span>
-                <h1 class="hero-title">Tu negocio existe.<br>Pero para tus clientes es invisible.</h1>
-                <p class="hero-subtitle">
-                    Construimos sistemas de visibilidad para empresas y profesionales que necesitan aparecer exactamente donde sus clientes potenciales ya están buscando contratar servicios.
-                </p>
-
-                <div class="hero-actions">
-                    <button class="btn-primary-neon trigger-modal">
-                        <svg class="btn-icon-target" viewBox="0 0 24 24" width="20" height="20">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="12" cy="12" r="3" fill="currentColor"/>
-                        </svg>
-                        Analizar mi visibilidad
-                    </button>
-                    <a href="#casos" class="btn-secondary-ghost">
-                        Ver casos de éxito 
-                        <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16">
-                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" fill="currentColor"/>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="hero-system-status">
-                    <div class="status-indicator">
-                        <span class="status-dot green"></span>
-                        <span class="status-text">COBERTURA GOOGLE: ACTIVO</span>
-                    </div>
-                    <div class="status-indicator">
-                        <span class="status-dot amber pulse-dot"></span>
-                        <span class="status-text">DETECTANDO DEMANDA COMERCIAL</span>
-                    </div>
-                    <div class="status-indicator">
-                        <span class="status-dot green"></span>
-                        <span class="status-text">POSICIONAMIENTO LOCAL: OK</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side: Precision Radar Scope & B2B Metrics -->
-            <div class="hero-visual-container">
-                <!-- Precision Radar UI -->
-                <div class="radar-scope-wrapper">
-                    <div class="radar-scan-overlay"></div>
-                    <svg class="radar-scope-svg" viewBox="0 0 500 500" preserveAspectRatio="none">
-                        <!-- Compass Rings -->
-                        <circle cx="250" cy="250" r="230" stroke="rgba(255,255,255,0.03)" stroke-width="1.5" fill="none" />
-                        <circle cx="250" cy="250" r="160" stroke="rgba(255,255,255,0.03)" stroke-width="1" fill="none" />
-                        <circle cx="250" cy="250" r="90" stroke="rgba(255,255,255,0.03)" stroke-width="1" fill="none" />
-                        
-                        <!-- Grid Axis -->
-                        <line x1="250" y1="10" x2="250" y2="490" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-                        <line x1="10" y1="250" x2="490" y2="250" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-                        <line x1="80" y1="80" x2="420" y2="420" stroke="rgba(255,255,255,0.02)" stroke-dasharray="3 3" />
-                        <line x1="80" y1="420" x2="420" y2="80" stroke="rgba(255,255,255,0.02)" stroke-dasharray="3 3" />
-
-                        <!-- Coordinate numbers -->
-                        <text x="255" y="30" fill="rgba(255,255,255,0.2)" font-size="9" font-family="monospace">000°</text>
-                        <text x="460" y="245" fill="rgba(255,255,255,0.2)" font-size="9" font-family="monospace">090°</text>
-                        <text x="255" y="480" fill="rgba(255,255,255,0.2)" font-size="9" font-family="monospace">180°</text>
-                        <text x="15" y="245" fill="rgba(255,255,255,0.2)" font-size="9" font-family="monospace">270°</text>
-                    </svg>
-
-                    <!-- Realtime Monospace Data feeds -->
-                    <div class="radar-telemetry tl">
-                        <div>[ SYS_LOC: 40.7128, -74.0060 ]</div>
-                        <div>SEARCH_RANGE: 15KM</div>
-                    </div>
-                    <div class="radar-telemetry tr">
-                        <div>SCAN RATE: 60Hz</div>
-                        <div>AUDIT: ACTIVE</div>
-                    </div>
-                    <div class="radar-telemetry bl">
-                        <div>TARGET_01: INVISIBLE</div>
-                        <div>TARGET_02: COMPETING</div>
-                    </div>
-                    <div class="radar-telemetry br">
-                        <div>VISIBILITY: 24.3%</div>
-                        <div>[ LIVE_MONITOR ]</div>
-                    </div>
-
-                    <!-- Target Coordinate Nodes (Simulated Businesses) -->
-                    <!-- Orange dots = Unindexed/Invisible, Green dots = Indexed/Visible -->
-                    <div class="radar-target-node target-invisible" style="left: 20%; top: 30%;" data-label="UNINDEXED_B2B">
-                        <div class="target-ping amber"></div>
-                    </div>
-                    <div class="radar-target-node target-invisible" style="left: 68%; top: 22%;" data-label="NO_MAPS_PRESENCE">
-                        <div class="target-ping amber"></div>
-                    </div>
-                    <div class="radar-target-node target-visible" style="left: 45%; top: 65%;" data-label="LAGOSOLUTIONS_SYS">
-                        <div class="target-ping green"></div>
-                    </div>
-                    <div class="radar-target-node target-invisible" style="left: 72%; top: 78%;" data-label="OFFLINE_CLINIC">
-                        <div class="target-ping amber"></div>
-                    </div>
-                    <div class="radar-target-node target-visible" style="left: 32%; top: 52%;" data-label="ACTIVE_LAW_FIRM">
-                        <div class="target-ping green"></div>
-                    </div>
-                </div>
-
-                <!-- Floating Glassmorphic Metric Sidebar -->
-                <div class="glass-results-card">
-                    <h3 class="card-title">ANÁLISIS DE VISIBILIDAD B2B</h3>
-                    
-                    <div class="metric-row">
-                        <div class="metric-meta">
-                            <span class="metric-label">TRÁFICO EN GOOGLE MAPS</span>
-                            <span class="metric-value text-green">+215%</span>
-                            <span class="metric-sub">Llamadas y Cotizaciones</span>
-                        </div>
-                        <div class="sparkline-wrapper">
-                            <svg viewBox="0 0 120 40" class="sparkline-svg">
-                                <path class="sparkline-path path-green" d="M 0 38 L 20 30 L 40 35 L 60 22 L 80 18 L 100 8 L 120 2" fill="none" stroke="#10B981" stroke-width="2"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="metric-row">
-                        <div class="metric-meta">
-                            <span class="metric-label">BÚSQUEDAS EN INTELIGENCIA ARTIFICIAL</span>
-                            <span class="metric-value text-blue">+187%</span>
-                            <span class="metric-sub">Recomendaciones ChatGPT / Claude</span>
-                        </div>
-                        <div class="sparkline-wrapper">
-                            <svg viewBox="0 0 120 40" class="sparkline-svg">
-                                <path class="sparkline-path path-blue" d="M 0 35 L 20 38 L 40 28 L 60 30 L 80 15 L 100 12 L 120 5" fill="none" stroke="#00B0FF" stroke-width="2"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="metric-row">
-                        <div class="metric-meta">
-                            <span class="metric-label">COMPRADORES INTERCEPTADOS</span>
-                            <span class="metric-value text-purple">+143%</span>
-                            <span class="metric-sub">Consultas directas a la web</span>
-                        </div>
-                        <div class="sparkline-wrapper">
-                            <svg viewBox="0 0 120 40" class="sparkline-svg">
-                                <path class="sparkline-path path-purple" d="M 0 35 L 30 35 L 60 20 L 90 25 L 120 8" fill="none" stroke="#D500F9" stroke-width="2"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Menú Desplegable Móvil -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+        <div class="mobile-drawer-header">
+            <span class="logo-title">LAGOSOLUTIONS</span>
+            <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
         </div>
-    </header>
-
-    <!-- 2. DIAGNOSTIC SECTION: ¿POR QUÉ TU NEGOCIO SIGUE SIENDO INVISIBLE? -->
-    <section id="por-que-invisible" class="por-que-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="system-pretitle">[ ANÁLISIS DE IMPACTO COMERCIAL ]</span>
-                <h2 class="section-title">¿Por qué tu negocio sigue sin captar clientes en internet?</h2>
-                <p class="section-desc center-desc">
-                    La mayoría de las webs corporativas son simples folletos estáticos que no interceptan la demanda del mercado y le regalan consultas diariamente a su competencia.
-                </p>
-            </div>
-
-            <div class="invisible-diagnostics-grid">
-                <div class="diagnostic-card">
-                    <span class="card-coordinate">[ BLOCK_01 ]</span>
-                    <div class="diagnostic-header">
-                        <div class="diagnostic-num">01</div>
-                        <h3>Estás fuera del radar</h3>
-                    </div>
-                    <p>
-                        Si un cliente busca servicios como los tuyos en tu zona o sector, tu competencia directa aparece en las primeras posiciones de Google y Mapas. Tu negocio simplemente no figura para el algoritmo.
-                    </p>
-                </div>
-
-                <div class="diagnostic-card">
-                    <span class="card-coordinate">[ BLOCK_02 ]</span>
-                    <div class="diagnostic-header">
-                        <div class="diagnostic-num">02</div>
-                        <h3>Falta de reputación digital</h3>
-                    </div>
-                    <p>
-                        Para los buscadores, tu dominio actual no tiene peso ni relevancia. Google prefiere mostrar y recomendar competidores que han trabajado su infraestructura web y perfiles de autoridad estructurados.
-                    </p>
-                </div>
-
-                <div class="diagnostic-card">
-                    <span class="card-coordinate">[ BLOCK_03 ]</span>
-                    <div class="diagnostic-header">
-                        <div class="diagnostic-num">03</div>
-                        <h3>Un folleto digital muerto</h3>
-                    </div>
-                    <p>
-                        Tu página web actual fue diseñada como una presentación institucional tradicional ("quiénes somos") que nadie lee, en lugar de estructurarse para resolver las dudas comerciales inmediatas de un tomador de decisiones.
-                    </p>
-                </div>
-
-                <div class="diagnostic-card">
-                    <span class="card-coordinate">[ BLOCK_04 ]</span>
-                    <div class="diagnostic-header">
-                        <div class="diagnostic-num">04</div>
-                        <h3>Sin canales de captación</h3>
-                    </div>
-                    <p>
-                        No ofreces una forma rápida, directa y profesional para que un cliente agende una llamada o solicite una cotización en segundos. El poco tráfico que logras atraer abandona tu sitio y contacta al siguiente competidor.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. METHODOLOGY: THE VISIBILITY FRAMEWORK -->
-    <section id="framework" class="framework-section">
-        <div class="container">
-            <div class="system-header">
-                <div class="system-header-left">
-                    <span class="system-pretitle">[ PROTOCOLO COMERCIAL ]</span>
-                    <h2 class="system-title">El Framework de Visibilidad B2B</h2>
-                    <p class="system-subtitle">Un método de ingeniería estructurado para posicionar tu marca en los puntos de búsqueda clave y generar oportunidades de venta predecibles.</p>
-                </div>
-                <div class="system-header-right">
-                    <button class="btn-text-link trigger-modal">
-                        INICIAR AUDITORÍA AHORA 
-                        <svg class="arrow-right-icon" viewBox="0 0 24 24" width="18" height="18">
-                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" fill="currentColor"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 5-Stage Framework Grid -->
-            <div class="framework-grid">
-                <div class="framework-card">
-                    <div class="card-index-box">
-                        <span class="fw-num">01</span>
-                        <span class="fw-tag">DETECT</span>
-                    </div>
-                    <div class="fw-icon-wrapper glow-green">
-                        <svg viewBox="0 0 24 24" class="fw-icon">
-                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                            <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h4>Auditoría de Presencia</h4>
-                    <p class="fw-objective"><strong>Objetivo:</strong> Revelar bloqueos comerciales.</p>
-                    <p class="fw-desc">Analizamos la estructura de tu sitio y localizamos los errores técnicos invisibles que impiden que tu negocio aparezca ante Google y motores de búsqueda.</p>
-                </div>
-
-                <div class="framework-card">
-                    <div class="card-index-box">
-                        <span class="fw-num">02</span>
-                        <span class="fw-tag">MAP</span>
-                    </div>
-                    <div class="fw-icon-wrapper glow-blue">
-                        <svg viewBox="0 0 24 24" class="fw-icon">
-                            <path d="M20.5 3l-.16.03L15 5.1 9 3 3.5 4.9C3.15 5.02 3 5.3 3 5.65v14.7c0 .35.3.65.65.65h.15l5.2-2.1 6 2.1 5.5-1.9c.35-.12.5-.4.5-.75V3.65c0-.35-.3-.65-.65-.65zM9 15.89l-4 1.45V5.96l4-1.4v11.33zm6 2.15l-4-1.4V5.31l4 1.4v11.33zm4-1.45l-2.6 1V6.5l2.6-.9v11.02z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h4>Mapeo de Demanda</h4>
-                    <p class="fw-objective"><strong>Objetivo:</strong> Identificar intenciones de compra.</p>
-                    <p class="fw-desc">Mapeamos los términos y preguntas exactas que escriben los gerentes y directores de tu sector cuando necesitan contratar un proveedor de confianza de inmediato.</p>
-                </div>
-
-                <div class="framework-card">
-                    <div class="card-index-box">
-                        <span class="fw-num">03</span>
-                        <span class="fw-tag">POSITION</span>
-                    </div>
-                    <div class="fw-icon-wrapper glow-cyan">
-                        <svg viewBox="0 0 24 24" class="fw-icon">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <path d="M12 8l-4 4h3v4h2v-4h3z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h4>Despliegue de Visibilidad</h4>
-                    <p class="fw-objective"><strong>Objetivo:</strong> Aparecer ante el cliente.</p>
-                    <p class="fw-desc">Creamos páginas comerciales optimizadas que interceptan esa demanda y registramos tu marca de forma prioritaria en Google Maps e índices corporativos.</p>
-                </div>
-
-                <div class="framework-card">
-                    <div class="card-index-box">
-                        <span class="fw-num">04</span>
-                        <span class="fw-tag">AUTHORITY</span>
-                    </div>
-                    <div class="fw-icon-wrapper glow-purple">
-                        <svg viewBox="0 0 24 24" class="fw-icon">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15.5l-3.5-3.5 1.41-1.41L11 13.67l4.59-4.59L17 10.5l-6 6z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h4>Generación de Autoridad</h4>
-                    <p class="fw-objective"><strong>Objetivo:</strong> Elevar la reputación.</p>
-                    <p class="fw-desc">Conseguimos que portales y prensa del sector enlacen y recomienden tu marca corporativa, indicando a los buscadores que eres la opción de mayor peso técnico.</p>
-                </div>
-
-                <div class="framework-card">
-                    <div class="card-index-box">
-                        <span class="fw-num">05</span>
-                        <span class="fw-tag">SCALE</span>
-                    </div>
-                    <div class="fw-icon-wrapper glow-pink">
-                        <svg viewBox="0 0 24 24" class="fw-icon">
-                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h4>Sistemas de Captación</h4>
-                    <p class="fw-objective"><strong>Objetivo:</strong> Automatizar llamadas y leads.</p>
-                    <p class="fw-desc">Instalamos embudos y canales directos de contacto (llamadas, cotizaciones y agendas) para convertir el nuevo tráfico calificado en oportunidades comerciales reales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. KEY B2B SECTORS -->
-    <section id="sectores" class="sectores-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="system-pretitle">[ ENFOQUE POR SECTOR B2B ]</span>
-                <h2 class="section-title">Especialización para Industrias de Alta Confianza</h2>
-                <p class="section-desc center-desc">
-                    Adaptamos la estrategia de visibilidad comercial al proceso de toma de decisiones y exigencias específicas de tu mercado corporativo.
-                </p>
-            </div>
-
-            <div class="sectores-grid">
-                <div class="sector-card">
-                    <div class="sector-icon-title">
-                        <svg class="sector-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#10B981"/></svg>
-                        <h3>Estudios Jurídicos</h3>
-                    </div>
-                    <p>Posicionamos a tu estudio penal, laboral o comercial ante directivos y gerentes que buscan asesoría legal y representación de confianza para mitigar riesgos corporativos.</p>
-                </div>
-
-                <div class="sector-card">
-                    <div class="sector-icon-title">
-                        <svg class="sector-icon" viewBox="0 0 24 24"><path d="M19 10.5S17.5 12 16 12s-3-1.5-3-1.5V3h6v7.5zM12 12.5c-1.5 0-3-1.5-3-1.5V3h6v9.5c0 0-1.5 0-3 0zm-7-2S3.5 12 2 12s-3-1.5-3-1.5V3h6v7.5z" fill="#10B981"/></svg>
-                        <h3>Clínicas y Salud</h3>
-                    </div>
-                    <p>Dominamos las búsquedas de especialidades médicas avanzadas en tu zona geográfica, garantizando que los pacientes y derivaciones encuentren tu centro de inmediato en su momento de necesidad.</p>
-                </div>
-
-                <div class="sector-card">
-                    <div class="sector-icon-title">
-                        <svg class="sector-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm4 0h-3V7h3v10zm4 0h-3v-4h3v4z" fill="#10B981"/></svg>
-                        <h3>Constructoras e Inmobiliarias</h3>
-                    </div>
-                    <p>Posicionamos tus desarrollos, obras y portafolio técnico ante contratistas, inversores y directivos que buscan desarrolladores de infraestructura e ingeniería comercial.</p>
-                </div>
-
-                <div class="sector-card">
-                    <div class="sector-icon-title">
-                        <svg class="sector-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm0-4h-2V7h2v8z" fill="#10B981"/></svg>
-                        <h3>Consultoras B2B</h3>
-                    </div>
-                    <p>Construimos una sólida autoridad digital para tus servicios corporativos (procesos, finanzas, recursos humanos), asegurando tu presencia en las fases iniciales de búsqueda directiva.</p>
-                </div>
-
-                <div class="sector-card">
-                    <div class="sector-icon-title">
-                        <svg class="sector-icon" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zm-10 8c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="#10B981"/></svg>
-                        <h3>Servicios Industriales</h3>
-                    </div>
-                    <p>Establecemos canales de visibilidad para tu maquinaria, repuestos o soporte técnico técnico, apareciendo directamente ante jefes de planta e ingenieros de compras.</p>
-                </div>
-
-                <div class="sector-card">
-                    <div class="sector-icon-title">
-                        <svg class="sector-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#10B981"/></svg>
-                        <h3>Empresas y PyMEs</h3>
-                    </div>
-                    <p>Tomamos el monopolio comercial de tu zona geográfica. Hacemos que tu negocio sea la primera y más seria opción para capturar el flujo diario de consultas en tu mercado inmediato.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. CASE STUDIES (CASOS DE ÉXITO B2B) -->
-    <section id="casos" class="casos-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="system-pretitle">[ RESULTADOS AUDITADOS Y CONFIRMADOS ]</span>
-                <h2 class="section-title">Casos Reales de Negocio</h2>
-                <p class="section-desc center-desc">
-                    Comprueba cómo transformamos la captación digital de empresas que dependían enteramente de recomendaciones tradicionales.
-                </p>
-            </div>
-
-            <div class="casos-container">
-                <!-- Case study 1 -->
-                <div class="caso-row">
-                    <div class="caso-meta-content">
-                        <span class="caso-tag">[ ESTUDIO DE CASO: SECTOR LEGAL ]</span>
-                        <h3>Firma de Abogados Penalistas Corporativos</h3>
-                        <p class="caso-description">
-                            Un despacho de abogados con excelente reputación técnica pero nula presencia en Google. Sus ingresos dependían 100% de recomendaciones personales boca en boca.
-                        </p>
-                        
-                        <div class="caso-stats-box">
-                            <div class="c-stat">
-                                <span class="c-stat-val">+215%</span>
-                                <span class="c-stat-lbl">Consultas de clientes en 6 meses</span>
-                            </div>
-                            <div class="c-stat">
-                                <span class="c-stat-val">TOP #1</span>
-                                <span class="c-stat-lbl">Posición prioritaria en mapas locales</span>
-                            </div>
-                        </div>
-
-                        <div class="caso-points">
-                            <div class="cp-item"><strong>El Desafío:</strong> Aparecer primero ante directores generales que buscan defensa penal preventiva y litigios comerciales de alto valor.</div>
-                            <div class="cp-item"><strong>La Solución:</strong> Despliegue de landing pages por especialidad penal, alta visibilidad geolocalizada y optimización semántica comercial.</div>
-                        </div>
-                    </div>
-                    
-                    <div class="caso-visual-panel">
-                        <div class="glass-telemetry-panel">
-                            <div class="panel-header">
-                                <span class="panel-dot"></span>
-                                <span class="panel-title">ESTADO DE VISIBILIDAD DIGITAL</span>
-                            </div>
-                            <div class="panel-body">
-                                <div class="telemetry-bar">
-                                    <span class="bar-lbl">Antes de Lagosolutions:</span>
-                                    <div class="bar-track"><div class="bar-fill" style="width: 8%;"></div></div>
-                                    <span class="bar-val">8% (Fuera del radar)</span>
-                                </div>
-                                <div class="telemetry-bar">
-                                    <span class="bar-lbl">Con Sistema de Visibilidad:</span>
-                                    <div class="bar-track"><div class="bar-fill green-fill" style="width: 96%;"></div></div>
-                                    <span class="bar-val text-green">96% (Líder en búsquedas)</span>
-                                </div>
-                                <div class="panel-grid-data">
-                                    <div>[ SOLICITUDES MENSUALES: +144% ]</div>
-                                    <div>[ PALABRAS TRANSACCIONALES EN TOP 3: 42 ]</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case study 2 -->
-                <div class="caso-row reverse">
-                    <div class="caso-meta-content">
-                        <span class="caso-tag">[ ESTUDIO DE CASO: SECTOR SALUD ]</span>
-                        <h3>Clínica de Especialistas en Traumatología</h3>
-                        <p class="caso-description">
-                            Centro traumatológico y de rehabilitación. Sus competidores locales (de menor nivel profesional) acaparaban el tráfico al estar mejor posicionados en mapas.
-                        </p>
-                        
-                        <div class="caso-stats-box">
-                            <div class="c-stat">
-                                <span class="c-stat-val">+187%</span>
-                                <span class="c-stat-lbl">Agendas de citas directas por la web</span>
-                            </div>
-                            <div class="c-stat">
-                                <span class="c-stat-val">24/7</span>
-                                <span class="c-stat-lbl">Canal continuo de consultas activo</span>
-                            </div>
-                        </div>
-
-                        <div class="caso-points">
-                            <div class="cp-item"><strong>El Desafío:</strong> Dejar de depender de aseguradoras médicas y captar pacientes privados para tratamientos complejos de columna y rodilla.</div>
-                            <div class="cp-item"><strong>La Solución:</strong> Estructurar páginas de tratamientos y síntomas, consistencia telefónica/ubicación, y optimización de reseñas locales.</div>
-                        </div>
-                    </div>
-                    
-                    <div class="caso-visual-panel">
-                        <div class="glass-telemetry-panel">
-                            <div class="panel-header">
-                                <span class="panel-dot"></span>
-                                <span class="panel-title">ESTADO DE VISIBILIDAD DIGITAL</span>
-                            </div>
-                            <div class="panel-body">
-                                <div class="telemetry-bar">
-                                    <span class="bar-lbl">Antes de Lagosolutions:</span>
-                                    <div class="bar-track"><div class="bar-fill" style="width: 15%;"></div></div>
-                                    <span class="bar-val">15% (Oculto en mapas)</span>
-                                </div>
-                                <div class="telemetry-bar">
-                                    <span class="bar-lbl">Con Sistema de Visibilidad:</span>
-                                    <div class="bar-track"><div class="bar-fill green-fill" style="width: 91%;"></div></div>
-                                    <span class="bar-val text-green">91% (Presencia dominante)</span>
-                                </div>
-                                <div class="panel-grid-data">
-                                    <div>[ CITAS AGENDADAS WEB: +300% ]</div>
-                                    <div>[ CUBRIMIENTO EN MAPAS LOCALES: EXCELENTE ]</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. LEAD MAGNET: VISIBILITY DIAGNOSTIC FORM -->
-    <section id="lead-magnet" class="lead-magnet-section">
-        <div class="container">
-            <div class="lead-magnet-card reveal scale-up">
-                <div class="lm-text-zone">
-                    <span class="system-pretitle">[ EVALUACIÓN DE PRESENCIA DIGITAL ]</span>
-                    <h2 class="lm-title">Diagnóstico de Visibilidad Digital</h2>
-                    <p class="lm-intro">¿Por qué tu negocio no aparece ante los clientes que te necesitan hoy?</p>
-                    <p class="lm-p">
-                        Realizamos un análisis manual de indexación sobre tu dominio. Evaluaremos cómo rastrea Google, tus fichas locales de mapas y asistentes de inteligencia artificial la información de tu marca.
-                    </p>
-                    <p class="lm-p"><strong>No es un reporte automático genérico.</strong> Es un análisis de negocio real que evaluará:</p>
-                    <ul class="lm-bullets">
-                        <li>
-                            <svg class="lm-bullet-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            Errores técnicos que hacen que los buscadores ignoren tu web actual.
-                        </li>
-                        <li>
-                            <svg class="lm-bullet-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            Zonas de demanda desaprovechadas (términos de compra que tu competencia está explotando).
-                        </li>
-                        <li>
-                            <svg class="lm-bullet-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            Oportunidades de visibilidad geolocalizada para aparecer de forma prioritaria.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="lm-action-zone">
-                    <form class="lead-form leadFormAction" action="#" method="POST">
-                        <div class="input-wrapper">
-                            <label for="name" class="sr-only">Nombre Completo</label>
-                            <input type="text" id="name" name="name" placeholder="Nombre completo" required>
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="email" class="sr-only">Correo Electrónico Corporativo</label>
-                            <input type="email" id="email" name="email" placeholder="Correo electrónico corporativo" required>
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="website" class="sr-only">URL de tu sitio web</label>
-                            <input type="url" id="website" name="website" placeholder="URL de tu sitio web (opcional si es nuevo)">
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="sector" class="sr-only">Sector del Negocio</label>
-                            <select id="sector" name="sector" class="b2b-select" required>
-                                <option value="" disabled selected>Selecciona tu sector</option>
-                                <option value="juridico">Estudio Jurídico / Legal</option>
-                                <option value="salud">Clínica / Salud / Medicina</option>
-                                <option value="construccion">Constructora / Inmobiliaria</option>
-                                <option value="consultoria">Consultoría / Servicios B2B</option>
-                                <option value="industrial">Industrial / Proveedor Técnico</option>
-                                <option value="local">Comercio / Negocio Local</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-primary-neon btn-full">
-                            Solicitar Análisis de Visibilidad
-                        </button>
-                    </form>
-
-                    <div class="reinforcement-text">
-                        <span class="safe-badge">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
-                            </svg> 
-                            100% Confidencial y Seguro
-                        </span>
-                        <span>✓ Auditoría externa sin requerir claves internas.</span>
-                        <span>✓ Recibe las conclusiones en un PDF directo a tu buzón.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) -->
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="system-pretitle">[ SOPORTE Y RESPUESTAS ]</span>
-                <h2 class="section-title">Preguntas Frecuentes</h2>
-                <p class="section-desc center-desc">
-                    Resolvemos las principales consultas sobre cómo funciona nuestro sistema de posicionamiento digital y auditoría.
-                </p>
-            </div>
-
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>¿Cuánto tiempo toma ver resultados comerciales reales?</span>
-                        <svg class="faq-arrow-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            La corrección de errores de rastreo y la optimización de fichas de mapas toman entre 10 y 15 días desde su despliegue técnico. El incremento de tráfico calificado y la entrada regular de consultas comerciales o llamadas telefónicas directas empieza a consolidarse entre los 60 y 90 días de iniciado el framework.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>¿Por qué esto no es SEO tradicional o una simple web?</span>
-                        <svg class="faq-arrow-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            El SEO tradicional busca atraer visitas de cualquier tipo (generalmente informativas) escribiendo artículos genéricos. Una web estándar es simplemente un documento estático. Lagosolutions crea un **sistema integrado de visibilidad**: colocamos tu marca exactamente donde tus compradores te están buscando (Google, Mapas y recomendadores de Inteligencia Artificial) y estructuramos embudos directos de captación para asegurar que te contacten de forma prioritaria.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>¿Necesitan acceso a mis servidores para la auditoría?</span>
-                        <svg class="faq-arrow-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            No. El diagnóstico inicial se realiza enteramente de forma externa mediante rastreadores propios, analizando el comportamiento público de tu web y la consistencia de tu marca en internet. No requerimos claves, bases de datos ni accesos privados de ningún tipo para emitir el reporte.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>¿Este sistema aplica para empresas B2B y servicios profesionales?</span>
-                        <svg class="faq-arrow-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Sí, es nuestra especialidad. Los clientes que buscan un despacho de abogados, una clínica de especialidad, una consultoría o un proveedor industrial realizan un análisis de confianza estricto antes de contactar. Nuestro framework posiciona tu autoridad digital precisamente para responder a las preguntas y objeciones de este tipo de compradores racionales de alto valor.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. MODAL DIALOG ANALYSIS (POP-UP) -->
-    <div id="diagnostic-modal" class="modal-overlay">
-        <div class="modal-card">
-            <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
-            <div class="modal-header">
-                <span class="modal-badge">[ PROTOCOLO DE AUDITORÍA ]</span>
-                <h2>Analizar mi Visibilidad Digital</h2>
-                <p>Estructura tu diagnóstico técnico. Evaluaremos tu presencia en buscadores, posicionamiento local y canales de captación.</p>
-            </div>
-            
-            <form class="lead-form leadFormAction" action="#" method="POST">
-                <div class="input-wrapper">
-                    <label for="modal-name" class="sr-only">Nombre Completo</label>
-                    <input type="text" id="modal-name" name="name" placeholder="Nombre completo" required>
-                </div>
-                <div class="input-wrapper">
-                    <label for="modal-email" class="sr-only">Correo Electrónico Corporativo</label>
-                    <input type="email" id="modal-email" name="email" placeholder="Correo electrónico corporativo" required>
-                </div>
-                <div class="input-wrapper">
-                    <label for="modal-website" class="sr-only">URL de tu sitio web</label>
-                    <input type="url" id="modal-website" name="website" placeholder="URL de tu sitio web (opcional si es nuevo)">
-                </div>
-                <div class="input-wrapper">
-                    <label for="modal-sector" class="sr-only">Sector del Negocio</label>
-                    <select id="modal-sector" name="sector" class="b2b-select" required>
-                        <option value="" disabled selected>Selecciona tu sector</option>
-                        <option value="juridico">Estudio Jurídico / Legal</option>
-                        <option value="salud">Clínica / Salud / Medicina</option>
-                        <option value="construccion">Constructora / Inmobiliaria</option>
-                        <option value="consultoria">Consultoría / Servicios B2B</option>
-                        <option value="industrial">Industrial / Proveedor Técnico</option>
-                        <option value="local">Comercio / Negocio Local</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-primary-neon btn-full">
-                    INICIAR ANÁLISIS COMERCIAL
-                </button>
-            </form>
-            <p class="modal-footer-text">✓ Análisis externo y no invasivo.</p>
+        <ul class="mobile-drawer-links">
+            <li><a href="#enfoque" class="mobile-link">El Problema</a></li>
+            <li><a href="#proceso" class="mobile-link">Nuestro Enfoque</a></li>
+            <li><a href="#dimensiones" class="mobile-link">Qué Analizamos</a></li>
+            <li><a href="#proyectos" class="mobile-link">Proyectos Reales</a></li>
+            <li><a href="#contacto" class="mobile-link">Contacto & Diagnóstico</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+            <button class="btn-pill-navy btn-full trigger-modal mobile-cta-trigger">
+                ANALIZAR MI EMPRESA
+            </button>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <svg class="logo-icon" viewBox="0 0 50 50">
-                            <circle cx="25" cy="25" r="22" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" fill="none" />
-                            <circle cx="25" cy="25" r="14" stroke="#10B981" stroke-width="2" fill="none" />
-                        </svg>
-                        <span class="logo-title">LAGOSOLUTIONS</span>
+    <!-- MAIN WRAPPER -->
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <header class="hero-section">
+            <div class="container hero-container">
+                <!-- Left Side: Copy -->
+                <div class="hero-main-content">
+                    <h1 class="hero-title">
+                        Su empresa ya logró algo que la mayoría nunca consigue.
+                        <span class="accent-green">Construyó una posición en el mercado.</span>
+                    </h1>
+                    
+                    <div class="hero-divider"></div>
+                    
+                    <div class="concept-hero-box">
+                        <span class="concept-tag">[ PRINCIPIO METODOLÓGICO ]</span>
+                        <p class="concept-lead">
+                            PRIMERO ENTENDEMOS.<br>
+                            DESPUÉS DECIDIMOS.<br>
+                            LUEGO CONSTRUIMOS.
+                        </p>
                     </div>
-                    <p class="mt-3">Sistemas de posicionamiento y visibilidad digital. Diseñamos infraestructura semántica para elevar la autoridad comercial de empresas en internet.</p>
-                    <p class="footer-coords" style="font-family: monospace; font-size: 0.75rem; color: rgba(255,255,255,0.15); margin-top: 10px;">[ COORDS: 40.7128° N, 74.0060° W ]</p>
+
+                    <p class="hero-subtitle">
+                        LAGOSOLUTIONS analiza cómo funciona realmente tu negocio para identificar qué merece optimización, qué debe adaptarse y qué conviene construir.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="btn-pill-navy trigger-modal" id="hero-cta-btn">
+                            ANALIZAR MI EMPRESA
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                        <button class="btn-text-play" id="how-we-work-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                            CÓMO TRABAJAMOS
+                        </button>
+                        <a href="#proyectos" class="hero-secondary-link">Ver Proyectos Reales ↓</a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="#hero">Inicio</a>
-                    <a href="#por-que-invisible">¿Por qué Lagosolutions?</a>
-                    <a href="#framework">Metodología</a>
-                    <a href="#sectores">Sectores B2B</a>
-                    <a href="#faq">Preguntas</a>
+
+                <!-- Right Side: Businessman Image -->
+                <div class="hero-visual-container">
+                    <img src="businessman_city_sunrise.png" alt="Ejecutivo observando la ciudad al amanecer, representando visión de negocios" class="hero-image" width="600" height="400" loading="eager">
                 </div>
             </div>
+        </header>
+
+        <!-- 2. SECCIÓN EL PROBLEMA & POSICIONAMIENTO -->
+        <section id="enfoque" class="opportunities-section">
+            <div class="container">
+                <span class="opportunities-pretitle">Las empresas consolidadas rara vez tienen problemas visibles.</span>
+                <h2 class="opportunities-title">Tienen <span class="accent-green">oportunidades invisibles</span> y cuellos de botella no detectados.</h2>
+
+                <p class="section-intro-text">
+                    La mayoría de los negocios no se estancan por falta de producto o ganas de trabajar. Se estancan porque las fricciones comerciales, la lentitud en el seguimiento, la pérdida de datos en hojas de cálculo y la tecnología desintegrada reducen silenciosamente el margen y las conversiones.
+                </p>
+
+                <div class="opportunities-grid">
+                    <!-- Card 1: Fricción Comercial -->
+                    <div class="opportunity-card reveal">
+                        <div class="opp-icon-wrapper">
+                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 8v4l3 3"/>
+                                <circle cx="12" cy="12" r="10"/>
+                            </svg>
+                        </div>
+                        <h3 class="opp-title">Lentitud Comercial</h3>
+                        <p class="opp-desc">Demoras de horas o días en responder solicitudes de cotización, perdiendo prospectos calificados ante competidores más veloces.</p>
+                    </div>
+
+                    <!-- Card 2: Fuga de Seguimiento -->
+                    <div class="opportunity-card reveal">
+                        <div class="opp-icon-wrapper">
+                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <h3 class="opp-title">Seguimiento Inexistente</h3>
+                        <p class="opp-desc">Cotizaciones enviadas por correo que nunca vuelven a ser contactadas por falta de recordatorios o procesos estandarizados.</p>
+                    </div>
+
+                    <!-- Card 3: Datos Dispersos -->
+                    <div class="opportunity-card reveal">
+                        <div class="opp-icon-wrapper">
+                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3 class="opp-title">Datos Fragmentados</h3>
+                        <p class="opp-desc">Información comercial en hojas de Excel independientes por vendedor, impidiendo conocer el pipeline y el historial real del cliente.</p>
+                    </div>
+
+                    <!-- Card 4: Tecnología Desintegrada -->
+                    <div class="opportunity-card reveal">
+                        <div class="opp-icon-wrapper">
+                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="opp-title">Sistemas Desconectados</h3>
+                        <p class="opp-desc">Herramientas digitales que no se comunican entre sí, obligando al personal a re-tipiar datos manualmente y cometer errores.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN NUESTRO ENFOQUE & PROCESO -->
+        <section id="proceso" class="process-section">
+            <div class="container">
+                <div class="process-header reveal">
+                    <span class="opportunities-pretitle">METODOLOGÍA BASADA EN EVIDENCIA</span>
+                    <h2 class="opportunities-title">No empezamos preguntando <span class="accent-green">qué tecnología quieres.</span></h2>
+                    <p class="process-lead-text">
+                        Empezamos entendiendo cómo funciona tu empresa. Analizamos la captación, la atención, las ventas, la operación y los datos existentes antes de recomendar cualquier intervención.
+                    </p>
+                </div>
+
+                <!-- Ciclo de 6 Fases -->
+                <div class="process-steps-grid">
+                    <div class="step-card reveal">
+                        <span class="step-num">01</span>
+                        <h3 class="step-title">ENTENDER</h3>
+                        <p class="step-desc">Investigamos cómo opera el negocio, su modelo financiero, sus clientes y la rutina diaria de su equipo.</p>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-num">02</span>
+                        <h3 class="step-title">OPTIMIZAR</h3>
+                        <p class="step-desc">Analizamos la infraestructura y herramientas existentes. Corregimos ineficiencias antes de gastar en cosas nuevas.</p>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-num">03</span>
+                        <h3 class="step-title">ADAPTAR</h3>
+                        <p class="step-desc">Ajustamos los procesos e infraestructura para que respondan a la exigencia y evolución real del mercado.</p>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-num">04</span>
+                        <h3 class="step-title">CONSTRUIR</h3>
+                        <p class="step-desc">Desarrollamos e implementamos única y exclusivamente las capacidades digitales que el negocio necesita.</p>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-num">05</span>
+                        <h3 class="step-title">MEDIR</h3>
+                        <p class="step-desc">Auditamos el impacto de cada cambio mediante métricas objetivas de negocio (conversión, tiempo, margen).</p>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-num">06</span>
+                        <h3 class="step-title">EVOLUCIONAR</h3>
+                        <p class="step-desc">Iteramos y ampliamos el sistema únicamente cuando exista evidencia de una nueva oportunidad rentable.</p>
+                    </div>
+                </div>
+
+                <!-- Bloque Estratégico: No todo requiere web nueva -->
+                <div class="no-new-web-box reveal">
+                    <div class="no-new-web-content">
+                        <span class="badge-accent">[ PRINCIPIO DE RESPONSABILIDAD ]</span>
+                        <h3>Una web nueva no siempre es la respuesta.</h3>
+                        <p>
+                            Si el sitio web o sistema actual funciona bien comercialmente, la recomendación profesional es <strong>OPTIMIZARLO</strong>. Si requiere integraciones concretas, se <strong>ADAPTA</strong>. Solo si la arquitectura actual limita severamente el crecimiento y genera costos excesivos, se justifica <strong>RECONSTRUIR</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN QUÉ ANALIZAMOS (8 DIMENSIONES) -->
+        <section id="dimensiones" class="dimensions-section">
+            <div class="container">
+                <div class="process-header reveal">
+                    <span class="opportunities-pretitle">CAMPOS DE INVESTIGACIÓN</span>
+                    <h2 class="opportunities-title">Las 8 dimensiones que <span class="accent-green">auditamos en tu empresa.</span></h2>
+                    <p class="process-lead-text">
+                        No ofrecemos estas áreas como servicios sueltos de catálogo. Las investigamos en conjunto para comprender la salud integral del negocio.
+                    </p>
+                </div>
+
+                <div class="dimensions-grid">
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">01</span>
+                        <h4>NEGOCIO</h4>
+                        <p>Modelo de cobro, productos principales vs secundarios, márgenes y oferta de valor real.</p>
+                    </div>
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">02</span>
+                        <h4>CLIENTES</h4>
+                        <p>Perfil del comprador real, comportamiento de compra, recurrencia y motivos de pérdida.</p>
+                    </div>
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">03</span>
+                        <h4>CAPTACIÓN</h4>
+                        <p>Canales activos (boca a boca, Google, Ads, vendedores), costo de adquisición y estabilidad.</p>
+                    </div>
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">04</span>
+                        <h4>CONVERSIÓN</h4>
+                        <p>Velocidad de respuesta, proceso de cotización, seguimiento y tasa de cierre de prospectos.</p>
+                    </div>
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">05</span>
+                        <h4>OPERACIÓN</h4>
+                        <p>Flujo de entrega posterior al pago, cuellos de botella manuales y tiempos de servicio.</p>
+                    </div>
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">06</span>
+                        <h4>DATOS</h4>
+                        <p>Métricas que se registran vs métricas que se utilizan para tomar decisiones de inversión.</p>
+                    </div>
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">07</span>
+                        <h4>TECNOLOGÍA</h4>
+                        <p>Utilidad real del software actual, integraciones, costos de licencias y propiedad de activos.</p>
+                    </div>
+                    <div class="dim-card reveal">
+                        <span class="dim-tag">08</span>
+                        <h4>CAPACIDAD</h4>
+                        <p>Disponibilidad del equipo para absorber demanda sin colapsar la calidad del servicio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN PROYECTOS REALES -->
+        <section id="proyectos" class="portfolio-section">
+            <div class="container">
+                <div class="portfolio-header reveal">
+                    <span class="opportunities-pretitle">TRABAJO REAL EN PRODUCCIÓN</span>
+                    <h2 class="opportunities-title">No mostramos conceptos inventados. <span class="accent-green">Mostramos trabajo realizado.</span></h2>
+                    <p class="portfolio-lead-text">
+                        Creemos en la transparencia total. Presentamos proyectos reales entregados por LAGOSOLUTIONS con su arquitectura comprobable y estado de evidencia.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid">
+                    
+                    <!-- Proyecto 1: Banda Bruna -->
+                    <article class="portfolio-card reveal">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-badge-real">[ REAL — EN PRODUCCIÓN ]</span>
+                            <h3 class="portfolio-project-name">Banda Bruna</h3>
+                            <p class="portfolio-project-sub">Orquesta Oficial de Cumbia Tropical · Chile</p>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-detail-item">
+                                <strong>CONTEXTO:</strong>
+                                <p>Agrupación musical de alta trayectoria en La Araucanía. Requería una plataforma web moderna con capacidad de difundir eventos, estrenos musicales y captar contrataciones directas.</p>
+                            </div>
+                            <div class="portfolio-detail-item">
+                                <strong>TRABAJO REALIZADO:</strong>
+                                <p>Diseño y desarrollo web institucional con arquitectura en Astro SSG, banner interactivo de eventos, reproductor de lanzamientos y sincronización con API de Supabase en tiempo real.</p>
+                            </div>
+                            <div class="portfolio-tech-tags">
+                                <span class="tech-tag">Astro SSG</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Supabase API</span>
+                                <span class="tech-tag">Cloudinary CDN</span>
+                                <span class="tech-tag">Schema.org</span>
+                                <span class="tech-tag">WhatsApp API</span>
+                            </div>
+                            <div class="portfolio-evidence-box">
+                                <strong>EVIDENCIA TÉCNICA VERIFICADA:</strong>
+                                <p>✓ Carga ultrarrápida SSG, SEO técnico estructurado (MusicGroup), medios optimizados en WebP y canalización directa a WhatsApp.</p>
+                                <span class="unmeasured-note">* Métricas de facturación interna no medidas por confidencialidad.</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-footer">
+                            <a href="https://www.bandabruna.cl/" target="_blank" rel="noopener" class="portfolio-link-btn">
+                                Visitar Sitio Real: bandabruna.cl ↗
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 2: Logos Arquitectura -->
+                    <article class="portfolio-card reveal">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-badge-real">[ REAL — EN PRODUCCIÓN ]</span>
+                            <h3 class="portfolio-project-name">Logos Arquitectura</h3>
+                            <p class="portfolio-project-sub">Infraestructura Educacional & Asesoría MINEDUC · Chile</p>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-detail-item">
+                                <strong>CONTEXTO:</strong>
+                                <p>Firma de arquitectura y consultoría normativa especializada en proyectos educativos para colegios, jardines infantiles e institutos en Chile.</p>
+                            </div>
+                            <div class="portfolio-detail-item">
+                                <strong>TRABAJO REALIZADO:</strong>
+                                <p>Desarrollo de landing page B2B enfocada en la aprobación ante el Reconocimiento Oficial de la Seremi de Educación, reducción de objeciones y captura cualificada de sostenedores.</p>
+                            </div>
+                            <div class="portfolio-tech-tags">
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Google Tag Manager</span>
+                                <span class="tech-tag">Google Ads GTM</span>
+                                <span class="tech-tag">Cloudinary CDN</span>
+                                <span class="tech-tag">WhatsApp Form</span>
+                            </div>
+                            <div class="portfolio-evidence-box">
+                                <strong>EVIDENCIA TÉCNICA VERIFICADA:</strong>
+                                <p>✓ Estructura de alta conversión B2B, integración con etiquetas de Google Ads y evaluación de factibilidad normativa directa a WhatsApp.</p>
+                                <span class="unmeasured-note">* Tasa de cierre final de contratos no medida.</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-footer">
+                            <a href="https://www.logosarquitectura.cl/" target="_blank" rel="noopener" class="portfolio-link-btn">
+                                Visitar Sitio Real: logosarquitectura.cl ↗
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SECCIÓN DIAGNÓSTICO Y CALL TO ACTION -->
+        <section id="contacto" class="impact-section">
+            <div class="container">
+                <div class="impact-card reveal">
+                    <div class="impact-grid">
+                        <!-- Left Side -->
+                        <div class="impact-left">
+                            <span class="opportunities-pretitle" style="color: #10b981;">EVALUACIÓN INICIAL</span>
+                            <h2 class="impact-title">¿Qué está pasando realmente en tu negocio?</h2>
+                            <div class="impact-divider"></div>
+                            <p class="impact-desc-left">
+                                Antes de recomendar cualquier solución, plataforma o línea de código, necesitamos entender cómo funciona actualmente tu empresa.
+                            </p>
+                        </div>
+                        
+                        <!-- Right Side -->
+                        <div class="impact-right">
+                            <p class="impact-desc-right">
+                                Conversemos sobre tu operación, tus procesos comerciales y dónde existen oportunidades reales de mejora sustentadas en datos.
+                            </p>
+                            <button class="btn-pill-navy trigger-modal" id="impact-cta-btn">
+                                ANALIZAR MI EMPRESA
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER PREMIUM SOBRIO -->
+    <footer id="nosotros" class="footer-banner">
+        <div class="container">
+            <div class="footer-top">
+                <!-- Left: Statement -->
+                <div class="footer-statement">
+                    <p class="footer-statement-small">Primero entendemos. Después decidimos. Luego construimos.</p>
+                    <h2 class="footer-statement-large">
+                        Somos tu aliado para <span class="accent-green">optimizar y expandir tu negocio.</span>
+                    </h2>
+                </div>
+                
+                <!-- Right: Values -->
+                <div class="footer-values-grid">
+                    <div class="value-col">
+                        <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <h4 class="value-title">Investigación previa</h4>
+                        <p class="value-desc">Analizamos la verdad operativa antes de proponer software.</p>
+                    </div>
+                    
+                    <div class="value-col">
+                        <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                        <h4 class="value-title">Transparencia total</h4>
+                        <p class="value-desc">Sin métricas inventadas ni falsos claims comerciales.</p>
+                    </div>
+
+                    <div class="value-col">
+                        <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                        <h4 class="value-title">Orientación a resultados</h4>
+                        <p class="value-desc">Construimos única y exclusivamente lo necesario.</p>
+                    </div>
+
+                    <div class="value-col">
+                        <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                        </svg>
+                        <h4 class="value-title">Capacidad técnica</h4>
+                        <p class="value-desc">Arquitectura web rápida, limpia e independiente.</p>
+                    </div>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Lagosolutions Visibility Systems. Todos los derechos reservados.</p>
+                <div class="footer-brand-meta">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" aria-hidden="true">
+                            <rect x="5" y="5" width="30" height="30" rx="6" fill="none" stroke="#ffffff" stroke-width="3.5" />
+                            <path d="M12 28L28 12M18 12h10v10" fill="none" stroke="#10b981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="footer-logo-title">LAGOSOLUTIONS</span>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Inicio</a>
+                    <a href="#enfoque">El Problema</a>
+                    <a href="#proceso">Nuestro Enfoque</a>
+                    <a href="#dimensiones">Qué Analizamos</a>
+                    <a href="#proyectos">Proyectos Reales</a>
+                    <a href="#contacto">Analizar Mi Empresa</a>
+                </div>
+                
+                <p style="opacity: 0.6;">&copy; 2026 LAGOSOLUTIONS. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- DIÁLOGO MODAL NATIVO REAL DE CAPTURA DE LEADS -->
+    <dialog id="diagnostic-modal" aria-labelledby="modal-title">
+        <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+        <div class="modal-header">
+            <span class="modal-badge">[ EVALUACIÓN EMPRESARIAL ]</span>
+            <h2 id="modal-title">Analizar Mi Empresa</h2>
+            <p>Estructura tu solicitud inicial. Revisaremos la operación, procesos y presencia digital de tu empresa para la primera conversación.</p>
+        </div>
+        
+        <form class="lead-form" id="real-diagnostic-form" action="#" method="POST">
+            <div class="input-wrapper">
+                <label for="modal-name" class="sr-only">Nombre Completo</label>
+                <input type="text" id="modal-name" name="name" placeholder="Nombre completo" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="modal-company" class="sr-only">Nombre de la Empresa</label>
+                <input type="text" id="modal-company" name="company" placeholder="Nombre de tu empresa" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="modal-email" class="sr-only">Correo Electrónico Corporativo</label>
+                <input type="email" id="modal-email" name="email" placeholder="Correo electrónico corporativo" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="modal-phone" class="sr-only">Teléfono / WhatsApp de Contacto</label>
+                <input type="tel" id="modal-phone" name="phone" placeholder="Teléfono o WhatsApp de contacto" required>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="modal-website" class="sr-only">Sitio Web Actual (Opcional)</label>
+                <input type="url" id="modal-website" name="website" placeholder="Sitio web actual (opcional)">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="modal-sector" class="sr-only">Sector del Negocio</label>
+                <select id="modal-sector" name="sector" class="b2b-select" required>
+                    <option value="" disabled selected>Selecciona tu sector</option>
+                    <option value="Servicios B2B / Consultoría">Servicios B2B / Consultoría</option>
+                    <option value="Estudio Jurídico / Legal">Estudio Jurídico / Legal</option>
+                    <option value="Clínica / Salud / Medicina">Clínica / Salud / Medicina</option>
+                    <option value="Constructora / Inmobiliaria / Arquitectura">Constructora / Inmobiliaria / Arquitectura</option>
+                    <option value="Industrial / Proveedor Técnico">Industrial / Proveedor Técnico</option>
+                    <option value="Comercio / Retail / Ecommerce">Comercio / Retail / Ecommerce</option>
+                    <option value="Otro sector consolidado">Otro sector consolidado</option>
+                </select>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="modal-problem" class="sr-only">¿Cuál es el principal problema o meta actual?</label>
+                <textarea id="modal-problem" name="problem" rows="3" placeholder="Describe brevemente qué hace tu empresa y cuál es tu principal dificultad o meta actual..." class="b2b-textarea" required></textarea>
+            </div>
+
+            <!-- Canal de Envío / Opción de Recepción -->
+            <div class="submit-action-group">
+                <button type="submit" id="submit-form-btn" class="btn-pill-navy btn-full">
+                    ENVIAR SOLICITUD DE EVALUACIÓN
+                </button>
+            </div>
+
+            <!-- Mensaje de Feedback Real -->
+            <div id="form-feedback-msg" class="form-feedback-msg hidden" aria-live="polite"></div>
+        </form>
+        <p class="modal-footer-text">✓ Análisis inicial confidencial y sin compromiso comercial.</p>
+    </dialog>
+
+    <!-- SCRIPT PRINCIPAL -->
     <script src="script.js"></script>
 </body>
 
