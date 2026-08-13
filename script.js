@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             setTimeout(() => {
                 if (channel === "WhatsApp") {
-                    const whatsappNumber = "56990021689";
+                    const whatsappNumber = "56961996576";
                     const waUrl = `https://wa.me/${whatsappNumber}?text=${messageBody}`;
                     window.open(waUrl, "_blank");
                 }
