@@ -1,4 +1,4 @@
-// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V1 COMERCIAL REAL)
+// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2 PREMIUM REFINEMENT)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -114,16 +114,70 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 4. SCROLL SUAVE Y BOTÓN "CÓMO TRABAJAMOS"
+    // 4. MAPA DE OPORTUNIDADES INTERACTIVO
     // ==========================================
-    const howWeWorkBtn = document.getElementById("how-we-work-btn");
-    if (howWeWorkBtn) {
-        howWeWorkBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            const procesoSection = document.getElementById("proceso");
-            if (procesoSection) {
-                procesoSection.scrollIntoView({ behavior: "smooth" });
-            }
+    const nodeData = {
+        clientes: {
+            title: "CLIENTES",
+            investigamos: "Perfil del comprador real, frecuencia de compra, motivo de elección y clientes inactivos.",
+            evidencia: "Historial de facturación, registros de pedidos, encuestas o conversaciones comerciales directas.",
+            hallazgo: "Podría aparecer que un segmento reducido de clientes genera la mayor parte del margen, o que existen clientes antiguos que dejaron de comprar por falta de contacto."
+        },
+        captacion: {
+            title: "CAPTACIÓN",
+            investigamos: "Origen de clientes calificados, canales activos, volúmenes de búsqueda y conducta post-contacto.",
+            evidencia: "Google Analytics, Search Console, registros publicitarios, fuentes de recomendación.",
+            hallazgo: "Podría aparecer demanda calificada en el mercado que la empresa actualmente no está capturando o canalizando adecuadamente."
+        },
+        ventas: {
+            title: "VENTAS & CONVERSIÓN",
+            investigamos: "Tiempos de cotización, velocidad de primera respuesta, tasa de cierre y frecuencia de seguimiento.",
+            evidencia: "Registros de cotizaciones enviadas, correos salientes, WhatsApp Business, agendas comerciales.",
+            hallazgo: "Podría aparecer que cotizaciones de alto margen se pierden únicamente por demoras de respuesta o falta de recordatorios estandarizados."
+        },
+        operacion: {
+            title: "OPERACIÓN & ENTREGA",
+            investigamos: "Flujo de trabajo posterior a la venta, cuellos de botella manuales, capacidad del equipo y tiempos de servicio.",
+            evidencia: "Tiempos de entrega de proyectos/servicios, tareas repetitivas del personal, reportes de soporte.",
+            hallazgo: "Podría aparecer que tareas administrativas repetitivas consumen horas que el equipo técnico podría dedicar a entregar más valor."
+        },
+        datos: {
+            title: "DATOS & ANÁLISIS",
+            investigamos: "Métricas que se registran históricamente vs métricas que efectivamente se utilizan para tomar decisiones de inversión.",
+            evidencia: "Archivos Excel, sistemas de facturación, bases de contactos, reportes mensuales.",
+            hallazgo: "Podría aparecer información valiosa sobre estacionalidad o rotación de servicios ignorada por estar dispersa en planillas."
+        },
+        tecnologia: {
+            title: "TECNOLOGÍA & SISTEMAS",
+            investigamos: "Utilidad real del software actual, nivel de integración entre herramientas, costos y propiedad de los activos digitales.",
+            evidencia: "Sitio web actual, licencias de software, herramientas de comunicación interna y formularios.",
+            hallazgo: "Podría aparecer que la tecnología actual aísla información o fuerza a re-tipiar datos en lugar de conectar procesos."
+        }
+    };
+
+    const nodeButtons = document.querySelectorAll(".node-btn");
+    const nodeTitle = document.getElementById("node-title");
+    const nodeInvestigamos = document.getElementById("node-investigamos");
+    const nodeEvidencia = document.getElementById("node-evidencia");
+    const nodeHallazgo = document.getElementById("node-hallazgo");
+
+    if (nodeButtons.length > 0) {
+        nodeButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const key = btn.getAttribute("data-node");
+                const data = nodeData[key];
+                if (!data) return;
+
+                // Update active state
+                nodeButtons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                // Update content with smooth transition
+                if (nodeTitle) nodeTitle.textContent = data.title;
+                if (nodeInvestigamos) nodeInvestigamos.textContent = data.investigamos;
+                if (nodeEvidencia) nodeEvidencia.textContent = data.evidencia;
+                if (nodeHallazgo) nodeHallazgo.textContent = data.hallazgo;
+            });
         });
     }
 
@@ -160,18 +214,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const nameInput = realForm.querySelector('input[name="name"]');
             const companyInput = realForm.querySelector('input[name="company"]');
             const emailInput = realForm.querySelector('input[name="email"]');
-            const phoneInput = realForm.querySelector('input[name="phone"]');
             const websiteInput = realForm.querySelector('input[name="website"]');
-            const sectorInput = realForm.querySelector('select[name="sector"]');
+            const goalInput = realForm.querySelector('select[name="goal"]');
             const problemInput = realForm.querySelector('textarea[name="problem"]');
             const submitBtn = document.getElementById("submit-form-btn");
 
             const name = sanitizeInput(nameInput ? nameInput.value : "");
             const company = sanitizeInput(companyInput ? companyInput.value : "");
             const email = sanitizeInput(emailInput ? emailInput.value : "");
-            const phone = sanitizeInput(phoneInput ? phoneInput.value : "");
             const website = sanitizeInput(websiteInput ? websiteInput.value : "");
-            const sector = sanitizeInput(sectorInput ? sectorInput.value : "");
+            const goal = sanitizeInput(goalInput ? goalInput.value : "NO LO SÉ TODAVÍA");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
 
             // Validation
@@ -185,26 +237,25 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Real action: Format a structured lead message for direct commercial routing
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO - LAGOSOLUTIONS*%0A%0A` +
+            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2 - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
                 `*Email:* ${encodeURIComponent(email)}%0A` +
-                `*Teléfono/WhatsApp:* ${encodeURIComponent(phone)}%0A` +
                 `*Sitio Web:* ${encodeURIComponent(website || "No especificado")}%0A` +
-                `*Sector:* ${encodeURIComponent(sector)}%0A` +
-                `*Meta/Problema:* ${encodeURIComponent(problem)}`;
+                `*Prioridad a mejorar:* ${encodeURIComponent(goal)}%0A` +
+                `*Contexto de empresa:* ${encodeURIComponent(problem)}`;
 
             // Feedback real
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerText = "PROCESANDO SOLICITUD REAL...";
+                submitBtn.innerText = "ABRIENDO ATENCIÓN COMERCIAL...";
                 submitBtn.style.opacity = "0.75";
             }
 
             if (feedbackMsg) {
                 feedbackMsg.classList.remove("hidden");
                 feedbackMsg.classList.add("success");
-                feedbackMsg.innerText = "✓ Solicitud preparada. Abriendo canal de atención comercial...";
+                feedbackMsg.innerText = "✓ Solicitud preparada. Redirigiendo a WhatsApp Business...";
             }
 
             // Redirecting to WhatsApp / direct commercial channel

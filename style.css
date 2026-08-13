@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LAGOSOLUTIONS STRATEGIC EXPANSION — DESIGN SYSTEM & STYLES (V1 COMERCIAL)
+   LAGOSOLUTIONS STRATEGIC EXPANSION — DESIGN SYSTEM & STYLES (V2 PREMIUM REFINEMENT)
    ========================================================================== */
 
 /* 1. TOKENS & VARIABLES */
@@ -92,7 +92,7 @@ svg {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(250, 251, 252, 0.88);
+    background: rgba(250, 251, 252, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-light);
@@ -150,7 +150,7 @@ svg {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
     list-style: none;
 }
 
@@ -158,7 +158,7 @@ svg {
     text-decoration: none;
     color: var(--color-navy);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 1px;
     transition: color 0.3s ease;
 }
@@ -191,6 +191,28 @@ svg {
     background-color: var(--color-navy-light);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(6, 15, 34, 0.2);
+}
+
+.btn-pill-outline {
+    background: transparent;
+    color: var(--color-navy);
+    border: 2px solid var(--color-navy);
+    border-radius: 50px;
+    padding: 11px 22px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-pill-outline:hover {
+    background-color: var(--color-navy);
+    color: #ffffff;
 }
 
 /* Botón Hamburguesa Móvil */
@@ -300,7 +322,7 @@ svg {
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: 600;
     color: var(--color-navy);
     line-height: 1.25;
@@ -345,7 +367,7 @@ svg {
     font-size: 1.05rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .hero-actions {
@@ -353,45 +375,14 @@ svg {
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 16px;
 }
 
-.btn-text-play {
-    background: transparent;
-    border: none;
-    color: var(--color-navy);
-    font-family: var(--font-sans);
-    font-weight: 700;
+.hero-microcopy {
     font-size: 0.8rem;
-    letter-spacing: 1px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 16px;
-    transition: color 0.3s ease;
-}
-
-.btn-text-play svg {
-    width: 20px;
-    height: 20px;
-    color: var(--color-green);
-}
-
-.btn-text-play:hover {
-    color: var(--color-green);
-}
-
-.hero-secondary-link {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.85rem;
     font-weight: 600;
-    margin-left: 8px;
-    transition: color 0.3s ease;
-}
-
-.hero-secondary-link:hover {
-    color: var(--color-navy);
+    color: var(--color-green);
+    letter-spacing: 0.5px;
 }
 
 .hero-visual-container {
@@ -409,10 +400,192 @@ svg {
     border-radius: 16px;
 }
 
-/* 5. SECCIÓN EL PROBLEMA & OPORTUNIDADES */
-.opportunities-section {
+/* 5. SECCIÓN PROYECTOS REALES (PORTFOLIO - REUBICADO TEMPRANO) */
+.portfolio-section {
     padding: 100px 0;
     background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.portfolio-header {
+    margin-bottom: 48px;
+}
+
+.portfolio-lead-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin-top: 12px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.portfolio-card {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(6, 15, 34, 0.1);
+    border-color: var(--border-green);
+}
+
+.portfolio-badge-real {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--color-green);
+    background-color: var(--color-green-light);
+    padding: 4px 12px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.portfolio-project-name {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 4px;
+}
+
+.portfolio-project-sub {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.portfolio-transformation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+}
+
+.trans-item strong {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.trans-before strong {
+    color: var(--text-muted);
+}
+
+.trans-after strong {
+    color: var(--color-green);
+}
+
+.trans-item p {
+    font-size: 0.85rem;
+    color: var(--text-navy);
+    line-height: 1.4;
+}
+
+.portfolio-detail-item {
+    margin-bottom: 16px;
+}
+
+.portfolio-detail-item strong {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--color-navy);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.portfolio-detail-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.portfolio-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.tech-tag {
+    background-color: #e8eef6;
+    color: var(--color-navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.portfolio-evidence-box {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.portfolio-evidence-box strong {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--color-green);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.portfolio-evidence-box p {
+    font-size: 0.85rem;
+    color: var(--text-navy);
+    line-height: 1.4;
+}
+
+.unmeasured-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+.portfolio-card-footer {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+.portfolio-link-btn {
+    color: var(--color-green);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.portfolio-link-btn:hover {
+    color: var(--color-navy);
+}
+
+/* 6. SECCIÓN PREGUNTAS DE INDAGACIÓN EMPRESARIAL */
+.opportunities-section {
+    padding: 100px 0;
+    background-color: #fafbfc;
 }
 
 .opportunities-pretitle {
@@ -442,61 +615,206 @@ svg {
     line-height: 1.6;
 }
 
-.opportunities-grid {
+.inquiry-questions-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-.opportunity-card {
-    background-color: var(--bg-light);
+.inquiry-card {
+    background-color: #ffffff;
     border: 1px solid var(--border-light);
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 32px 24px;
+    box-shadow: var(--shadow-subtle);
     transition: all 0.3s ease;
 }
 
-.opportunity-card:hover {
+.inquiry-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-card);
     border-color: var(--border-green);
 }
 
-.opp-icon-wrapper {
-    width: 48px;
-    height: 48px;
-    background-color: var(--color-green-light);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.opp-icon {
-    width: 24px;
-    height: 24px;
-    color: var(--color-green);
-}
-
-.opp-title {
-    font-size: 1.15rem;
+.inquiry-num {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-navy);
+    color: var(--color-green);
+    opacity: 0.7;
+    display: block;
     margin-bottom: 12px;
 }
 
-.opp-desc {
-    font-size: 0.9rem;
+.inquiry-question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.inquiry-sub {
+    font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.5;
 }
 
-/* 6. SECCIÓN PROCESO & METODOLOGÍA */
+/* 7. SECCIÓN MAPA DE OPORTUNIDADES INTERACTIVO (NAVY PROFUNDO) */
+.opportunity-map-section {
+    padding: 100px 0;
+    background-color: var(--color-navy);
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.map-header {
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.map-title {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+.map-lead-text {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.map-interactive-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.nodes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: center;
+}
+
+.node-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px 12px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.node-btn:hover, .node-btn.active {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--color-green-accent);
+    transform: scale(1.04);
+}
+
+.node-icon {
+    font-size: 1.5rem;
+}
+
+.node-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.center-node-box {
+    background: var(--color-green);
+    border-radius: 12px;
+    padding: 24px 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(19, 119, 82, 0.4);
+}
+
+.center-tag {
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    color: #ffffff;
+    opacity: 0.8;
+    display: block;
+}
+
+.center-node-box h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+/* Card de Display de Información del Nodo */
+.node-display-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.node-display-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--color-green-accent);
+    display: block;
+    margin-bottom: 8px;
+}
+
+#node-title {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.node-info-col {
+    margin-bottom: 20px;
+}
+
+.node-info-col strong {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.node-info-col p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.node-finding-col {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 3px solid var(--color-green-accent);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 0;
+}
+
+.node-finding-col strong {
+    color: var(--color-green-accent);
+}
+
+/* 8. SECCIÓN PROCESO & TRAYECTORIA */
 .process-section {
     padding: 100px 0;
     background-color: #f3f6fa;
-    border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -509,6 +827,52 @@ svg {
     color: var(--text-muted);
     max-width: 750px;
     margin-top: 12px;
+}
+
+/* Trayectoria Visual */
+.trajectory-line-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-navy);
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 16px 32px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-card);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.trajectory-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.t-badge {
+    background-color: var(--color-green-accent);
+    color: var(--color-navy);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.t-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.t-arrow {
+    color: var(--color-green-accent);
+    font-size: 1.1rem;
+    font-weight: 800;
 }
 
 .process-steps-grid {
@@ -579,18 +943,38 @@ svg {
 .no-new-web-content h3 {
     font-family: var(--font-serif);
     font-size: 1.8rem;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-weight: 600;
 }
 
-.no-new-web-content p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.6;
-    max-width: 900px;
+.three-paths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-/* 7. SECCIÓN QUÉ ANALIZAMOS (DIMENSIONES) */
+.path-item strong {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--color-green-accent);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.path-item p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+.paths-closing {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* 9. SECCIÓN QUÉ ANALIZAMOS (DIMENSIONES) */
 .dimensions-section {
     padding: 100px 0;
     background-color: var(--bg-white);
@@ -639,160 +1023,10 @@ svg {
     line-height: 1.5;
 }
 
-/* 8. SECCIÓN PROYECTOS REALES (PORTFOLIO) */
-.portfolio-section {
-    padding: 100px 0;
-    background-color: #fafbfc;
-    border-top: 1px solid var(--border-light);
-}
-
-.portfolio-header {
-    margin-bottom: 48px;
-}
-
-.portfolio-lead-text {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 750px;
-    margin-top: 12px;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-}
-
-.portfolio-card {
-    background-color: var(--bg-white);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
-    padding: 36px;
-    box-shadow: var(--shadow-card);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(6, 15, 34, 0.1);
-    border-color: var(--border-green);
-}
-
-.portfolio-badge-real {
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: var(--color-green);
-    background-color: var(--color-green-light);
-    padding: 4px 12px;
-    border-radius: 50px;
-    display: inline-block;
-    margin-bottom: 12px;
-}
-
-.portfolio-project-name {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-navy);
-    margin-bottom: 4px;
-}
-
-.portfolio-project-sub {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-}
-
-.portfolio-detail-item {
-    margin-bottom: 16px;
-}
-
-.portfolio-detail-item strong {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    color: var(--color-navy);
-    display: block;
-    margin-bottom: 4px;
-}
-
-.portfolio-detail-item p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-.portfolio-tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 20px 0;
-}
-
-.tech-tag {
-    background-color: #f0f4f8;
-    color: var(--color-navy);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 6px;
-}
-
-.portfolio-evidence-box {
-    background-color: var(--bg-light);
-    border: 1px solid var(--border-light);
-    border-radius: 10px;
-    padding: 16px;
-    margin-top: 16px;
-}
-
-.portfolio-evidence-box strong {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    color: var(--color-green);
-    display: block;
-    margin-bottom: 4px;
-}
-
-.portfolio-evidence-box p {
-    font-size: 0.85rem;
-    color: var(--text-navy);
-    line-height: 1.4;
-}
-
-.unmeasured-note {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    display: block;
-    margin-top: 6px;
-    font-style: italic;
-}
-
-.portfolio-card-footer {
-    margin-top: 28px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-light);
-}
-
-.portfolio-link-btn {
-    color: var(--color-green);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.portfolio-link-btn:hover {
-    color: var(--color-navy);
-}
-
-/* 9. SECCIÓN IMPACTO & BANNER CTA */
+/* 10. SECCIÓN IMPACTO & BANNER CTA */
 .impact-section {
     padding: 100px 0;
-    background-color: var(--bg-white);
+    background-color: #fafbfc;
 }
 
 .impact-card {
@@ -838,7 +1072,7 @@ svg {
     margin-bottom: 28px;
 }
 
-/* 10. FOOTER BANNER */
+/* 11. FOOTER BANNER */
 .footer-banner {
     background-color: var(--color-navy-dark);
     color: #ffffff;
@@ -946,7 +1180,7 @@ svg {
     color: var(--color-green-accent);
 }
 
-/* 11. DIÁLOGO MODAL NATIVO (<dialog>) */
+/* 12. DIÁLOGO MODAL NATIVO (<dialog>) */
 dialog {
     border: none;
     border-radius: 16px;
@@ -1020,6 +1254,14 @@ dialog::backdrop {
     margin-bottom: 16px;
 }
 
+.form-label-bold {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    display: block;
+    margin-bottom: 6px;
+}
+
 input[type="text"], 
 input[type="email"], 
 input[type="url"], 
@@ -1090,7 +1332,7 @@ input:focus, .b2b-select:focus, .b2b-textarea:focus {
     display: none;
 }
 
-/* 12. ANIMACIONES & TRANSICIONES REVEAL */
+/* 13. ANIMACIONES & TRANSICIONES REVEAL */
 .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -1118,13 +1360,17 @@ dialog {
     transition: opacity 0.3s, transform 0.3s, display 0.3s allow-discrete, overlay 0.3s allow-discrete;
 }
 
-/* 13. RESPONSIVE BREAKPOINTS */
+/* 14. RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
-    .opportunities-grid, .dimensions-grid {
+    .inquiry-questions-grid, .dimensions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .map-interactive-container {
+        grid-template-columns: 1fr;
+    }
     
-    .process-steps-grid {
+    .process-steps-grid, .three-paths-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1160,10 +1406,14 @@ dialog {
         grid-template-columns: 1fr;
         gap: 36px;
     }
+
+    .trajectory-line-box {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 640px) {
-    .opportunities-grid, .dimensions-grid, .process-steps-grid {
+    .inquiry-questions-grid, .dimensions-grid, .process-steps-grid, .three-paths-grid, .portfolio-transformation-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1176,7 +1426,7 @@ dialog {
         align-items: stretch;
     }
 
-    .btn-pill-navy {
+    .btn-pill-navy, .btn-pill-outline {
         justify-content: center;
     }
 

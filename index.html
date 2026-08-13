@@ -8,7 +8,7 @@
     <!-- SEO Meta Tags -->
     <title>LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales</title>
     <meta name="description"
-        content="Analizamos cómo funciona realmente tu empresa para identificar qué merece optimización, qué debe adaptarse y qué conviene construir. Sin soluciones prefabricadas.">
+        content="Analizamos cómo consigue clientes, cómo vende, cómo opera y cómo utiliza sus datos para descubrir oportunidades reales de optimización, adaptación y crecimiento.">
     <meta name="keywords"
         content="diagnóstico empresarial, desarrollo web B2B, optimización de procesos, sistemas digitales, arquitectura web, consultoría tecnológica, SEO técnico, automatización">
     <meta name="robots" content="index, follow">
@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://lagosolutions.cl/">
     <meta property="og:title" content="LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales">
     <meta property="og:description"
-        content="Primero entendemos. Después decidimos. Luego construimos. Analizamos la operación real de tu empresa antes de proponer cualquier solución.">
+        content="Su empresa ya funciona. ¿Pero está funcionando todo su potencial? Primero entendemos. Después decidimos. Luego construimos.">
     <meta property="og:image" content="https://lagosolutions.cl/businessman_city_sunrise.png">
 
     <!-- Twitter Cards -->
@@ -39,7 +39,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet with Cache Buster -->
-    <link rel="stylesheet" href="style.css?v=1.0.1">
+    <link rel="stylesheet" href="style.css?v=2.0.0">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -73,10 +73,11 @@
             </div>
             
             <ul class="nav-menu">
-                <li><a href="#enfoque">PROBLEMA</a></li>
-                <li><a href="#proceso">NUESTRO ENFOQUE</a></li>
-                <li><a href="#dimensiones">QUÉ ANALIZAMOS</a></li>
                 <li><a href="#proyectos">PROYECTOS REALES</a></li>
+                <li><a href="#enfoque">INDAGACIÓN</a></li>
+                <li><a href="#mapa-oportunidades">MAPA DE OPORTUNIDADES</a></li>
+                <li><a href="#proceso">NUESTRO ENFOQUE</a></li>
+                <li><a href="#dimensiones">INVESTIGACIÓN</a></li>
             </ul>
 
             <div class="nav-cta">
@@ -101,10 +102,11 @@
             <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
         </div>
         <ul class="mobile-drawer-links">
-            <li><a href="#enfoque" class="mobile-link">El Problema</a></li>
-            <li><a href="#proceso" class="mobile-link">Nuestro Enfoque</a></li>
-            <li><a href="#dimensiones" class="mobile-link">Qué Analizamos</a></li>
             <li><a href="#proyectos" class="mobile-link">Proyectos Reales</a></li>
+            <li><a href="#enfoque" class="mobile-link">Indagación Empresarial</a></li>
+            <li><a href="#mapa-oportunidades" class="mobile-link">Mapa de Oportunidades</a></li>
+            <li><a href="#proceso" class="mobile-link">Nuestro Enfoque</a></li>
+            <li><a href="#dimensiones" class="mobile-link">8 Dimensiones</a></li>
             <li><a href="#contacto" class="mobile-link">Contacto & Diagnóstico</a></li>
         </ul>
         <div class="mobile-drawer-footer">
@@ -117,14 +119,14 @@
     <!-- MAIN WRAPPER -->
     <main>
 
-        <!-- 1. HERO SECTION -->
+        <!-- 1. HERO SECTION REFINADO -->
         <header class="hero-section">
             <div class="container hero-container">
                 <!-- Left Side: Copy -->
                 <div class="hero-main-content">
                     <h1 class="hero-title">
-                        Su empresa ya logró algo que la mayoría nunca consigue.
-                        <span class="accent-green">Construyó una posición en el mercado.</span>
+                        Su empresa ya funciona.<br>
+                        <span class="accent-green">¿Pero está funcionando todo su potencial?</span>
                     </h1>
                     
                     <div class="hero-divider"></div>
@@ -139,7 +141,7 @@
                     </div>
 
                     <p class="hero-subtitle">
-                        LAGOSOLUTIONS analiza cómo funciona realmente tu negocio para identificar qué merece optimización, qué debe adaptarse y qué conviene construir.
+                        Analizamos cómo consigue clientes, cómo vende, cómo opera y cómo utiliza sus datos para descubrir oportunidades reales de optimización, adaptación y crecimiento.
                     </p>
 
                     <div class="hero-actions">
@@ -150,15 +152,14 @@
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </button>
-                        <button class="btn-text-play" id="how-we-work-btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                            </svg>
-                            CÓMO TRABAJAMOS
-                        </button>
-                        <a href="#proyectos" class="hero-secondary-link">Ver Proyectos Reales ↓</a>
+                        <a href="#proyectos" class="btn-pill-outline" id="hero-secondary-btn">
+                            VER PROYECTOS REALES
+                        </a>
                     </div>
+                    
+                    <p class="hero-microcopy">
+                        ✓ Proyectos reales · Clientes reales · Desarrollo propio
+                    </p>
                 </div>
 
                 <!-- Right Side: Businessman Image -->
@@ -168,111 +169,313 @@
             </div>
         </header>
 
-        <!-- 2. SECCIÓN EL PROBLEMA & POSICIONAMIENTO -->
+        <!-- 2. PROYECTOS REALES (REUBICADO TEMPRANO COMO EVIDENCIA PRIMARIA) -->
+        <section id="proyectos" class="portfolio-section">
+            <div class="container">
+                <div class="portfolio-header reveal">
+                    <span class="opportunities-pretitle">TRABAJO REAL EN PRODUCCIÓN</span>
+                    <h2 class="opportunities-title">No mostramos conceptos inventados. <span class="accent-green">Mostramos trabajo realizado.</span></h2>
+                    <p class="portfolio-lead-text">
+                        Creemos en la transparencia total. Presentamos proyectos reales entregados por LAGOSOLUTIONS con su arquitectura comprobable y estado de evidencia.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid">
+                    
+                    <!-- Proyecto 1: Banda Bruna -->
+                    <article class="portfolio-card reveal">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-badge-real">[ REAL — EN PRODUCCIÓN ]</span>
+                            <h3 class="portfolio-project-name">Banda Bruna</h3>
+                            <p class="portfolio-project-sub">Orquesta Oficial de Cumbia Tropical · Chile</p>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-transformation-grid">
+                                <div class="trans-item trans-before">
+                                    <strong>ANTES:</strong>
+                                    <p>Presencia digital principalmente visual sin integración comercial directa.</p>
+                                </div>
+                                <div class="trans-item trans-after">
+                                    <strong>DESPUÉS:</strong>
+                                    <p>Plataforma preparada para informar, mostrar el trabajo y facilitar oportunidades de contratación directa.</p>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-detail-item">
+                                <strong>TRABAJO REALIZADO:</strong>
+                                <p>Formularios, WhatsApp, contratación directa, vídeos, fotografías, muestras oficiales, SEO orientado a captación y reproductor de sencillos.</p>
+                            </div>
+                            
+                            <div class="portfolio-detail-item">
+                                <strong>ARQUITECTURA TÉCNICA:</strong>
+                                <div class="portfolio-tech-tags">
+                                    <span class="tech-tag">Astro SSG</span>
+                                    <span class="tech-tag">Tailwind CSS</span>
+                                    <span class="tech-tag">Supabase API</span>
+                                    <span class="tech-tag">Cloudinary CDN</span>
+                                    <span class="tech-tag">Schema.org</span>
+                                    <span class="tech-tag">WhatsApp API</span>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-evidence-box">
+                                <strong>ESTADO DE EVIDENCIA:</strong>
+                                <p>✓ Sistema construido y actualmente en producción.</p>
+                                <span class="unmeasured-note">* Métricas de facturación no medidas por confidencialidad.</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-footer">
+                            <a href="https://www.bandabruna.cl/" target="_blank" rel="noopener" class="portfolio-link-btn">
+                                Visitar Sitio Real: bandabruna.cl ↗
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 2: Logos Arquitectura -->
+                    <article class="portfolio-card reveal">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-badge-real">[ REAL — EN PRODUCCIÓN ]</span>
+                            <h3 class="portfolio-project-name">Logos Arquitectura</h3>
+                            <p class="portfolio-project-sub">Infraestructura Educacional & Asesoría MINEDUC · Chile</p>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-transformation-grid">
+                                <div class="trans-item trans-before">
+                                    <strong>ENFOQUE:</strong>
+                                    <p>Plataforma desarrollada desde cero alrededor de un nicho específico de arquitectura educacional y procesos de validación normativa MINEDUC.</p>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-detail-item">
+                                <strong>TRABAJO REALIZADO:</strong>
+                                <p>Arquitectura desde cero, posicionamiento de nicho, captación B2B, contenidos, Google Tag Manager, Google Ads, WhatsApp y evaluación de factibilidad inicial.</p>
+                                <span class="unmeasured-note">* El conocimiento especializado normativo MINEDUC pertenece al responsable del negocio.</span>
+                            </div>
+
+                            <div class="portfolio-detail-item">
+                                <strong>ARQUITECTURA TÉCNICA:</strong>
+                                <div class="portfolio-tech-tags">
+                                    <span class="tech-tag">Tailwind CSS</span>
+                                    <span class="tech-tag">Google Tag Manager</span>
+                                    <span class="tech-tag">Google Ads GTM</span>
+                                    <span class="tech-tag">Cloudinary CDN</span>
+                                    <span class="tech-tag">WhatsApp Form</span>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-evidence-box">
+                                <strong>ESTADO DE EVIDENCIA:</strong>
+                                <p>✓ Estructura orientada a captación B2B.</p>
+                                <span class="unmeasured-note">* Tasa de cierre final de contratos no medida.</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-footer">
+                            <a href="https://www.logosarquitectura.cl/" target="_blank" rel="noopener" class="portfolio-link-btn">
+                                Visitar Sitio Real: logosarquitectura.cl ↗
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PREGUNTAS DE INDAGACIÓN EMPRESARIAL -->
         <section id="enfoque" class="opportunities-section">
             <div class="container">
-                <span class="opportunities-pretitle">Las empresas consolidadas rara vez tienen problemas visibles.</span>
-                <h2 class="opportunities-title">Tienen <span class="accent-green">oportunidades invisibles</span> y cuellos de botella no detectados.</h2>
+                <span class="opportunities-pretitle">PREGUNTAS DE ESTRATEGIA</span>
+                <h2 class="opportunities-title">Las empresas consolidadas <span class="accent-green">no siempre tienen problemas visibles.</span></h2>
 
                 <p class="section-intro-text">
-                    La mayoría de los negocios no se estancan por falta de producto o ganas de trabajar. Se estancan porque las fricciones comerciales, la lentitud en el seguimiento, la pérdida de datos en hojas de cálculo y la tecnología desintegrada reducen silenciosamente el margen y las conversiones.
+                    Con los años, los procesos funcionan, los equipos aprenden a trabajar alrededor de ellos y las herramientas se vuelven parte de la rutina. Eso puede ser una fortaleza. También puede ocultar oportunidades.
                 </p>
 
-                <div class="opportunities-grid">
-                    <!-- Card 1: Fricción Comercial -->
-                    <div class="opportunity-card reveal">
-                        <div class="opp-icon-wrapper">
-                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 8v4l3 3"/>
-                                <circle cx="12" cy="12" r="10"/>
-                            </svg>
-                        </div>
-                        <h3 class="opp-title">Lentitud Comercial</h3>
-                        <p class="opp-desc">Demoras de horas o días en responder solicitudes de cotización, perdiendo prospectos calificados ante competidores más veloces.</p>
+                <div class="inquiry-questions-grid">
+                    <!-- Pregunta 1 -->
+                    <div class="inquiry-card reveal">
+                        <span class="inquiry-num">01</span>
+                        <h3 class="inquiry-question">¿Existe alguna tarea en tu empresa que funciona, pero consume demasiado tiempo?</h3>
+                        <p class="inquiry-sub">Evaluamos si el equipo dedica horas manuales a tareas que podrían simplificarse o integrarse.</p>
                     </div>
 
-                    <!-- Card 2: Fuga de Seguimiento -->
-                    <div class="opportunity-card reveal">
-                        <div class="opp-icon-wrapper">
-                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                            </svg>
-                        </div>
-                        <h3 class="opp-title">Seguimiento Inexistente</h3>
-                        <p class="opp-desc">Cotizaciones enviadas por correo que nunca vuelven a ser contactadas por falta de recordatorios o procesos estandarizados.</p>
+                    <!-- Pregunta 2 -->
+                    <div class="inquiry-card reveal">
+                        <span class="inquiry-num">02</span>
+                        <h3 class="inquiry-question">¿Sabes exactamente de dónde llegan tus mejores clientes y por qué eligen comprarte?</h3>
+                        <p class="inquiry-sub">Investigamos los canales activos de captación y el comportamiento real del comprador calificado.</p>
                     </div>
 
-                    <!-- Card 3: Datos Dispersos -->
-                    <div class="opportunity-card reveal">
-                        <div class="opp-icon-wrapper">
-                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
-                        </div>
-                        <h3 class="opp-title">Datos Fragmentados</h3>
-                        <p class="opp-desc">Información comercial en hojas de Excel independientes por vendedor, impidiendo conocer el pipeline y el historial real del cliente.</p>
+                    <!-- Pregunta 3 -->
+                    <div class="inquiry-card reveal">
+                        <span class="inquiry-num">03</span>
+                        <h3 class="inquiry-question">¿Tus datos comerciales se utilizan para tomar decisiones o solo para facturar?</h3>
+                        <p class="inquiry-sub">Analizamos si la información histórica revela patrones de recurrencia, margen o productos clave.</p>
                     </div>
 
-                    <!-- Card 4: Tecnología Desintegrada -->
-                    <div class="opportunity-card reveal">
-                        <div class="opp-icon-wrapper">
-                            <svg class="opp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <circle cx="12" cy="12" r="3"/>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                            </svg>
-                        </div>
-                        <h3 class="opp-title">Sistemas Desconectados</h3>
-                        <p class="opp-desc">Herramientas digitales que no se comunican entre sí, obligando al personal a re-tipiar datos manualmente y cometer errores.</p>
+                    <!-- Pregunta 4 -->
+                    <div class="inquiry-card reveal">
+                        <span class="inquiry-num">04</span>
+                        <h3 class="inquiry-question">¿Tu sitio web solo informa o participa activamente en el proceso comercial?</h3>
+                        <p class="inquiry-sub">Auditamos si la presencia digital canaliza prospectos, resuelve dudas iniciales y acelera la venta.</p>
+                    </div>
+
+                    <!-- Pregunta 5 -->
+                    <div class="inquiry-card reveal">
+                        <span class="inquiry-num">05</span>
+                        <h3 class="inquiry-question">¿Qué ocurre con la capacidad de tu equipo durante las temporadas de menor demanda?</h3>
+                        <p class="inquiry-sub">Exploramos cómo nivelar la carga de trabajo y aprovechar capacidades desaprovechadas.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. SECCIÓN NUESTRO ENFOQUE & PROCESO -->
+        <!-- 4. MAPA DE OPORTUNIDADES INTERACTIVO (SECCIÓN NAVY CONTRASTADO) -->
+        <section id="mapa-oportunidades" class="opportunity-map-section">
+            <div class="container">
+                <div class="map-header reveal">
+                    <span class="badge-accent">[ INTERACCIÓN METODOLÓGICA ]</span>
+                    <h2 class="map-title">El Mapa de Oportunidades</h2>
+                    <p class="map-lead-text">
+                        Haz clic o toca cualquier dimensión para explorar qué investigamos, qué evidencia buscamos y qué podría aparecer durante el diagnóstico.
+                    </p>
+                </div>
+
+                <!-- Mapa Interactivo Desktop & Mobile -->
+                <div class="map-interactive-container reveal">
+                    <!-- Grid Nodos Periféricos -->
+                    <div class="nodes-grid">
+                        <button class="node-btn active" data-node="clientes">
+                            <span class="node-icon">👥</span>
+                            <span class="node-label">CLIENTES</span>
+                        </button>
+                        <button class="node-btn" data-node="captacion">
+                            <span class="node-icon">🎯</span>
+                            <span class="node-label">CAPTACIÓN</span>
+                        </button>
+                        <button class="node-btn" data-node="ventas">
+                            <span class="node-icon">💼</span>
+                            <span class="node-label">VENTAS</span>
+                        </button>
+
+                        <div class="center-node-box">
+                            <span class="center-tag">NÚCLEO</span>
+                            <h3>EMPRESA</h3>
+                        </div>
+
+                        <button class="node-btn" data-node="operacion">
+                            <span class="node-icon">⚙️</span>
+                            <span class="node-label">OPERACIÓN</span>
+                        </button>
+                        <button class="node-btn" data-node="datos">
+                            <span class="node-icon">📊</span>
+                            <span class="node-label">DATOS</span>
+                        </button>
+                        <button class="node-btn" data-node="tecnologia">
+                            <span class="node-icon">💻</span>
+                            <span class="node-label">TECNOLOGÍA</span>
+                        </button>
+                    </div>
+
+                    <!-- Display de Información del Nodo Seleccionado -->
+                    <div class="node-display-card" id="node-display-card">
+                        <div class="node-display-header">
+                            <span class="node-display-badge" id="node-badge">DIMENSIÓN SELECCIONADA</span>
+                            <h3 id="node-title">CLIENTES</h3>
+                        </div>
+                        <div class="node-display-content">
+                            <div class="node-info-col">
+                                <strong>QUÉ INVESTIGAMOS:</strong>
+                                <p id="node-investigamos">Perfil del comprador real, frecuencia de compra, motivo de elección y clientes inactivos.</p>
+                            </div>
+                            <div class="node-info-col">
+                                <strong>EVIDENCIA QUE BUSCAMOS:</strong>
+                                <p id="node-evidencia">Historial de facturación, registros de pedidos, encuestas o conversaciones comerciales directas.</p>
+                            </div>
+                            <div class="node-info-col node-finding-col">
+                                <strong>QUÉ PODRÍA APARECER:</strong>
+                                <p id="node-hallazgo">Podría aparecer que un segmento reducido de clientes genera la mayor parte del margen, o que existen clientes antiguos que dejaron de comprar por falta de contacto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN NUESTRO ENFOQUE & PROCESO (TRAYECTORIA VISUAL) -->
         <section id="proceso" class="process-section">
             <div class="container">
                 <div class="process-header reveal">
                     <span class="opportunities-pretitle">METODOLOGÍA BASADA EN EVIDENCIA</span>
-                    <h2 class="opportunities-title">No empezamos preguntando <span class="accent-green">qué tecnología quieres.</span></h2>
+                    <h2 class="opportunities-title">No saltamos directamente del problema a la tecnología.</h2>
                     <p class="process-lead-text">
-                        Empezamos entendiendo cómo funciona tu empresa. Analizamos la captación, la atención, las ventas, la operación y los datos existentes antes de recomendar cualquier intervención.
+                        Seguimos un ciclo riguroso donde cada decisión comercial o técnica debe estar respaldada por evidencia observable.
                     </p>
                 </div>
 
-                <!-- Ciclo de 6 Fases -->
+                <!-- Trayectoria Visual de Decisión -->
+                <div class="trajectory-line-box reveal">
+                    <div class="trajectory-step">
+                        <span class="t-badge">1</span>
+                        <span class="t-title">PROBLEMA</span>
+                    </div>
+                    <span class="t-arrow">→</span>
+                    <div class="trajectory-step">
+                        <span class="t-badge">2</span>
+                        <span class="t-title">EVIDENCIA</span>
+                    </div>
+                    <span class="t-arrow">→</span>
+                    <div class="trajectory-step">
+                        <span class="t-badge">3</span>
+                        <span class="t-title">OPORTUNIDAD</span>
+                    </div>
+                    <span class="t-arrow">→</span>
+                    <div class="trajectory-step">
+                        <span class="t-badge">4</span>
+                        <span class="t-title">DECISIÓN</span>
+                    </div>
+                    <span class="t-arrow">→</span>
+                    <div class="trajectory-step">
+                        <span class="t-badge">5</span>
+                        <span class="t-title">SOLUCIÓN</span>
+                    </div>
+                    <span class="t-arrow">→</span>
+                    <div class="trajectory-step">
+                        <span class="t-badge">6</span>
+                        <span class="t-title">MEDICIÓN</span>
+                    </div>
+                </div>
+
+                <!-- Ciclo de 6 Fases Simplificado -->
                 <div class="process-steps-grid">
                     <div class="step-card reveal">
                         <span class="step-num">01</span>
                         <h3 class="step-title">ENTENDER</h3>
-                        <p class="step-desc">Investigamos cómo opera el negocio, su modelo financiero, sus clientes y la rutina diaria de su equipo.</p>
+                        <p class="step-desc">Investigamos cómo opera el negocio y su modelo financiero real.</p>
                     </div>
                     <div class="step-card reveal">
                         <span class="step-num">02</span>
                         <h3 class="step-title">OPTIMIZAR</h3>
-                        <p class="step-desc">Analizamos la infraestructura y herramientas existentes. Corregimos ineficiencias antes de gastar en cosas nuevas.</p>
+                        <p class="step-desc">Corregimos ineficiencias de activos existentes antes de gastar en cosas nuevas.</p>
                     </div>
                     <div class="step-card reveal">
                         <span class="step-num">03</span>
                         <h3 class="step-title">ADAPTAR</h3>
-                        <p class="step-desc">Ajustamos los procesos e infraestructura para que respondan a la exigencia y evolución real del mercado.</p>
+                        <p class="step-desc">Ajustamos los procesos para que respondan a la exigencia real del mercado.</p>
                     </div>
                     <div class="step-card reveal">
                         <span class="step-num">04</span>
                         <h3 class="step-title">CONSTRUIR</h3>
-                        <p class="step-desc">Desarrollamos e implementamos única y exclusivamente las capacidades digitales que el negocio necesita.</p>
+                        <p class="step-desc">Desarrollamos única y exclusivamente las capacidades digitales que el negocio necesita.</p>
                     </div>
                     <div class="step-card reveal">
                         <span class="step-num">05</span>
                         <h3 class="step-title">MEDIR</h3>
-                        <p class="step-desc">Auditamos el impacto de cada cambio mediante métricas objetivas de negocio (conversión, tiempo, margen).</p>
+                        <p class="step-desc">Auditamos el impacto mediante métricas objetivas de negocio.</p>
                     </div>
                     <div class="step-card reveal">
                         <span class="step-num">06</span>
                         <h3 class="step-title">EVOLUCIONAR</h3>
-                        <p class="step-desc">Iteramos y ampliamos el sistema únicamente cuando exista evidencia de una nueva oportunidad rentable.</p>
+                        <p class="step-desc">Iteramos cuando exista evidencia comprobada de una nueva oportunidad.</p>
                     </div>
                 </div>
 
@@ -281,22 +484,34 @@
                     <div class="no-new-web-content">
                         <span class="badge-accent">[ PRINCIPIO DE RESPONSABILIDAD ]</span>
                         <h3>Una web nueva no siempre es la respuesta.</h3>
-                        <p>
-                            Si el sitio web o sistema actual funciona bien comercialmente, la recomendación profesional es <strong>OPTIMIZARLO</strong>. Si requiere integraciones concretas, se <strong>ADAPTA</strong>. Solo si la arquitectura actual limita severamente el crecimiento y genera costos excesivos, se justifica <strong>RECONSTRUIR</strong>.
-                        </p>
+                        <div class="three-paths-grid">
+                            <div class="path-item">
+                                <strong>OPTIMIZAR:</strong>
+                                <p>El sistema funciona. Mejoramos aquello que realmente limita la operación.</p>
+                            </div>
+                            <div class="path-item">
+                                <strong>ADAPTAR:</strong>
+                                <p>Existe una necesidad concreta. Modificamos o integramos herramientas existentes.</p>
+                            </div>
+                            <div class="path-item">
+                                <strong>RECONSTRUIR:</strong>
+                                <p>La arquitectura actual ya no responde al negocio y frena su crecimiento.</p>
+                            </div>
+                        </div>
+                        <p class="paths-closing">* La decisión sobre cuál camino tomar se toma únicamente después del diagnóstico.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. SECCIÓN QUÉ ANALIZAMOS (8 DIMENSIONES) -->
+        <!-- 6. SECCIÓN QUÉ ANALIZAMOS (8 DIMENSIONES) -->
         <section id="dimensiones" class="dimensions-section">
             <div class="container">
                 <div class="process-header reveal">
                     <span class="opportunities-pretitle">CAMPOS DE INVESTIGACIÓN</span>
-                    <h2 class="opportunities-title">Las 8 dimensiones que <span class="accent-green">auditamos en tu empresa.</span></h2>
+                    <h2 class="opportunities-title">8 Dimensiones que <span class="accent-green">investigamos en tu empresa.</span></h2>
                     <p class="process-lead-text">
-                        No ofrecemos estas áreas como servicios sueltos de catálogo. Las investigamos en conjunto para comprender la salud integral del negocio.
+                        No buscamos problemas para justificar una solución. Buscamos entender cómo funciona el negocio y dónde existe una oportunidad real.
                     </p>
                 </div>
 
@@ -345,97 +560,7 @@
             </div>
         </section>
 
-        <!-- 5. SECCIÓN PROYECTOS REALES -->
-        <section id="proyectos" class="portfolio-section">
-            <div class="container">
-                <div class="portfolio-header reveal">
-                    <span class="opportunities-pretitle">TRABAJO REAL EN PRODUCCIÓN</span>
-                    <h2 class="opportunities-title">No mostramos conceptos inventados. <span class="accent-green">Mostramos trabajo realizado.</span></h2>
-                    <p class="portfolio-lead-text">
-                        Creemos en la transparencia total. Presentamos proyectos reales entregados por LAGOSOLUTIONS con su arquitectura comprobable y estado de evidencia.
-                    </p>
-                </div>
-
-                <div class="portfolio-grid">
-                    
-                    <!-- Proyecto 1: Banda Bruna -->
-                    <article class="portfolio-card reveal">
-                        <div class="portfolio-card-header">
-                            <span class="portfolio-badge-real">[ REAL — EN PRODUCCIÓN ]</span>
-                            <h3 class="portfolio-project-name">Banda Bruna</h3>
-                            <p class="portfolio-project-sub">Orquesta Oficial de Cumbia Tropical · Chile</p>
-                        </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-detail-item">
-                                <strong>CONTEXTO:</strong>
-                                <p>Agrupación musical de alta trayectoria en La Araucanía. Requería una plataforma web moderna con capacidad de difundir eventos, estrenos musicales y captar contrataciones directas.</p>
-                            </div>
-                            <div class="portfolio-detail-item">
-                                <strong>TRABAJO REALIZADO:</strong>
-                                <p>Diseño y desarrollo web institucional con arquitectura en Astro SSG, banner interactivo de eventos, reproductor de lanzamientos y sincronización con API de Supabase en tiempo real.</p>
-                            </div>
-                            <div class="portfolio-tech-tags">
-                                <span class="tech-tag">Astro SSG</span>
-                                <span class="tech-tag">Tailwind CSS</span>
-                                <span class="tech-tag">Supabase API</span>
-                                <span class="tech-tag">Cloudinary CDN</span>
-                                <span class="tech-tag">Schema.org</span>
-                                <span class="tech-tag">WhatsApp API</span>
-                            </div>
-                            <div class="portfolio-evidence-box">
-                                <strong>EVIDENCIA TÉCNICA VERIFICADA:</strong>
-                                <p>✓ Carga ultrarrápida SSG, SEO técnico estructurado (MusicGroup), medios optimizados en WebP y canalización directa a WhatsApp.</p>
-                                <span class="unmeasured-note">* Métricas de facturación interna no medidas por confidencialidad.</span>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-footer">
-                            <a href="https://www.bandabruna.cl/" target="_blank" rel="noopener" class="portfolio-link-btn">
-                                Visitar Sitio Real: bandabruna.cl ↗
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Proyecto 2: Logos Arquitectura -->
-                    <article class="portfolio-card reveal">
-                        <div class="portfolio-card-header">
-                            <span class="portfolio-badge-real">[ REAL — EN PRODUCCIÓN ]</span>
-                            <h3 class="portfolio-project-name">Logos Arquitectura</h3>
-                            <p class="portfolio-project-sub">Infraestructura Educacional & Asesoría MINEDUC · Chile</p>
-                        </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-detail-item">
-                                <strong>CONTEXTO:</strong>
-                                <p>Firma de arquitectura y consultoría normativa especializada en proyectos educativos para colegios, jardines infantiles e institutos en Chile.</p>
-                            </div>
-                            <div class="portfolio-detail-item">
-                                <strong>TRABAJO REALIZADO:</strong>
-                                <p>Desarrollo de landing page B2B enfocada en la aprobación ante el Reconocimiento Oficial de la Seremi de Educación, reducción de objeciones y captura cualificada de sostenedores.</p>
-                            </div>
-                            <div class="portfolio-tech-tags">
-                                <span class="tech-tag">Tailwind CSS</span>
-                                <span class="tech-tag">Google Tag Manager</span>
-                                <span class="tech-tag">Google Ads GTM</span>
-                                <span class="tech-tag">Cloudinary CDN</span>
-                                <span class="tech-tag">WhatsApp Form</span>
-                            </div>
-                            <div class="portfolio-evidence-box">
-                                <strong>EVIDENCIA TÉCNICA VERIFICADA:</strong>
-                                <p>✓ Estructura de alta conversión B2B, integración con etiquetas de Google Ads y evaluación de factibilidad normativa directa a WhatsApp.</p>
-                                <span class="unmeasured-note">* Tasa de cierre final de contratos no medida.</span>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-footer">
-                            <a href="https://www.logosarquitectura.cl/" target="_blank" rel="noopener" class="portfolio-link-btn">
-                                Visitar Sitio Real: logosarquitectura.cl ↗
-                            </a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. SECCIÓN DIAGNÓSTICO Y CALL TO ACTION -->
+        <!-- 7. SECCIÓN DIAGNÓSTICO Y CALL TO ACTION FINAL -->
         <section id="contacto" class="impact-section">
             <div class="container">
                 <div class="impact-card reveal">
@@ -443,20 +568,20 @@
                         <!-- Left Side -->
                         <div class="impact-left">
                             <span class="opportunities-pretitle" style="color: #10b981;">EVALUACIÓN INICIAL</span>
-                            <h2 class="impact-title">¿Qué está pasando realmente en tu negocio?</h2>
+                            <h2 class="impact-title">Quizá su próxima oportunidad <span class="accent-green">ya está dentro de su empresa.</span></h2>
                             <div class="impact-divider"></div>
                             <p class="impact-desc-left">
-                                Antes de recomendar cualquier solución, plataforma o línea de código, necesitamos entender cómo funciona actualmente tu empresa.
+                                Sus procesos, datos y clientes actuales pueden revelar oportunidades que todavía no está utilizando.
                             </p>
                         </div>
                         
                         <!-- Right Side -->
                         <div class="impact-right">
                             <p class="impact-desc-right">
-                                Conversemos sobre tu operación, tus procesos comerciales y dónde existen oportunidades reales de mejora sustentadas en datos.
+                                No necesita saber qué solución necesita. Primero necesitamos entender cómo funciona actualmente su empresa.
                             </p>
                             <button class="btn-pill-navy trigger-modal" id="impact-cta-btn">
-                                ANALIZAR MI EMPRESA
+                                QUIERO ANALIZARLO
                                 <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -534,10 +659,10 @@
                 
                 <div class="footer-links">
                     <a href="#">Inicio</a>
-                    <a href="#enfoque">El Problema</a>
-                    <a href="#proceso">Nuestro Enfoque</a>
-                    <a href="#dimensiones">Qué Analizamos</a>
                     <a href="#proyectos">Proyectos Reales</a>
+                    <a href="#enfoque">Indagación</a>
+                    <a href="#mapa-oportunidades">Mapa de Oportunidades</a>
+                    <a href="#proceso">Nuestro Enfoque</a>
                     <a href="#contacto">Analizar Mi Empresa</a>
                 </div>
                 
@@ -546,13 +671,13 @@
         </div>
     </footer>
 
-    <!-- DIÁLOGO MODAL NATIVO REAL DE CAPTURA DE LEADS -->
+    <!-- DIÁLOGO MODAL NATIVO REAL DE CAPTURA DE LEADS CON OPCIÓN "NO LO SÉ TODAVÍA" -->
     <dialog id="diagnostic-modal" aria-labelledby="modal-title">
         <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
         <div class="modal-header">
             <span class="modal-badge">[ EVALUACIÓN EMPRESARIAL ]</span>
             <h2 id="modal-title">Analizar Mi Empresa</h2>
-            <p>Estructura tu solicitud inicial. Revisaremos la operación, procesos y presencia digital de tu empresa para la primera conversación.</p>
+            <p>No necesitas saber qué solución necesitas. Cuéntanos cómo funciona actualmente tu empresa.</p>
         </div>
         
         <form class="lead-form" id="real-diagnostic-form" action="#" method="POST">
@@ -572,35 +697,30 @@
             </div>
 
             <div class="input-wrapper">
-                <label for="modal-phone" class="sr-only">Teléfono / WhatsApp de Contacto</label>
-                <input type="tel" id="modal-phone" name="phone" placeholder="Teléfono o WhatsApp de contacto" required>
-            </div>
-
-            <div class="input-wrapper">
                 <label for="modal-website" class="sr-only">Sitio Web Actual (Opcional)</label>
                 <input type="url" id="modal-website" name="website" placeholder="Sitio web actual (opcional)">
             </div>
 
             <div class="input-wrapper">
-                <label for="modal-sector" class="sr-only">Sector del Negocio</label>
-                <select id="modal-sector" name="sector" class="b2b-select" required>
-                    <option value="" disabled selected>Selecciona tu sector</option>
-                    <option value="Servicios B2B / Consultoría">Servicios B2B / Consultoría</option>
-                    <option value="Estudio Jurídico / Legal">Estudio Jurídico / Legal</option>
-                    <option value="Clínica / Salud / Medicina">Clínica / Salud / Medicina</option>
-                    <option value="Constructora / Inmobiliaria / Arquitectura">Constructora / Inmobiliaria / Arquitectura</option>
-                    <option value="Industrial / Proveedor Técnico">Industrial / Proveedor Técnico</option>
-                    <option value="Comercio / Retail / Ecommerce">Comercio / Retail / Ecommerce</option>
-                    <option value="Otro sector consolidado">Otro sector consolidado</option>
+                <label for="modal-goal" class="form-label-bold">¿Qué quieres mejorar prioritariamente?</label>
+                <select id="modal-goal" name="goal" class="b2b-select" required>
+                    <option value="" disabled>Selecciona una opción</option>
+                    <option value="NO LO SÉ TODAVÍA — Deseo diagnosticar mi empresa" selected>⭐ NO LO SÉ TODAVÍA (Quiero investigar mi empresa)</option>
+                    <option value="CAPTACIÓN — Generar más clientes cualificados">CAPTACIÓN (Generar más prospectos)</option>
+                    <option value="VENTAS — Acelerar el proceso comercial">VENTAS (Acelerar cierres y cotizaciones)</option>
+                    <option value="OPERACIÓN — Eliminar tareas manuales">OPERACIÓN (Optimizar tiempos de equipo)</option>
+                    <option value="DATOS — Organizar información y métricas">DATOS (Organizar métricas clave)</option>
+                    <option value="WEB — Mejorar presencia digital actual">WEB (Optimizar o transformar sitio actual)</option>
+                    <option value="AUTOMATIZACIÓN — Integrar herramientas">AUTOMATIZACIÓN (Conectar sistemas)</option>
                 </select>
             </div>
 
             <div class="input-wrapper">
-                <label for="modal-problem" class="sr-only">¿Cuál es el principal problema o meta actual?</label>
-                <textarea id="modal-problem" name="problem" rows="3" placeholder="Describe brevemente qué hace tu empresa y cuál es tu principal dificultad o meta actual..." class="b2b-textarea" required></textarea>
+                <label for="modal-problem" class="sr-only">Cuéntanos sobre tu empresa</label>
+                <textarea id="modal-problem" name="problem" rows="3" placeholder="Describe brevemente qué hace tu empresa y cómo funciona actualmente..." class="b2b-textarea" required></textarea>
             </div>
 
-            <!-- Canal de Envío / Opción de Recepción -->
+            <!-- Canal de Envío -->
             <div class="submit-action-group">
                 <button type="submit" id="submit-form-btn" class="btn-pill-navy btn-full">
                     ENVIAR SOLICITUD DE EVALUACIÓN
@@ -614,7 +734,7 @@
     </dialog>
 
     <!-- SCRIPT PRINCIPAL CON CACHE BUSTER -->
-    <script src="script.js?v=1.0.1"></script>
+    <script src="script.js?v=2.0.0"></script>
 </body>
 
 </html>
