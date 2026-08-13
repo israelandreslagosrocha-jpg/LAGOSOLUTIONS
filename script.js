@@ -1,4 +1,4 @@
-// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2.2 OPTIMIZED)
+// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2.3 MAESTRO)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const stickyCta = document.getElementById("sticky-mobile-cta");
 
     if (dialog) {
-        // Open Modal
         triggerButtons.forEach(btn => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Close Modal
         const closeModal = () => {
             dialog.close();
         };
@@ -130,7 +128,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 5. CONMUTADOR INTERACTIVO DE PROYECTOS REALES CON ATRIBUTOS ARIA
+    // 5. ACCORDEÓN 10 ETAPAS (PROFUNDIDAD METODOLÓGICA)
+    // ==========================================
+    const toggle10StepsBtn = document.getElementById("toggle-10-steps-btn");
+    const tenStepsContainer = document.getElementById("ten-steps-container");
+
+    if (toggle10StepsBtn && tenStepsContainer) {
+        toggle10StepsBtn.addEventListener("click", () => {
+            tenStepsContainer.classList.toggle("hidden-steps");
+            const isHidden = tenStepsContainer.classList.contains("hidden-steps");
+            toggle10StepsBtn.textContent = isHidden ? 
+                "Ver / Ocultar el Proceso Completo de 10 Etapas" : 
+                "Ocultar el Proceso de 10 Etapas";
+        });
+    }
+
+    // ==========================================
+    // 6. CONMUTADOR INTERACTIVO DE PROYECTOS REALES CON ATRIBUTOS ARIA
     // ==========================================
     const caseTabs = document.querySelectorAll(".case-tab");
     if (caseTabs.length > 0) {
@@ -139,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const cardId = tab.getAttribute("data-card");
                 const state = tab.getAttribute("data-state");
 
-                // Update tab ARIA states
                 const siblingTabs = document.querySelectorAll(`.case-tab[data-card="${cardId}"]`);
                 siblingTabs.forEach(t => {
                     t.classList.remove("active");
@@ -148,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 tab.classList.add("active");
                 tab.setAttribute("aria-selected", "true");
 
-                // Update panels
                 const cardElement = document.getElementById(`card-${cardId}`);
                 if (cardElement) {
                     const panels = cardElement.querySelectorAll(".case-state-panel");
@@ -163,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 6. MAPA DE OPORTUNIDADES INTERACTIVO
+    // 7. MAPA DE OPORTUNIDADES INTERACTIVO
     // ==========================================
     const nodeData = {
         clientes: {
@@ -233,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 7. ANIMACIONES REVEAL AL HACER SCROLL
+    // 8. ANIMACIONES REVEAL AL HACER SCROLL
     // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
     if (revealElements.length > 0) {
@@ -252,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 8. ENVIÓ REAL DE FORMULARIO DE DIAGNÓSTICO
+    // 9. ENVIÓ REAL DE FORMULARIO DE DIAGNÓSTICO
     // ==========================================
     const realForm = document.getElementById("real-diagnostic-form");
     const feedbackMsg = document.getElementById("form-feedback-msg");
@@ -278,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
 
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2.2 - LAGOSOLUTIONS*%0A%0A` +
+            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2.3 - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
                 `*Contacto:* ${encodeURIComponent(email)}%0A` +
@@ -289,21 +301,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerText = "ABRIENDO CANAL DE ATENCIÓN...";
+                submitBtn.innerText = "PROCESANDO SOLICITUD...";
                 submitBtn.style.opacity = "0.75";
             }
 
             if (feedbackMsg) {
                 feedbackMsg.classList.remove("hidden");
                 feedbackMsg.classList.add("success");
-                feedbackMsg.innerText = "✓ Solicitud registrada. Redirigiendo...";
+                if (channel === "Email") {
+                    feedbackMsg.innerHTML = "✓ <strong>Solicitud recibida.</strong> Le responderemos vía Email Corporativo a la brevedad.<br><span style='font-size: 0.8rem;'>[ESPERAR RESPUESTA POR EMAIL]</span>";
+                } else {
+                    feedbackMsg.innerHTML = "✓ <strong>Solicitud preparada.</strong> Redirigiendo a atención comercial...<br><span style='font-size: 0.8rem;'>[CONTINUAR POR WHATSAPP]</span>";
+                }
             }
 
             setTimeout(() => {
-                const whatsappNumber = "56990021689";
-                const waUrl = `https://wa.me/${whatsappNumber}?text=${messageBody}`;
-
-                window.open(waUrl, "_blank");
+                if (channel === "WhatsApp") {
+                    const whatsappNumber = "56990021689";
+                    const waUrl = `https://wa.me/${whatsappNumber}?text=${messageBody}`;
+                    window.open(waUrl, "_blank");
+                }
 
                 realForm.reset();
                 if (submitBtn) {
@@ -317,8 +334,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (dialog && dialog.open) {
                         dialog.close();
                     }
-                }, 1500);
-            }, 800);
+                }, 2500);
+            }, 1000);
         });
     }
 });
