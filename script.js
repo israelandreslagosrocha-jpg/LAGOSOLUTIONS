@@ -1,4 +1,4 @@
-// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V3 MAESTRO)
+// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V3.1 FINAL COMMERCIAL POLISH)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 9. ENVIÓ REAL DE FORMULARIO DE DIAGNÓSTICO
+    // 9. ENVÍO REAL DE FORMULARIO DE DIAGNÓSTICO
     // ==========================================
     const realForm = document.getElementById("real-diagnostic-form");
     const feedbackMsg = document.getElementById("form-feedback-msg");
@@ -287,10 +287,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const website = sanitizeInput(websiteInput ? websiteInput.value : "");
             const email = sanitizeInput(emailInput ? emailInput.value : "");
             const channel = sanitizeInput(channelInput ? channelInput.value : "WhatsApp");
-            const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro");
+            const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro. Quiero entender primero qué necesita mi empresa");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
 
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V3 - LAGOSOLUTIONS*%0A%0A` +
+            const messageBody = `*SOLICITUD DE DIAGNÓSTICO - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
                 `*Contacto:* ${encodeURIComponent(email)}%0A` +
@@ -309,9 +309,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 feedbackMsg.classList.remove("hidden");
                 feedbackMsg.classList.add("success");
                 if (channel === "Email") {
-                    feedbackMsg.innerHTML = "✓ <strong>Solicitud recibida.</strong> Le responderemos vía Email Corporativo a la brevedad.<br><span style='font-size: 0.8rem;'>[ESPERAR RESPUESTA POR EMAIL]</span>";
+                    feedbackMsg.innerHTML = "✓ <strong>Solicitud registrada.</strong> Revisaremos su contexto y le responderemos vía Email Corporativo a la brevedad.<br><span style='font-size: 0.8rem;'>[REVISAREMOS SU CONSULTA POR EMAIL]</span>";
                 } else {
-                    feedbackMsg.innerHTML = "✓ <strong>Solicitud preparada.</strong> Redirigiendo a atención comercial...<br><span style='font-size: 0.8rem;'>[CONTINUAR POR WHATSAPP]</span>";
+                    feedbackMsg.innerHTML = "✓ <strong>Solicitud preparada.</strong> Abriendo canal de WhatsApp para coordinar la conversación...<br><span style='font-size: 0.8rem;'>[ABRIENDO WHATSAPP]</span>";
                 }
             }
 
