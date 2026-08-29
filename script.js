@@ -1,4 +1,4 @@
-// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V2.3 MAESTRO)
+// LAGOSOLUTIONS STRATEGIC EXPANSION — script.js (V3 MAESTRO)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
 
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V2.3 - LAGOSOLUTIONS*%0A%0A` +
+            const messageBody = `*SOLICITUD DE DIAGNÓSTICO V3 - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
                 `*Contacto:* ${encodeURIComponent(email)}%0A` +

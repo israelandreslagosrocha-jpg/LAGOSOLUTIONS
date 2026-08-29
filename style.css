@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LAGOSOLUTIONS STRATEGIC EXPANSION — DESIGN SYSTEM & STYLES (V2.3 MAESTRO)
+   LAGOSOLUTIONS STRATEGIC EXPANSION — DESIGN SYSTEM & STYLES (V3 MAESTRO)
    ========================================================================== */
 
 /* 1. TOKENS & VARIABLES */
@@ -72,6 +72,20 @@ svg {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* Fallback NoScript Banner */
+.noscript-banner {
+    background-color: var(--color-navy);
+    color: #ffffff;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--color-green-accent);
+}
+
+.noscript-banner p {
+    margin: 0;
 }
 
 /* Accessibility: Skip Link */
@@ -330,7 +344,7 @@ svg {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 4. HERO SECTION */
+/* 4. HERO SECTION V3 (TEXTO PRIORITARIO + CANVAS DE SOPORTE) */
 .hero-section {
     padding-top: 140px;
     padding-bottom: 90px;
@@ -410,19 +424,45 @@ svg {
     letter-spacing: 0.5px;
 }
 
-.hero-visual-container {
+/* Soporte Visual Canvas (6 Áreas Clave) */
+.hero-visual-wrapper {
     position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(6, 15, 34, 0.12);
+    width: 100%;
 }
 
-.hero-image {
+.hero-system-canvas-box {
     width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+    height: 360px;
+    background: #ffffff;
+    border: 1px solid var(--border-light);
     border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero-system-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: crosshair;
+}
+
+.canvas-caption-note {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.canvas-caption-note span {
+    color: var(--color-green);
 }
 
 .offer-summary-grid {
@@ -466,7 +506,77 @@ svg {
     line-height: 1.45;
 }
 
-/* 5. SECCIÓN RECONOCIMIENTO DEL VALOR CONSTRUIDO */
+/* 5. SECCIÓN CINÉTICA DE METODOLOGÍA (SECCIÓN 2) */
+.kinetic-methodology-section {
+    padding: 70px 0;
+    background-color: var(--color-navy);
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+}
+
+.kinetic-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.kinetic-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--color-green-accent);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.kinetic-main-heading {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.kinetic-words-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.kinetic-word {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 8px 18px;
+    border-radius: 50px;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.kinetic-word.accent-green {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--color-green-accent);
+    color: var(--color-green-accent);
+}
+
+.kinetic-arrow {
+    color: var(--color-green-accent);
+    font-size: 0.9rem;
+}
+
+/* Fallback cinético sin JS */
+.kinetic-word.visible {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+/* 6. SECCIÓN RECONOCIMIENTO DEL VALOR CONSTRUIDO */
 .recognition-section {
     padding: 70px 0;
     background-color: var(--bg-white);
@@ -497,7 +607,7 @@ svg {
     max-width: 1000px;
 }
 
-/* 6. NUEVA SECCIÓN: ¿QUÉ OCURRE CUANDO SOLICITA UN DIAGNÓSTICO? */
+/* 7. ¿QUÉ OCURRE CUANDO SOLICITA UN DIAGNÓSTICO? */
 .diagnostic-process-section {
     padding: 90px 0;
     background-color: #fafbfc;
@@ -559,7 +669,7 @@ svg {
     text-align: center;
 }
 
-/* 7. SECCIÓN PROYECTOS REALES CON CONMUTADOR DE TABS */
+/* 8. SECCIÓN PROYECTOS REALES CON CONMUTADOR DE TABS */
 .portfolio-section {
     padding: 100px 0;
     background-color: #f3f6fa;
@@ -756,7 +866,7 @@ svg {
     color: var(--color-navy);
 }
 
-/* 8. NUEVA SECCIÓN: ¿QUÉ PODRÍA ENCONTRAR LAGOSOLUTIONS EN SU EMPRESA? */
+/* 9. ¿QUÉ PODRÍA ENCONTRAR LAGOSOLUTIONS EN SU EMPRESA? */
 .findings-scenarios-section {
     padding: 90px 0;
     background-color: var(--bg-white);
@@ -821,7 +931,7 @@ svg {
     color: var(--color-green);
 }
 
-/* 9. NUEVA SECCIÓN: SI ENCONTRAMOS UNA OPORTUNIDAD, ¿QUÉ PODEMOS HACER? */
+/* 10. SI ENCONTRAMOS UNA OPORTUNIDAD, ¿QUÉ PODEMOS HACER? */
 .solution-types-section {
     padding: 90px 0;
     background-color: #f3f6fa;
@@ -878,7 +988,7 @@ svg {
     color: var(--color-green-accent);
 }
 
-/* 10. ¿QUÉ RECIBE DESPUÉS DEL ANÁLISIS? */
+/* 11. ¿QUÉ RECIBE DESPUÉS DEL ANÁLISIS? */
 .deliverables-section {
     padding: 80px 0;
     background-color: var(--bg-white);
@@ -908,7 +1018,7 @@ svg {
     font-weight: 500;
 }
 
-/* 11. RECORRIDO COMERCIAL COMPLETO (10 ETAPAS COMPACTAS CON ACORDEÓN) */
+/* 12. RECORRIDO COMERCIAL COMPLETO & CADENA CAUSAL DE 9 ESLABONES */
 .commercial-path-section {
     padding: 100px 0;
     background-color: var(--bg-white);
@@ -924,7 +1034,6 @@ svg {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-bottom: 36px;
-
 }
 
 .ten-step-card {
@@ -965,6 +1074,7 @@ svg {
     line-height: 1.5;
 }
 
+/* Cadena Causal Metodológica (9 Eslabones Intactos) */
 .causal-chain-box {
     background-color: var(--color-navy);
     color: #ffffff;
@@ -985,10 +1095,9 @@ svg {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    font-size: 0.8rem;
+    gap: 8px;
+    font-size: 0.78rem;
     font-weight: 800;
-    color: var(--color-green-accent);
 }
 
 .c-node {
@@ -997,9 +1106,35 @@ svg {
     padding: 6px 14px;
     border-radius: 50px;
     color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
 }
 
-/* 12. SECCIÓN MAPA DE OPORTUNIDADES INTERACTIVO (NAVY PROFUNDO) */
+.c-node.node-active {
+    background: rgba(19, 119, 82, 0.4);
+    border-color: var(--color-green-accent);
+    color: #ffffff;
+}
+
+.c-node.node-hover {
+    background: var(--color-green);
+    transform: scale(1.06);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.c-node-final {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: var(--color-green-accent);
+    color: var(--color-green-accent);
+}
+
+.c-arrow {
+    color: var(--color-green-accent);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* 13. SECCIÓN MAPA DE OPORTUNIDADES INTERACTIVO */
 .opportunity-map-section {
     padding: 100px 0;
     background-color: var(--color-navy);
@@ -1149,7 +1284,7 @@ svg {
     color: var(--color-green-accent);
 }
 
-/* 13. SECCIÓN DATOS PREEXISTENTES */
+/* 14. SECCIÓN DATOS PREEXISTENTES */
 .data-sources-section {
     padding: 100px 0;
     background-color: var(--bg-light);
@@ -1241,7 +1376,7 @@ svg {
     border-radius: 6px;
 }
 
-/* 14. SECCIÓN ACTUAR VS NO ACTUAR */
+/* 15. SECCIÓN ACTUAR VS NO ACTUAR */
 .act-vs-noact-section {
     padding: 100px 0;
     background-color: var(--bg-white);
@@ -1302,7 +1437,7 @@ svg {
     color: var(--color-navy);
 }
 
-/* 15. SECCIÓN IMPACTO & BANNER CTA */
+/* 16. CIERRE CONVERGENTE & BANNER CTA */
 .impact-section {
     padding: 100px 0;
     background-color: #fafbfc;
@@ -1351,7 +1486,7 @@ svg {
     margin-bottom: 28px;
 }
 
-/* 16. FOOTER BANNER */
+/* 17. FOOTER BANNER */
 .footer-banner {
     background-color: var(--color-navy-dark);
     color: #ffffff;
@@ -1460,7 +1595,7 @@ svg {
     color: var(--color-green-accent);
 }
 
-/* 17. STICKY CTA FLOTANTE MÓVIL DISCRETO */
+/* 18. STICKY CTA FLOTANTE MÓVIL DISCRETO */
 .sticky-mobile-cta {
     display: none;
     position: fixed;
@@ -1481,7 +1616,7 @@ svg {
     transform: translate(-50%, 20px);
 }
 
-/* 18. DIÁLOGO MODAL NATIVO SIMPLIFICADO (<dialog>) */
+/* 19. DIÁLOGO MODAL NATIVO SIMPLIFICADO (<dialog>) */
 dialog {
     border: none;
     border-radius: 16px;
@@ -1632,7 +1767,7 @@ input:focus, .b2b-select:focus, .b2b-textarea:focus {
     display: none;
 }
 
-/* 19. ANIMACIONES REVEAL AL SCROLL */
+/* 20. ANIMACIONES REVEAL AL SCROLL */
 .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -1660,7 +1795,30 @@ dialog {
     transition: opacity 0.3s, transform 0.3s, display 0.3s allow-discrete, overlay 0.3s allow-discrete;
 }
 
-/* 20. RESPONSIVE BREAKPOINTS */
+/* 21. PREFERS-REDUCED-MOTION */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .kinetic-word {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+    .c-node {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* 22. RESPONSIVE BREAKPOINTS */
 @media (max-width: 1100px) {
     .diagnostic-steps-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1671,14 +1829,19 @@ dialog {
 }
 
 @media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    .hero-system-canvas-box {
+        height: 300px;
+    }
     .ten-steps-grid, .data-sources-grid, .act-comparison-grid, .offer-summary-grid, .findings-grid, .deliverables-grid {
         grid-template-columns: 1fr;
     }
-
     .map-interactive-container {
         grid-template-columns: 1fr;
     }
-
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -1688,25 +1851,19 @@ dialog {
     .nav-menu, .nav-cta {
         display: none;
     }
-
     .mobile-menu-btn {
         display: flex;
     }
-
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-
     .hero-title {
         font-size: 2rem;
     }
-
+    .kinetic-main-heading {
+        font-size: 1.8rem;
+    }
     .impact-grid {
         grid-template-columns: 1fr;
         gap: 28px;
     }
-
     .footer-top {
         grid-template-columns: 1fr;
         gap: 36px;
@@ -1723,6 +1880,13 @@ dialog {
     .solution-types-grid {
         grid-template-columns: 1fr;
     }
+    .kinetic-words-flow {
+        font-size: 0.95rem;
+        gap: 8px;
+    }
+    .kinetic-word {
+        padding: 6px 12px;
+    }
     body {
         padding-bottom: 70px;
     }
@@ -1732,20 +1896,16 @@ dialog {
     .footer-values-grid {
         grid-template-columns: 1fr;
     }
-
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
     }
-
     .btn-pill-navy, .btn-pill-outline {
         justify-content: center;
     }
-
     .impact-card {
         padding: 32px 24px;
     }
-
     .causal-chain-flow {
         font-size: 0.72rem;
     }

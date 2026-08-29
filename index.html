@@ -8,7 +8,7 @@
     <!-- SEO Meta Tags -->
     <title>LAGOSOLUTIONS | Diagnóstico y Desarrollo de Sistemas Digitales</title>
     <meta name="description"
-        content="Antes de construir una solución, entendemos cómo funciona su empresa. Analizamos procesos, clientes, captación, datos y tecnología para identificar oportunidades reales.">
+        content="Antes de construir una solución, entendemos cómo funciona su empresa. Analizamos procesos, clientes, captación, ventas, datos y tecnología para identificar oportunidades reales.">
     <meta name="keywords"
         content="diagnóstico empresarial, desarrollo web B2B, optimización de procesos, sistemas digitales, arquitectura web, consultoría tecnológica, SEO técnico, automatización">
     <meta name="robots" content="index, follow">
@@ -39,7 +39,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet with Cache Buster Version -->
-    <link rel="stylesheet" href="style.css?v=2.3.0">
+    <link rel="stylesheet" href="style.css?v=3.0.0">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -67,6 +67,13 @@
 
     <!-- Skip Link for Keyboard Accessibility -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Fallback NoScript: Asegura lectura y navegación esencial si JS está desactivado -->
+    <noscript>
+        <div class="noscript-banner">
+            <p><strong>LAGOSOLUTIONS:</strong> Modo de visualización estática activado. Todo el contenido comercial y de diagnóstico es completamente accesible.</p>
+        </div>
+    </noscript>
 
     <!-- BARRA DE NAVEGACIÓN -->
     <nav class="navbar">
@@ -133,13 +140,13 @@
     <main id="main-content">
 
         <!-- ==========================================
-             CAPA 1: COMPRENSIÓN INMEDIATA (PRIMEROS 20 SEGUNDOS)
+             CAPA 1: COMPRENSIÓN INMEDIATA
              ========================================== -->
 
-        <!-- 1. HERO SECTION V2.3 -->
+        <!-- 1. HERO SECTION V3 (TEXTO PRIORITARIO + CANVAS DE SOPORTE) -->
         <header class="hero-section">
             <div class="container hero-container">
-                <!-- Left Side: Copy -->
+                <!-- Left Side: Copy Prioritario -->
                 <div class="hero-main-content">
                     <h1 class="hero-title">
                         Antes de construir una solución,<br>
@@ -158,7 +165,7 @@
                     </div>
 
                     <p class="hero-subtitle">
-                        LAGOSOLUTIONS analiza procesos, clientes, captación, datos, tecnología y oportunidades de negocio para determinar qué conviene optimizar, adaptar o construir.
+                        LAGOSOLUTIONS analiza procesos, clientes, captación, ventas, datos y tecnología para identificar oportunidades reales antes de decidir qué construir.
                     </p>
 
                     <div class="hero-actions">
@@ -179,12 +186,14 @@
                     </p>
                 </div>
 
-                <!-- Right Side: Businessman Image Optimized (JPEG 208KB) -->
-                <div class="hero-visual-container">
-                    <picture>
-                        <source srcset="businessman_city_sunrise.jpg" type="image/jpeg">
-                        <img src="businessman_city_sunrise.jpg" alt="Ejecutivo observando la ciudad al amanecer, representando visión de negocios" class="hero-image" width="600" height="400" loading="eager">
-                    </picture>
+                <!-- Right Side: Soporte Visual (Canvas 6 Áreas Clave + Imagen de Respaldo) -->
+                <div class="hero-visual-wrapper">
+                    <div class="hero-system-canvas-box">
+                        <canvas id="hero-system-canvas" aria-label="Diagrama interactivo de las seis áreas principales de análisis de la empresa"></canvas>
+                        <div class="canvas-caption-note">
+                            <span>● Visualización interactiva de áreas de indagación</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -210,7 +219,30 @@
             </div>
         </header>
 
-        <!-- 2. RECONOCIMIENTO DEL VALOR CONSTRUIDO -->
+        <!-- 2. TRANSICIÓN CINÉTICA DE METODOLOGÍA (SECCIÓN 2) -->
+        <section class="kinetic-methodology-section">
+            <div class="container">
+                <div class="kinetic-container reveal">
+                    <span class="kinetic-badge">[ FILOSOFÍA DE TRABAJO ]</span>
+                    <h2 class="kinetic-main-heading">NO PARTIMOS DE LA SOLUCIÓN.</h2>
+                    <div class="kinetic-words-flow">
+                        <span class="kinetic-word">ENTENDEMOS</span>
+                        <span class="kinetic-arrow">→</span>
+                        <span class="kinetic-word">DETECTAMOS</span>
+                        <span class="kinetic-arrow">→</span>
+                        <span class="kinetic-word">DECIDIMOS</span>
+                        <span class="kinetic-arrow">→</span>
+                        <span class="kinetic-word">CONSTRUIMOS</span>
+                        <span class="kinetic-arrow">→</span>
+                        <span class="kinetic-word">MEDIMOS</span>
+                        <span class="kinetic-arrow">→</span>
+                        <span class="kinetic-word accent-green">EVOLUCIONAMOS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. RECONOCIMIENTO DEL VALOR CONSTRUIDO -->
         <section id="reconocimiento" class="recognition-section">
             <div class="container">
                 <div class="recognition-box reveal">
@@ -223,7 +255,7 @@
             </div>
         </section>
 
-        <!-- 3. ¿QUÉ OCURRE CUANDO SOLICITA UN DIAGNÓSTICO? -->
+        <!-- 4. ¿QUÉ OCURRE CUANDO SOLICITA UN DIAGNÓSTICO? -->
         <section id="que-ocurre-diagnostico" class="diagnostic-process-section">
             <div class="container">
                 <div class="process-header reveal">
@@ -276,7 +308,7 @@
              CAPA 2: CONFIANZA COMERCIAL Y OPCIONES
              ========================================== -->
 
-        <!-- 4. PROYECTOS REALES (EVIDENCIA COMERCIAL) -->
+        <!-- 5. PROYECTOS REALES (EVIDENCIA COMERCIAL) -->
         <section id="proyectos" class="portfolio-section">
             <div class="container">
                 <div class="portfolio-header reveal">
@@ -408,7 +440,7 @@
             </div>
         </section>
 
-        <!-- 5. NUEVA SECCIÓN: ¿QUÉ PODRÍA ENCONTRAR LAGOSOLUTIONS EN SU EMPRESA? -->
+        <!-- 6. ¿QUÉ PODRÍA ENCONTRAR LAGOSOLUTIONS EN SU EMPRESA? -->
         <section id="que-podria-encontrar" class="findings-scenarios-section">
             <div class="container">
                 <div class="process-header reveal">
@@ -489,7 +521,7 @@
             </div>
         </section>
 
-        <!-- 6. NUEVA SECCIÓN: SI ENCONTRAMOS UNA OPORTUNIDAD, ¿QUÉ PODEMOS HACER? -->
+        <!-- 7. SI ENCONTRAMOS UNA OPORTUNIDAD, ¿QUÉ PODEMOS HACER? -->
         <section id="que-podemos-hacer" class="solution-types-section">
             <div class="container">
                 <div class="process-header reveal">
@@ -536,7 +568,7 @@
             </div>
         </section>
 
-        <!-- 7. ¿QUÉ RECIBE DESPUÉS DEL ANÁLISIS? -->
+        <!-- 8. ¿QUÉ RECIBE DESPUÉS DEL ANÁLISIS? -->
         <section id="que-recibe" class="deliverables-section">
             <div class="container">
                 <div class="deliverables-box reveal">
@@ -560,10 +592,10 @@
         </section>
 
         <!-- ==========================================
-             CAPA 3: PROFUNDIDAD METODOLÓGICA (INTERACTIVA & COMPACTA)
+             CAPA 3: PROFUNDIDAD METODOLÓGICA
              ========================================== -->
 
-        <!-- 8. RECORRIDO COMERCIAL COMPLETO EN 10 ETAPAS (#metodologia-10) -->
+        <!-- 9. RECORRIDO COMERCIAL COMPLETO EN 10 ETAPAS (#metodologia-10) -->
         <section id="metodologia-10" class="commercial-path-section">
             <div class="container">
                 <div class="process-header reveal">
@@ -639,30 +671,38 @@
                     </div>
                 </div>
 
-                <!-- Cadena Causal Metodológica Interna (9 Eslabones) -->
+                <!-- Cadena Causal Metodológica Interna (9 Eslabones Intactos) -->
                 <div class="causal-chain-box reveal" style="margin-top: 36px;">
                     <span class="badge-accent">[ RIGOR METODOLÓGICO INTERNO ]</span>
                     <h3>No saltamos del síntoma a la tecnología</h3>
                     <div class="causal-chain-flow">
-                        <span class="c-node">EVIDENCIA</span> →
-                        <span class="c-node">PROBLEMA</span> →
-                        <span class="c-node">CAUSA PROBABLE</span> →
-                        <span class="c-node">CAUSA DEMOSTRADA</span> →
-                        <span class="c-node">OPORTUNIDAD</span> →
-                        <span class="c-node">ALTERNATIVAS</span> →
-                        <span class="c-node">PRIORIZACIÓN</span> →
-                        <span class="c-node">SOLUCIÓN</span> →
-                        <span class="c-node">MÉTRICA</span>
+                        <span class="c-node" data-step="1">EVIDENCIA</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node" data-step="2">PROBLEMA</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node" data-step="3">CAUSA PROBABLE</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node" data-step="4">CAUSA DEMOSTRADA</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node" data-step="5">OPORTUNIDAD</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node" data-step="6">ALTERNATIVAS</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node" data-step="7">PRIORIZACIÓN</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node" data-step="8">SOLUCIÓN</span>
+                        <span class="c-arrow">→</span>
+                        <span class="c-node c-node-final" data-step="9">MÉTRICA</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 9. MAPA DE OPORTUNIDADES INTERACTIVO (#mapa-oportunidades) -->
+        <!-- 10. MAPA DE OPORTUNIDADES INTERACTIVO (#mapa-oportunidades) -->
         <section id="mapa-oportunidades" class="opportunity-map-section">
             <div class="container">
                 <div class="map-header reveal">
-                    <span class="badge-accent">[ INTERACCIÓN METODOLÓGICAMENTE RIGUROSA ]</span>
+                    <span class="badge-accent">[ INTERACCIÓN METODOLÓGICA ]</span>
                     <h2 class="map-title">El Mapa de Oportunidades</h2>
                     <p class="map-lead-text">
                         Haz clic o toca cualquier dimensión para explorar qué investigamos, qué evidencia buscamos y qué podría aparecer durante el diagnóstico.
@@ -730,7 +770,7 @@
             </div>
         </section>
 
-        <!-- 10. DATOS QUE SU EMPRESA YA TIENE (#datos-existentes) -->
+        <!-- 11. DATOS QUE SU EMPRESA YA TIENE (#datos-existentes) -->
         <section id="datos-existentes" class="data-sources-section">
             <div class="container">
                 <div class="process-header reveal">
@@ -784,7 +824,7 @@
             </div>
         </section>
 
-        <!-- 11. COMPARATIVA ESTRATÉGICA: ACTUAR VS NO ACTUAR (#comparativa) -->
+        <!-- 12. COMPARATIVA ESTRATÉGICA: ACTUAR VS NO ACTUAR (#comparativa) -->
         <section id="comparativa" class="act-vs-noact-section">
             <div class="container">
                 <div class="process-header reveal">
@@ -828,7 +868,7 @@
             </div>
         </section>
 
-        <!-- 12. SECCIÓN DIAGNÓSTICO Y CALL TO ACTION FINAL (#contacto) -->
+        <!-- 13. CIERRE VISUAL CONVERGENTE & BANNER CTA FINAL (#contacto) -->
         <section id="contacto" class="impact-section">
             <div class="container">
                 <div class="impact-card reveal">
@@ -863,7 +903,7 @@
 
     </main>
 
-    <!-- FOOTER V2.3 MAESTRO -->
+    <!-- FOOTER V3 MAESTRO -->
     <footer id="nosotros" class="footer-banner">
         <div class="container">
             <div class="footer-top">
@@ -1015,8 +1055,17 @@
         <p class="modal-footer-text">✓ Análisis inicial confidencial y sin compromiso comercial.</p>
     </dialog>
 
-    <!-- SCRIPT PRINCIPAL CON CACHE BUSTER -->
-    <script src="script.js?v=2.3.0"></script>
+    <!-- GSAP & ScrollTrigger CDN (Capa de Mejora Progresiva Opcional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <!-- MÓDULOS INDEPENDIENTES V3 -->
+    <script src="js/hero-system-canvas.js?v=3.0.0" defer></script>
+    <script src="js/kinetic-type.js?v=3.0.0" defer></script>
+    <script src="js/causal-chain-draw.js?v=3.0.0" defer></script>
+
+    <!-- SCRIPT PRINCIPAL CORE -->
+    <script src="script.js?v=3.0.0" defer></script>
 </body>
 
 </html>
