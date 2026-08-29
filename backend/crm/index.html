@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAGOSOLUTIONS CRM — Panel de Operaciones Comerciales</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crm-app">
+        <!-- Sidebar Navigation -->
+        <aside class="crm-sidebar">
+            <div class="crm-brand">
+                <span class="brand-logo">LAGOSOLUTIONS</span>
+                <span class="brand-badge">SISTEMA COMERCIAL FASE 1</span>
+            </div>
+            
+            <nav class="crm-nav">
+                <button type="button" class="nav-item active" data-view="dashboard">
+                    <span class="nav-icon">📊</span> Panel de Control
+                </button>
+                <button type="button" class="nav-item" data-view="pipeline">
+                    <span class="nav-icon">💼</span> Pipeline de Leads
+                </button>
+                <button type="button" class="nav-item" data-view="diagnostics">
+                    <span class="nav-icon">🔬</span> Expedientes (E0-E4)
+                </button>
+                <button type="button" class="nav-item" data-view="learnings">
+                    <span class="nav-icon">🧠</span> Aprendizajes de Mercado
+                </button>
+            </nav>
+
+            <div class="crm-user-profile">
+                <div class="user-avatar">IL</div>
+                <div class="user-info">
+                    <span class="user-name">Israel Lagos</span>
+                    <span class="user-role">ADMINISTRADOR</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="crm-main">
+            <!-- Header Bar -->
+            <header class="crm-header">
+                <div class="header-search">
+                    <input type="text" id="crm-search-input" placeholder="Buscar por empresa, contacto o teléfono..." aria-label="Buscar leads">
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="btn-refresh" id="btn-refresh">⟳ Actualizar Datos</button>
+                </div>
+            </header>
+
+            <!-- 1. VIEW: DASHBOARD (5 PREGUNTAS CLAVE) -->
+            <section class="crm-view active" id="view-dashboard">
+                <div class="view-header">
+                    <h2>Panel de Operaciones — Las 5 Preguntas Clave</h2>
+                    <p class="view-sub">Visión ejecutiva de la realidad comercial inmediata.</p>
+                </div>
+
+                <!-- 5 Questions Cards Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card highlight-navy">
+                        <span class="kpi-label">1. ¿QUIÉN ENTRÓ?</span>
+                        <div class="kpi-value" id="kpi-new-leads">1</div>
+                        <span class="kpi-note">Leads nuevos sin responder</span>
+                    </div>
+
+                    <div class="kpi-card highlight-green">
+                        <span class="kpi-label">2. ¿DE DÓNDE VIENEN?</span>
+                        <div class="kpi-value" id="kpi-top-source">Google SEO</div>
+                        <span class="kpi-note">Fuente con mayor volumen</span>
+                    </div>
+
+                    <div class="kpi-card">
+                        <span class="kpi-label">3. ¿EN QUÉ ESTADO ESTÁN?</span>
+                        <div class="kpi-value" id="kpi-active-pipeline">3</div>
+                        <span class="kpi-note">Oportunidades en conversación activa</span>
+                    </div>
+
+                    <div class="kpi-card highlight-urgent">
+                        <span class="kpi-label">4. ¿QUÉ DEBO HACER AHORA?</span>
+                        <div class="kpi-value" id="kpi-due-actions">2</div>
+                        <span class="kpi-note">Próximas acciones para hoy / vencidas</span>
+                    </div>
+
+                    <div class="kpi-card">
+                        <span class="kpi-label">5. ¿QUÉ APRENDIMOS?</span>
+                        <div class="kpi-value" id="kpi-top-problem">Ventas</div>
+                        <span class="kpi-note">Problema más frecuente</span>
+                    </div>
+                </div>
+
+                <!-- Priority Actions Table -->
+                <div class="section-box" style="margin-top: 24px;">
+                    <div class="box-header">
+                        <h3>⚡ Acciones Inmediatas Priorizadas (Next Actions)</h3>
+                        <span class="badge-tag">REGLA DE GARANTÍA OPERATIVA</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="crm-table" id="table-due-actions">
+                            <thead>
+                                <tr>
+                                    <th>Empresa</th>
+                                    <th>Contacto</th>
+                                    <th>Etapa Actual</th>
+                                    <th>Próxima Acción</th>
+                                    <th>Fecha Límite</th>
+                                    <th>Responsable</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-due-actions">
+                                <!-- Rendered dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. VIEW: PIPELINE COMPLETO -->
+            <section class="crm-view" id="view-pipeline">
+                <div class="view-header">
+                    <h2>Pipeline de Oportunidades Comerciales</h2>
+                    <p class="view-sub">Flujo de 11 etapas sin automatizaciones opacas.</p>
+                </div>
+
+                <div class="pipeline-filters">
+                    <select id="filter-stage" class="crm-select">
+                        <option value="ALL">Todas las Etapas</option>
+                        <option value="01_NUEVO_CONTACTO">01 Nuevo Contacto</option>
+                        <option value="02_CONTACTO_INICIADO">02 Contacto Iniciado</option>
+                        <option value="05_DIAGNOSTICO_EN_PROCESO">05 Diagnóstico en Proceso</option>
+                        <option value="07_PROPUESTA_ENVIADA">07 Propuesta Enviada</option>
+                    </select>
+
+                    <select id="filter-classification" class="crm-select">
+                        <option value="ALL">Todas las Prioridades</option>
+                        <option value="ALTA_PRIORIDAD">Alta Prioridad</option>
+                        <option value="PRIORIDAD_MEDIA">Prioridad Media</option>
+                        <option value="REQUIERE_INFORMACION">Requiere Información</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive" style="margin-top: 16px;">
+                    <table class="crm-table">
+                        <thead>
+                            <tr>
+                                <th>Empresa</th>
+                                <th>Contacto</th>
+                                <th>Canal</th>
+                                <th>Fuente</th>
+                                <th>Prioridad</th>
+                                <th>Etapa</th>
+                                <th>TTR (Min)</th>
+                                <th>Gestión</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-pipeline">
+                            <!-- Rendered dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3. VIEW: EXPEDIENTE DE DIAGNÓSTICO (E0-E4) -->
+            <section class="crm-view" id="view-diagnostics">
+                <div class="view-header">
+                    <h2>Expedientes de Diagnóstico e Indagación Basada en Evidencia</h2>
+                    <p class="view-sub">Rigor metodológico: distinción estricta entre E0 (declarativo) y E1–E4 (demostrado).</p>
+                </div>
+
+                <div class="diagnostic-cards-grid" id="diagnostic-cards-container">
+                    <!-- Rendered dynamically -->
+                </div>
+            </section>
+
+            <!-- 4. VIEW: APRENDIZAJES DE MERCADO -->
+            <section class="crm-view" id="view-learnings">
+                <div class="view-header">
+                    <h2>Memoria Comercial y Aprendizajes de Mercado</h2>
+                    <p class="view-sub">Patrones de demanda, motivos reales de pérdida y sectores receptivos.</p>
+                </div>
+
+                <div class="learning-grid">
+                    <div class="learning-card">
+                        <h3>Sectores con Mayor Tracción</h3>
+                        <ul class="learning-list">
+                            <li><strong>Servicios Industriales & Minería B2B:</strong> Alta necesidad en seguimiento de cotizaciones.</li>
+                            <li><strong>Consultoría Técnica & Arquitectura:</strong> Necesidad de validación de autoridad y captación.</li>
+                        </ul>
+                    </div>
+
+                    <div class="learning-card">
+                        <h3>Motivos Frecuentes de No Intervención / Pérdida</h3>
+                        <ul class="learning-list">
+                            <li><strong>Honestidad Profesional (No Intervenir):</strong> Proceso ya funciona y no justifica costo de software.</li>
+                            <li><strong>Falta de Operación Activa:</strong> Emprendimientos en fase de idea sin volumen transaccional.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL DE DETALLE DE LEAD Y BITÁCORA -->
+    <dialog id="lead-detail-modal" class="crm-dialog">
+        <div class="dialog-header">
+            <h3 id="modal-lead-company">Detalle de Empresa</h3>
+            <button type="button" class="btn-close" id="btn-close-lead-modal">&times;</button>
+        </div>
+        <div class="dialog-body" id="modal-lead-content">
+            <!-- Rendered dynamically -->
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>

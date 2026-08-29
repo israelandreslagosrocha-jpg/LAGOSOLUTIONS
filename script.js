@@ -290,6 +290,31 @@ document.addEventListener("DOMContentLoaded", () => {
             const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro. Quiero entender primero qué necesita mi empresa");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
 
+            // Captura de UTMs y fuente de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const leadPayload = {
+                name,
+                company,
+                website,
+                email,
+                channel,
+                goal,
+                problem,
+                source: urlParams.get('source') || (document.referrer ? 'GOOGLE_ORGANIC_SEO' : 'UNKNOWN'),
+                utm_source: urlParams.get('utm_source') || '',
+                utm_medium: urlParams.get('utm_medium') || '',
+                utm_campaign: urlParams.get('utm_campaign') || ''
+            };
+
+            // Ingesta Asíncrona Segura (No bloquea la experiencia del usuario)
+            if (window.LAGOSOLUTIONS_API_URL) {
+                fetch(window.LAGOSOLUTIONS_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(leadPayload)
+                }).catch(err => console.warn('[INGEST_FALLBACK] Registro local continuado.', err));
+            }
+
             const messageBody = `*SOLICITUD DE DIAGNÓSTICO - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
