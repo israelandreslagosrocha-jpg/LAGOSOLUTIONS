@@ -363,14 +363,14 @@
         // 1. Núcleo Central (Empresa)
         ctx.beginPath();
         ctx.arc(centerX, centerY, 5, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(19, 119, 82, 0.4)';
+        ctx.fillStyle = 'rgba(45, 107, 255, 0.6)';
         ctx.fill();
 
         ctx.beginPath();
-        ctx.arc(centerX, centerY, 16, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(19, 119, 82, 0.12)';
+        ctx.arc(centerX, centerY, 18, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(45, 107, 255, 0.22)';
         ctx.lineWidth = 1;
-        ctx.setLineDash([2, 4]);
+        ctx.setLineDash([3, 4]);
         ctx.stroke();
         ctx.setLineDash([]);
 
@@ -382,17 +382,17 @@
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(centerX, centerY);
-            ctx.strokeStyle = (node === probe.activeNode) ? 'rgba(19, 119, 82, 0.35)' : 'rgba(6, 15, 34, 0.07)';
+            ctx.strokeStyle = (node === probe.activeNode) ? 'rgba(45, 107, 255, 0.45)' : 'rgba(255, 255, 255, 0.08)';
             ctx.stroke();
         });
 
-        // Líneas perimetrales
+        // Líneas perimetrales entre nodos continuos
         for (let i = 0; i < nodes.length; i++) {
             const nextNode = nodes[(i + 1) % nodes.length];
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nextNode.x, nextNode.y);
-            ctx.strokeStyle = 'rgba(19, 119, 82, 0.12)';
+            ctx.strokeStyle = 'rgba(45, 107, 255, 0.15)';
             ctx.stroke();
         }
 
@@ -405,11 +405,11 @@
             ctx.translate(probe.x, probe.y);
             ctx.rotate(beamAngle);
 
-            // Gradiente cónico de escaneo colimado
+            // Gradiente cónico de escaneo colimado en Azul Tecnología
             const grad = ctx.createLinearGradient(0, 0, beamDist, 0);
-            grad.addColorStop(0, `rgba(16, 185, 129, ${0.4 * probe.scanIntensity})`);
-            grad.addColorStop(0.5, `rgba(19, 119, 82, ${0.15 * probe.scanIntensity})`);
-            grad.addColorStop(1, `rgba(16, 185, 129, 0.0)`);
+            grad.addColorStop(0, `rgba(45, 107, 255, ${0.5 * probe.scanIntensity})`);
+            grad.addColorStop(0.5, `rgba(34, 224, 161, ${0.2 * probe.scanIntensity})`);
+            grad.addColorStop(1, `rgba(45, 107, 255, 0.0)`);
 
             ctx.beginPath();
             ctx.moveTo(0, 0);
@@ -423,7 +423,7 @@
             ctx.beginPath();
             ctx.moveTo(0, 0);
             ctx.lineTo(beamDist, 0);
-            ctx.strokeStyle = `rgba(16, 185, 129, ${0.6 * probe.scanIntensity})`;
+            ctx.strokeStyle = `rgba(34, 224, 161, ${0.7 * probe.scanIntensity})`;
             ctx.lineWidth = 1;
             ctx.setLineDash([3, 3]);
             ctx.stroke();
@@ -436,79 +436,102 @@
         nodes.forEach(node => {
             const isTarget = (node === probe.activeNode);
 
-            // Anillo de Pulso/Escaneo
+            // Anillo de Pulso/Escaneo en Azul Tech / Verde Acción
             if (isTarget) {
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, 14 + node.pulseScale, 0, Math.PI * 2);
-                ctx.strokeStyle = 'rgba(16, 185, 129, 0.4)';
-                ctx.lineWidth = 1.2;
+                ctx.strokeStyle = 'rgba(34, 224, 161, 0.6)';
+                ctx.lineWidth = 1.4;
                 ctx.stroke();
             }
 
             // Halo suave
             ctx.beginPath();
-            ctx.arc(node.x, node.y, isTarget ? 10 : 7, 0, Math.PI * 2);
-            ctx.fillStyle = isTarget ? 'rgba(19, 119, 82, 0.15)' : 'rgba(19, 119, 82, 0.06)';
+            ctx.arc(node.x, node.y, isTarget ? 11 : 7, 0, Math.PI * 2);
+            ctx.fillStyle = isTarget ? 'rgba(45, 107, 255, 0.25)' : 'rgba(45, 107, 255, 0.10)';
             ctx.fill();
 
             // Punto de nodo sólido
             ctx.beginPath();
             ctx.arc(node.x, node.y, isTarget ? 5 : 3.5, 0, Math.PI * 2);
-            ctx.fillStyle = isTarget ? '#10b981' : '#137752';
+            ctx.fillStyle = isTarget ? '#22E0A1' : '#2D6BFF';
             ctx.fill();
 
-            // Etiqueta tipográfica principal
+            // Etiqueta tipográfica principal (Blanco suave para alto contraste sobre Dark Hero)
             ctx.font = isTarget ? '700 11px "Outfit", sans-serif' : '600 10px "Outfit", sans-serif';
-            ctx.fillStyle = isTarget ? '#060f22' : '#334155';
+            ctx.fillStyle = isTarget ? '#FFFFFF' : '#CBD5E1';
             ctx.textAlign = 'center';
             ctx.fillText(node.label, node.x, node.y - (isTarget ? 15 : 12));
 
             // Micro-tag de telemetría durante inspección
             if (isTarget) {
-                ctx.font = '500 8.5px "Outfit", sans-serif';
-                ctx.fillStyle = '#137752';
+                ctx.font = '600 9px "Outfit", sans-serif';
+                ctx.fillStyle = '#22E0A1';
                 ctx.fillText(`[ ${node.tag} ]`, node.x, node.y + 18);
             }
         });
 
-        // --- F. DIBUJO VECTORIAL DE LA SONDA DE EXPLORACIÓN ---
+        // --- F. DIBUJO VECTORIAL DE LA SONDA OFICIAL (SILUETA + ÓRBITA AZUL) ---
         ctx.save();
         ctx.translate(probe.x, probe.y);
         ctx.rotate(probe.angle);
 
-        // Halo de propulsión / telemetría trasera
+        // 1. Órbita Elíptica Dinámica de la Sonda
         ctx.beginPath();
-        ctx.arc(-8, 0, 4, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(19, 119, 82, 0.2)';
-        ctx.fill();
-
-        // Cuerpo geométrico: Prisma Delta de Precisión Técnica
-        ctx.beginPath();
-        ctx.moveTo(12, 0);       // Vértice proa
-        ctx.lineTo(-8, -6.5);    // Ala superior
-        ctx.lineTo(-4.5, 0);     // Muesca central trasera
-        ctx.lineTo(-8, 6.5);     // Ala inferior
-        ctx.closePath();
-
-        // Relleno de alto contraste y trazo de ingeniería
-        ctx.fillStyle = '#060f22';
-        ctx.fill();
-        ctx.strokeStyle = '#137752';
+        ctx.ellipse(0, 0, 18, 7.5, Math.PI / 6, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(45, 107, 255, 0.7)';
         ctx.lineWidth = 1.4;
         ctx.stroke();
 
-        // Línea central de instrumentación
+        // 2. Chorro de Propulsión / Plasma Trasero
         ctx.beginPath();
-        ctx.moveTo(-4.5, 0);
-        ctx.lineTo(8, 0);
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
-        ctx.lineWidth = 1;
+        ctx.moveTo(-10, -2);
+        ctx.lineTo(-20, 0);
+        ctx.lineTo(-10, 2);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(45, 107, 255, 0.8)';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(-10, 0, 3, 0, Math.PI * 2);
+        ctx.fillStyle = '#93C5FD';
+        ctx.fill();
+
+        // 3. Fuselaje Aerodinámico de la Sonda (Blanco Puro + Borde Platino)
+        ctx.beginPath();
+        ctx.moveTo(14, 0);        // Nariz / Proa
+        ctx.lineTo(-8, -6.5);     // Ala superior
+        ctx.lineTo(-5, 0);        // Muesca trasera
+        ctx.lineTo(-8, 6.5);      // Ala inferior
+        ctx.closePath();
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fill();
+        ctx.strokeStyle = '#2D6BFF';
+        ctx.lineWidth = 1.2;
         ctx.stroke();
 
-        // Punto sensor de proa (Foco verde esmeralda)
+        // 4. Aletas / Alas Estabilizadoras
         ctx.beginPath();
-        ctx.arc(10, 0, 1.8, 0, Math.PI * 2);
-        ctx.fillStyle = '#10b981';
+        ctx.moveTo(-4, -4);
+        ctx.lineTo(-10, -9);
+        ctx.lineTo(-7, -3);
+        ctx.closePath();
+        ctx.fillStyle = '#CBD5E1';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(-4, 4);
+        ctx.lineTo(-10, 9);
+        ctx.lineTo(-7, 3);
+        ctx.closePath();
+        ctx.fillStyle = '#94A3B8';
+        ctx.fill();
+
+        // 5. Sensor de Proa / Ventana de Inspección (Foco Azul Tecnología)
+        ctx.beginPath();
+        ctx.arc(6, 0, 2, 0, Math.PI * 2);
+        ctx.fillStyle = '#2D6BFF';
         ctx.fill();
 
         ctx.restore();

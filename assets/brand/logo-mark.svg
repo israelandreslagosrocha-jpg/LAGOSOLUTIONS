@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" fill="none">
+  <!-- LAGOSOLUTIONS Isotype (Dark version for light backgrounds) -->
+  <defs>
+    <linearGradient id="orbit-grad-dark" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2D6BFF" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#2D6BFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="orbit-glow-dark" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Base Solid 'L' Mark -->
+  <path d="M26 18 H38 V66 H74 V78 H26 Z" fill="#060F22"/>
+
+  <!-- Orbital Energy Ring (Back segment) -->
+  <path d="M16 68 C 12 76, 24 82, 42 78 C 60 74, 80 62, 88 50" 
+        stroke="url(#orbit-grad-dark)" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Orbital Energy Ring (Front crossing segment with Glow) -->
+  <path d="M88 50 C 94 40, 84 32, 66 38 C 48 44, 28 58, 18 66" 
+        stroke="url(#orbit-grad-dark)" stroke-width="4" stroke-linecap="round" fill="none" filter="url(#orbit-glow-dark)"/>
+
+  <!-- Exploration Probe / Sleek Rocket (Ascending at 45deg) -->
+  <g transform="translate(68, 36) rotate(-45)">
+    <!-- Propulsion Jet Flare -->
+    <path d="M-2 18 Q 0 28 2 18 Z" fill="#2D6BFF" opacity="0.8"/>
+    <ellipse cx="0" cy="18" rx="2" ry="4" fill="#60A5FA"/>
+    
+    <!-- Rocket Body (Fuselage) -->
+    <path d="M0 -14 C 4 -6, 5 8, 4 16 L -4 16 C -5 8, -4 -6, 0 -14 Z" fill="#060F22"/>
+    
+    <!-- Wings / Fins -->
+    <path d="M-4 6 L -9 15 L -4 14 Z" fill="#1F2937"/>
+    <path d="M4 6 L 9 15 L 4 14 Z" fill="#1F2937"/>
+    
+    <!-- Canopy / Sensor Window -->
+    <ellipse cx="0" cy="-2" rx="1.8" ry="3.5" fill="#2D6BFF"/>
+  </g>
+</svg>

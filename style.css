@@ -2,37 +2,52 @@
    LAGOSOLUTIONS STRATEGIC EXPANSION — DESIGN SYSTEM & STYLES (V3 MAESTRO)
    ========================================================================== */
 
-/* 1. TOKENS & VARIABLES */
+/* 1. TOKENS & VARIABLES OFICIALES LAGOSOLUTIONS */
 :root {
-    /* Brand Color Palette */
-    --color-navy: #060f22;
-    --color-navy-light: #0d1b38;
-    --color-navy-dark: #030814;
+    /* Brand Color Palette Oficial */
+    --color-navy: #060F22;
+    --color-navy-surface: #0A1628;
+    --color-navy-card: #0F1E36;
     
-    --color-green: #137752;
-    --color-green-light: #e8f4f0;
-    --color-green-hover: #0e5e40;
-    --color-green-accent: #10b981;
+    --color-blue-tech: #2D6BFF;
+    --color-blue-tech-hover: #1A54E1;
+    --color-blue-tech-light: rgba(45, 107, 255, 0.12);
+    --color-blue-tech-glow: rgba(45, 107, 255, 0.35);
     
-    --bg-light: #fafbfc;
-    --bg-white: #ffffff;
-    --bg-card: #ffffff;
+    --color-green-action: #22E0A1;
+    --color-green-action-light: rgba(34, 224, 161, 0.12);
+    --color-green-action-hover: #1CC48C;
+    
+    --color-white-soft: #F8FAFC;
+    --color-bg-white: #FFFFFF;
+    
+    --color-gray-tech: #1F2937;
+    --color-gray-border: rgba(31, 41, 55, 0.12);
+    --color-gray-muted: #64748B;
     
     /* Typography Tokens */
     --font-serif: 'Lora', Georgia, serif;
-    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
-    /* Text Colors */
-    --text-navy: #060f22;
-    --text-muted: #5c6d8c;
-    --text-light: #8fa0be;
+    /* Legacy / Compatibility Mappings */
+    --color-green: #22E0A1;
+    --color-green-light: rgba(34, 224, 161, 0.12);
+    --color-green-hover: #1CC48C;
+    --color-green-accent: #22E0A1;
     
-    /* Borders & Shadows */
-    --border-light: rgba(6, 15, 34, 0.08);
-    --border-green: rgba(19, 119, 82, 0.2);
-    --shadow-subtle: 0 8px 30px rgba(6, 15, 34, 0.03);
-    --shadow-card: 0 12px 35px rgba(6, 15, 34, 0.06);
-    --shadow-button: 0 4px 14px rgba(6, 15, 34, 0.12);
+    --bg-light: #F8FAFC;
+    --bg-white: #FFFFFF;
+    --bg-card: #FFFFFF;
+    
+    --text-navy: #060F22;
+    --text-muted: #64748B;
+    --text-light: #94A3B8;
+    
+    --border-light: rgba(31, 41, 55, 0.10);
+    --border-green: rgba(34, 224, 161, 0.25);
+    --shadow-subtle: 0 8px 30px rgba(6, 15, 34, 0.04);
+    --shadow-card: 0 12px 35px rgba(6, 15, 34, 0.08);
+    --shadow-button: 0 4px 18px rgba(45, 107, 255, 0.25);
 }
 
 /* 2. BASE RESET & ACCESSIBILITY */
@@ -129,10 +144,10 @@ svg {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(250, 251, 252, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-light);
+    background: rgba(6, 15, 34, 0.90);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
 }
 
@@ -153,6 +168,13 @@ svg {
     text-decoration: none;
 }
 
+.nav-logo-img {
+    height: 38px;
+    width: auto;
+    max-width: 220px;
+    display: block;
+}
+
 .logo-icon {
     width: 38px !important;
     height: 38px !important;
@@ -171,7 +193,7 @@ svg {
     font-weight: 800;
     font-size: 1.15rem;
     letter-spacing: 0.5px;
-    color: var(--color-navy);
+    color: #FFFFFF;
     line-height: 1.1;
 }
 
@@ -180,7 +202,7 @@ svg {
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: var(--color-green);
+    color: var(--color-blue-tech);
     text-transform: uppercase;
 }
 
@@ -193,7 +215,7 @@ svg {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--color-navy);
+    color: #F8FAFC;
     font-weight: 600;
     font-size: 0.76rem;
     letter-spacing: 0.5px;
@@ -201,11 +223,11 @@ svg {
 }
 
 .nav-menu a:hover {
-    color: var(--color-green);
+    color: var(--color-blue-tech);
 }
 
 .btn-pill-navy {
-    background-color: var(--color-navy);
+    background-color: var(--color-blue-tech);
     color: #ffffff;
     border: none;
     border-radius: 50px;
@@ -215,7 +237,7 @@ svg {
     font-size: 0.8rem;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: var(--shadow-button);
+    box-shadow: 0 4px 18px rgba(45, 107, 255, 0.35);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: inline-flex;
     align-items: center;
@@ -224,99 +246,85 @@ svg {
 }
 
 .btn-pill-navy:hover {
-    background-color: var(--color-navy-light);
+    background-color: var(--color-blue-tech-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(6, 15, 34, 0.2);
+    box-shadow: 0 8px 25px rgba(45, 107, 255, 0.45);
 }
 
 .btn-pill-outline {
-    background: transparent;
-    color: var(--color-navy);
-    border: 2px solid var(--color-navy);
+    background-color: transparent;
+    color: #F8FAFC;
+    border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 50px;
-    padding: 11px 22px;
+    padding: 12px 24px;
     font-family: var(--font-sans);
     font-weight: 700;
     font-size: 0.8rem;
     letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .btn-pill-outline:hover {
-    background-color: var(--color-navy);
-    color: #ffffff;
+    border-color: var(--color-blue-tech);
+    color: #FFFFFF;
+    background-color: rgba(45, 107, 255, 0.12);
 }
 
 .mobile-menu-btn {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
+    background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    z-index: 1001;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .burger-bar {
-    width: 100%;
-    height: 2.5px;
-    background-color: var(--color-navy);
-    border-radius: 2px;
+    width: 24px;
+    height: 2px;
+    background-color: #FFFFFF;
     transition: all 0.3s ease;
 }
 
+/* Menú Desplegable Móvil */
 .mobile-menu-drawer {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 300px;
+    left: 0;
+    width: 100%;
     height: 100vh;
     background-color: var(--color-navy);
-    color: #ffffff;
-    z-index: 2000;
+    z-index: 1001;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 32px 24px;
-    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
-}
-
-.mobile-menu-drawer:not(.active) {
-    display: none;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-menu-drawer.active {
-    display: flex;
-    right: 0;
+    transform: translateY(0);
 }
 
 .mobile-drawer-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 16px;
-}
-
-.mobile-drawer-header .logo-title {
-    color: #ffffff;
 }
 
 .mobile-drawer-close {
-    background: transparent;
+    background: none;
     border: none;
     color: #ffffff;
     font-size: 2rem;
     cursor: pointer;
-    line-height: 1;
 }
 
 .mobile-drawer-links {
@@ -324,19 +332,20 @@ svg {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 32px;
+    margin: auto 0;
 }
 
 .mobile-drawer-links a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     transition: color 0.3s ease;
 }
 
 .mobile-drawer-links a:hover {
-    color: var(--color-green-accent);
+    color: var(--color-blue-tech);
 }
 
 .mobile-drawer-footer {
@@ -344,12 +353,16 @@ svg {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 4. HERO SECTION V3 (TEXTO PRIORITARIO + CANVAS DE SOPORTE) */
+/* 4. HERO SECTION V3 (DEEP NAVY DE AUTORIDAD + CANVAS DE TELEMETRÍA) */
 .hero-section {
     padding-top: 140px;
     padding-bottom: 90px;
-    background: linear-gradient(180deg, #fafbfc 0%, #f3f6fa 100%);
-    border-bottom: 1px solid var(--border-light);
+    background-color: var(--color-navy);
+    background-image: 
+        radial-gradient(circle at 80% 30%, rgba(45, 107, 255, 0.14) 0%, transparent 55%),
+        radial-gradient(circle at 10% 80%, rgba(34, 224, 161, 0.06) 0%, transparent 45%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-white-soft);
 }
 
 .hero-container {
@@ -363,7 +376,7 @@ svg {
     font-family: var(--font-serif);
     font-size: 2.4rem;
     font-weight: 600;
-    color: var(--color-navy);
+    color: #FFFFFF;
     line-height: 1.25;
     margin-bottom: 24px;
 }
@@ -371,25 +384,28 @@ svg {
 .hero-divider {
     width: 60px;
     height: 3px;
-    background-color: var(--color-green);
+    background: linear-gradient(90deg, var(--color-blue-tech), var(--color-green-action));
     margin-bottom: 24px;
+    border-radius: 2px;
 }
 
 .concept-hero-box {
-    background-color: var(--color-navy);
+    background-color: rgba(15, 30, 54, 0.75);
     color: #ffffff;
     padding: 20px 24px;
     border-radius: 12px;
-    border-left: 4px solid var(--color-green-accent);
+    border: 1px solid rgba(45, 107, 255, 0.25);
+    border-left: 4px solid var(--color-blue-tech);
     margin-bottom: 24px;
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
 }
 
 .concept-tag {
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 1.5px;
-    color: var(--color-green-accent);
+    color: var(--color-blue-tech);
     display: block;
     margin-bottom: 8px;
 }
@@ -404,7 +420,7 @@ svg {
 
 .hero-subtitle {
     font-size: 1.05rem;
-    color: var(--text-muted);
+    color: #94A3B8;
     line-height: 1.6;
     margin-bottom: 24px;
 }
@@ -420,7 +436,7 @@ svg {
 .hero-microcopy {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--color-green);
+    color: var(--color-green-action);
     letter-spacing: 0.5px;
 }
 
@@ -433,12 +449,12 @@ svg {
 .hero-system-canvas-box {
     width: 100%;
     height: 360px;
-    background-color: #ffffff;
-    background-image: radial-gradient(rgba(19, 119, 82, 0.05) 1px, transparent 1px);
+    background-color: #081224;
+    background-image: radial-gradient(rgba(45, 107, 255, 0.12) 1px, transparent 1px);
     background-size: 20px 20px;
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(45, 107, 255, 0.22);
     border-radius: 16px;
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -458,19 +474,19 @@ svg {
     left: 16px;
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--text-muted);
+    color: #94A3B8;
     pointer-events: none;
     line-height: 1.3;
 }
 
 .canvas-caption-note span {
-    color: var(--color-green);
+    color: var(--color-blue-tech);
     font-weight: 700;
 }
 
 .canvas-caption-sub {
     font-size: 0.65rem;
-    color: var(--text-muted);
+    color: #64748B;
     font-weight: 500;
     margin-top: 2px;
 }
@@ -865,7 +881,7 @@ svg {
 }
 
 .portfolio-link-btn {
-    color: var(--color-green);
+    color: var(--color-blue-tech);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.9rem;
@@ -873,7 +889,8 @@ svg {
 }
 
 .portfolio-link-btn:hover {
-    color: var(--color-navy);
+    color: var(--color-blue-tech-hover);
+    text-decoration: underline;
 }
 
 /* 9. ¿QUÉ PODRÍA ENCONTRAR LAGOSOLUTIONS EN SU EMPRESA? */
@@ -1201,9 +1218,10 @@ svg {
 }
 
 .node-btn:hover, .node-btn.active {
-    background: rgba(16, 185, 129, 0.15);
-    border-color: var(--color-green-accent);
+    background: rgba(45, 107, 255, 0.18);
+    border-color: var(--color-blue-tech);
     transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(45, 107, 255, 0.25);
 }
 
 .node-icon {
@@ -1217,11 +1235,11 @@ svg {
 }
 
 .center-node-box {
-    background: var(--color-green);
+    background: var(--color-blue-tech);
     border-radius: 12px;
     padding: 24px 12px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(19, 119, 82, 0.4);
+    box-shadow: 0 10px 30px rgba(45, 107, 255, 0.35);
 }
 
 .center-tag {
@@ -1242,7 +1260,7 @@ svg {
 
 .node-display-card {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(45, 107, 255, 0.25);
     border-radius: 16px;
     padding: 36px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
@@ -1252,7 +1270,7 @@ svg {
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 1.5px;
-    color: var(--color-green-accent);
+    color: var(--color-blue-tech);
     display: block;
     margin-bottom: 8px;
 }
@@ -1283,15 +1301,15 @@ svg {
 }
 
 .node-finding-col {
-    background: rgba(16, 185, 129, 0.08);
-    border-left: 3px solid var(--color-green-accent);
+    background: rgba(34, 224, 161, 0.08);
+    border-left: 3px solid var(--color-green-action);
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 0;
 }
 
 .node-finding-col strong {
-    color: var(--color-green-accent);
+    color: var(--color-green-action);
 }
 
 /* 14. SECCIÓN DATOS PREEXISTENTES */
@@ -1496,12 +1514,13 @@ svg {
     margin-bottom: 28px;
 }
 
-/* 17. FOOTER BANNER */
+/* 17. FOOTER BANNER OFICIAL EN DEEP NAVY */
 .footer-banner {
-    background-color: var(--color-navy-dark);
+    background-color: var(--color-navy);
+    background-image: radial-gradient(circle at 20% 30%, rgba(45, 107, 255, 0.08) 0%, transparent 60%);
     color: #ffffff;
     padding: 80px 0 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-top {
@@ -1515,7 +1534,7 @@ svg {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--color-green-accent);
+    color: var(--color-blue-tech);
     text-transform: uppercase;
     margin-bottom: 12px;
 }
@@ -1525,6 +1544,7 @@ svg {
     font-size: 2rem;
     line-height: 1.3;
     font-weight: 600;
+    color: #FFFFFF;
 }
 
 .footer-values-grid {
@@ -1534,16 +1554,17 @@ svg {
 }
 
 .value-col {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 10px;
-    padding: 20px;
+    background: rgba(15, 30, 54, 0.65);
+    border: 1px solid rgba(45, 107, 255, 0.16);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(8px);
 }
 
 .value-icon {
     width: 24px;
     height: 24px;
-    color: var(--color-green-accent);
+    color: var(--color-blue-tech);
     margin-bottom: 12px;
 }
 
@@ -1556,8 +1577,8 @@ svg {
 
 .value-desc {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.4;
+    color: #94A3B8;
+    line-height: 1.45;
 }
 
 .footer-bottom {
@@ -1565,7 +1586,7 @@ svg {
     align-items: center;
     justify-content: space-between;
     padding-top: 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -1582,10 +1603,10 @@ svg {
     gap: 10px;
 }
 
-.footer-logo-title {
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+.footer-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
 .footer-links {
@@ -1595,14 +1616,19 @@ svg {
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: #94A3B8;
     text-decoration: none;
     font-size: 0.85rem;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--color-green-accent);
+    color: var(--color-blue-tech);
+}
+
+.footer-bottom p {
+    color: #64748B;
+    font-size: 0.85rem;
 }
 
 /* 18. STICKY CTA FLOTANTE MÓVIL DISCRETO */

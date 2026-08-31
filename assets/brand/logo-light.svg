@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 80" width="100%" height="100%" fill="none">
+  <!-- LAGOSOLUTIONS Primary Horizontal Logo (Light version for dark backgrounds) -->
+  <defs>
+    <linearGradient id="orbit-grad-h-light" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2D6BFF" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#2D6BFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#93C5FD" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="orbit-glow-h-light" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- ISOTYPE (Scaled to 64x64 at x=8, y=8) -->
+  <g transform="translate(4, 4) scale(0.72)">
+    <!-- Base Solid 'L' Mark in Crisp White -->
+    <path d="M26 18 H38 V66 H74 V78 H26 Z" fill="#F8FAFC"/>
+
+    <!-- Orbital Energy Ring (Back segment) -->
+    <path d="M16 68 C 12 76, 24 82, 42 78 C 60 74, 80 62, 88 50" 
+          stroke="url(#orbit-grad-h-light)" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+    <!-- Orbital Energy Ring (Front crossing segment with Glow) -->
+    <path d="M88 50 C 94 40, 84 32, 66 38 C 48 44, 28 58, 18 66" 
+          stroke="url(#orbit-grad-h-light)" stroke-width="4.5" stroke-linecap="round" fill="none" filter="url(#orbit-glow-h-light)"/>
+
+    <!-- Exploration Probe / Rocket in Crisp White -->
+    <g transform="translate(68, 36) rotate(-45)">
+      <path d="M-2 18 Q 0 30 2 18 Z" fill="#2D6BFF" opacity="0.9"/>
+      <ellipse cx="0" cy="18" rx="2" ry="5" fill="#93C5FD"/>
+      <path d="M0 -14 C 4 -6, 5 8, 4 16 L -4 16 C -5 8, -4 -6, 0 -14 Z" fill="#FFFFFF"/>
+      <path d="M-4 6 L -9 15 L -4 14 Z" fill="#CBD5E1"/>
+      <path d="M4 6 L 9 15 L 4 14 Z" fill="#94A3B8"/>
+      <ellipse cx="0" cy="-2" rx="1.8" ry="3.5" fill="#2D6BFF"/>
+    </g>
+  </g>
+
+  <!-- WORDMARK: LAGOSOLUTIONS® -->
+  <g transform="translate(76, 44)">
+    <text font-family="system-ui, -apple-system, 'Inter', 'Satoshi', 'Outfit', sans-serif" font-size="28" letter-spacing="1.5">
+      <tspan font-weight="900" fill="#FFFFFF">LAGO</tspan>
+      <tspan font-weight="300" fill="#E2E8F0">SOLUTIONS</tspan>
+      <tspan font-weight="600" font-size="14" dy="-10" fill="#2D6BFF">®</tspan>
+    </text>
+  </g>
+
+  <!-- TAGLINE: ENTENDEMOS · CONECTAMOS · CONSTRUIMOS -->
+  <g transform="translate(77, 62)">
+    <text font-family="system-ui, -apple-system, 'Inter', 'Satoshi', 'Outfit', sans-serif" font-size="7.5" font-weight="700" letter-spacing="3.2" fill="#94A3B8">
+      ENTENDEMOS <tspan fill="#2D6BFF">·</tspan> CONECTAMOS <tspan fill="#2D6BFF">·</tspan> CONSTRUIMOS
+    </text>
+  </g>
+</svg>
