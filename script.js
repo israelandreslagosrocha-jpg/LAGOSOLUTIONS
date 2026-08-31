@@ -240,7 +240,36 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (nodeInvestigamos) nodeInvestigamos.textContent = data.investigamos;
                 if (nodeEvidencia) nodeEvidencia.textContent = data.evidencia;
                 if (nodeHallazgo) nodeHallazgo.textContent = data.hallazgo;
+
+                // Sincronización Bidireccional: HTML -> Sonda Canvas
+                if (window.LagosHeroSystem && typeof window.LagosHeroSystem.focusNode === 'function') {
+                    window.LagosHeroSystem.focusNode(key);
+                }
             });
+        });
+
+        // Sincronización Bidireccional: Canvas -> Display HTML
+        window.addEventListener('lagos:node-focus', (e) => {
+            const focusedKey = e.detail?.key;
+            if (!focusedKey) return;
+
+            const targetBtn = document.querySelector(`.node-btn[data-node="${focusedKey}"]`);
+            if (targetBtn && !targetBtn.classList.contains('active')) {
+                const data = nodeData[focusedKey];
+                if (!data) return;
+
+                nodeButtons.forEach(b => {
+                    b.classList.remove("active");
+                    b.setAttribute("aria-pressed", "false");
+                });
+                targetBtn.classList.add("active");
+                targetBtn.setAttribute("aria-pressed", "true");
+
+                if (nodeTitle) nodeTitle.textContent = data.title;
+                if (nodeInvestigamos) nodeInvestigamos.textContent = data.investigamos;
+                if (nodeEvidencia) nodeEvidencia.textContent = data.evidencia;
+                if (nodeHallazgo) nodeHallazgo.textContent = data.hallazgo;
+            }
         });
     }
 
