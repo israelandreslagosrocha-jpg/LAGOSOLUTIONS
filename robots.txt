@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://israelandreslagosrocha-jpg.github.io/LAGOSOLUTIONS/sitemap.xml
+Sitemap: https://www.lagosolutions.cl/sitemap.xml
