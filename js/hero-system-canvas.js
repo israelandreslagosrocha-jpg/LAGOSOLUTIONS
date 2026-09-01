@@ -210,24 +210,40 @@
         }
     });
 
-    // Touch en dispositivos móviles
+    // Touch en dispositivos móviles (Arrastre y toque táctil)
     canvas.addEventListener('touchstart', (e) => {
         if (e.touches.length > 0) {
             updateMousePosition(e.touches[0].clientX, e.touches[0].clientY, true);
-            // Si toca un nodo, enfocamos
+            // Comprobar si tocó un nodo directamente
+            let touchedNode = null;
             for (let node of nodes) {
-                if (getDistance(mouse.x, mouse.y, node.x, node.y) < 32) {
-                    focusNodeInternal(node.key, true);
+                if (getDistance(mouse.x, mouse.y, node.x, node.y) < 36) {
+                    touchedNode = node;
                     break;
                 }
             }
+            if (touchedNode) {
+                focusNodeInternal(touchedNode.key, true);
+            }
+        }
+    }, { passive: true });
+
+    canvas.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+            updateMousePosition(e.touches[0].clientX, e.touches[0].clientY, true);
         }
     }, { passive: true });
 
     canvas.addEventListener('touchend', () => {
         setTimeout(() => {
-            mouse.active = false;
-        }, 1500);
+            if (!probe.pinnedNode) {
+                mouse.active = false;
+            }
+        }, 1200);
+    }, { passive: true });
+
+    canvas.addEventListener('touchcancel', () => {
+        mouse.active = false;
     }, { passive: true });
 
     // 7. Función Interna de Enfoque Bidireccional
@@ -320,8 +336,8 @@
             probe.targetAngle = Math.atan2(probe.activeNode.y - probe.y, probe.activeNode.x - probe.x);
             probe.scanIntensity = Math.min(probe.scanIntensity + 0.08, 1);
 
-        } else if (mouse.active && !mouse.isTouch) {
-            // Modo Navegación con Mouse: seguimiento con inercia elástica
+        } else if (mouse.active) {
+            // Modo Navegación (Mouse o Touch en móvil): seguimiento con inercia elástica
             probe.targetX = mouse.x;
             probe.targetY = mouse.y;
 
