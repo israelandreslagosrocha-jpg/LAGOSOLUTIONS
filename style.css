@@ -893,6 +893,421 @@ svg {
     text-decoration: underline;
 }
 
+/* 8.5. SECCIÓN PLANES Y NIVELES DE INVERSIÓN (V3.3) */
+.plans-section {
+    padding: 100px 0;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.dossier-download-banner {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0c1a36 100%);
+    border: 1px solid rgba(45, 107, 255, 0.25);
+    border-radius: 16px;
+    padding: 28px 36px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 12px 30px rgba(6, 15, 34, 0.12);
+}
+
+.dossier-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dossier-icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(45, 107, 255, 0.15);
+    border: 1px solid var(--color-blue-tech);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blue-tech);
+    flex-shrink: 0;
+}
+
+.dossier-banner-text h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.dossier-banner-text p {
+    font-size: 0.88rem;
+    color: #94A3B8;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.btn-dossier-whatsapp {
+    background-color: var(--color-green);
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(34, 224, 161, 0.25);
+}
+
+.btn-dossier-whatsapp:hover {
+    background-color: var(--color-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 224, 161, 0.4);
+}
+
+/* Grid de Planes */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.plan-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 18px;
+    padding: 32px 28px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.plan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(6, 15, 34, 0.12);
+    border-color: rgba(45, 107, 255, 0.4);
+}
+
+/* Plan Destacado (PLAN PRO) */
+.plan-card-featured {
+    border: 2px solid var(--color-blue-tech);
+    box-shadow: 0 16px 40px rgba(45, 107, 255, 0.15);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.plan-featured-ribbon {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 4px 16px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+    white-space: nowrap;
+}
+
+/* Plan a Medida */
+.plan-card-custom {
+    border: 1px solid rgba(6, 15, 34, 0.2);
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+}
+
+/* Header del Plan */
+.plan-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.plan-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.plan-badge-start {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.plan-badge-comercial {
+    background-color: #ede9fe;
+    color: #6d28d9;
+}
+
+.plan-badge-growth {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.plan-badge-pro {
+    background-color: #ffe4e6;
+    color: #e11d48;
+}
+
+.plan-badge-custom {
+    background-color: #e2e8f0;
+    color: var(--color-navy);
+}
+
+.plan-payment-type {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+.plan-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 6px;
+}
+
+.plan-tagline {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin-bottom: 20px;
+    min-height: 38px;
+}
+
+.plan-price-box {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 20px;
+}
+
+.plan-currency {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-navy);
+}
+
+.plan-amount {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--color-navy);
+    letter-spacing: -0.5px;
+}
+
+.plan-clp {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-left: 4px;
+}
+
+.plan-custom-prefix {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-blue-tech);
+    margin-right: 4px;
+}
+
+/* Body del Plan */
+.plan-scope-summary {
+    background-color: #f1f5f9;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.72rem;
+    color: var(--color-navy);
+    text-align: center;
+    letter-spacing: 0.8px;
+}
+
+.plan-scope-featured {
+    background-color: #eff6ff;
+    color: var(--color-blue-tech);
+    border: 1px solid #bfdbfe;
+}
+
+.plan-ideal-for {
+    background-color: #fafbfc;
+    border-left: 3px solid var(--color-blue-tech);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+}
+
+.ideal-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--color-blue-tech);
+    display: block;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.plan-ideal-for p {
+    font-size: 0.82rem;
+    color: var(--text-navy);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.plan-features-list {
+    margin-bottom: 20px;
+}
+
+.features-header {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: var(--color-navy);
+    display: block;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.plan-features-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.plan-features-list li {
+    font-size: 0.84rem;
+    color: var(--text-navy);
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.check-icon {
+    color: var(--color-green);
+    font-weight: 900;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-top: -1px;
+}
+
+.plan-excludes-box,
+.plan-process-mini {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 24px;
+}
+
+.excludes-title,
+.process-mini-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.plan-excludes-box p,
+.plan-process-mini p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Footer & Botones del Plan */
+.plan-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-light);
+}
+
+.btn-plan-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-plan-primary {
+    background-color: var(--color-navy);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(6, 15, 34, 0.15);
+}
+
+.btn-plan-primary:hover {
+    background-color: var(--color-blue-tech);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(45, 107, 255, 0.3);
+}
+
+.btn-plan-featured {
+    background: linear-gradient(135deg, var(--color-blue-tech) 0%, #1a56ea 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(45, 107, 255, 0.35);
+}
+
+.btn-plan-featured:hover {
+    background: linear-gradient(135deg, #1a56ea 0%, var(--color-navy) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(45, 107, 255, 0.5);
+}
+
+.btn-plan-custom-cta {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1e293b 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(6, 15, 34, 0.2);
+}
+
+.btn-plan-custom-cta:hover {
+    background: var(--color-blue-tech);
+    transform: translateY(-2px);
+}
+
+.btn-plan-download {
+    background-color: transparent;
+    color: var(--color-navy);
+    border: 1px solid var(--border-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.btn-plan-download:hover {
+    background-color: #f1f5f9;
+    border-color: var(--color-blue-tech);
+    color: var(--color-blue-tech);
+}
+
 /* 9. ¿QUÉ PODRÍA ENCONTRAR LAGOSOLUTIONS EN SU EMPRESA? */
 .findings-scenarios-section {
     padding: 90px 0;
@@ -1879,6 +2294,10 @@ dialog {
     .ten-steps-grid, .data-sources-grid, .act-comparison-grid, .offer-summary-grid, .findings-grid, .deliverables-grid {
         grid-template-columns: 1fr;
     }
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
     .map-interactive-container {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -1925,6 +2344,19 @@ dialog {
 
     .container {
         padding: 0 16px;
+    }
+
+    /* Banner de Dossier en Móvil */
+    .dossier-download-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 20px;
+        gap: 18px;
+    }
+
+    .btn-dossier-whatsapp {
+        width: 100%;
+        justify-content: center;
     }
 
     .sticky-mobile-cta {
@@ -1974,7 +2406,14 @@ dialog {
         height: 260px !important;
     }
 
+    /* Colapso de Planes a 1 Columna en Móvil */
+    .plans-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
     /* Reducción de Padding Interno en Tarjetas Móviles */
+    .plan-card,
     .portfolio-card,
     .finding-card,
     .data-source-card,

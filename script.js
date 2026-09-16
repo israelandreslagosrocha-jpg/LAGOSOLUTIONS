@@ -315,6 +315,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const company = sanitizeInput(companyInput ? companyInput.value : "");
             const website = sanitizeInput(websiteInput ? websiteInput.value : "");
             const email = sanitizeInput(emailInput ? emailInput.value : "");
+            const planInput = document.getElementById("modal-plan");
+            const plan = sanitizeInput(planInput ? planInput.value : "Sin definir / Necesito evaluación previa");
             const channel = sanitizeInput(channelInput ? channelInput.value : "WhatsApp");
             const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro. Quiero entender primero qué necesita mi empresa");
             const problem = sanitizeInput(problemInput ? problemInput.value : "");
@@ -326,6 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 company,
                 website,
                 email,
+                plan,
                 channel,
                 goal,
                 problem,
@@ -344,10 +347,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }).catch(err => console.warn('[INGEST_FALLBACK] Registro local continuado.', err));
             }
 
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO - LAGOSOLUTIONS*%0A%0A` +
+            const messageBody = `*SOLICITUD DE DIAGNÓSTICO & COTIZACIÓN - LAGOSOLUTIONS*%0A%0A` +
                 `*Nombre:* ${encodeURIComponent(name)}%0A` +
                 `*Empresa:* ${encodeURIComponent(company)}%0A` +
                 `*Contacto:* ${encodeURIComponent(email)}%0A` +
+                `*Plan de Interés:* ${encodeURIComponent(plan)}%0A` +
                 `*Canal Preferido:* ${encodeURIComponent(channel)}%0A` +
                 `*Sitio Web:* ${encodeURIComponent(website || "No especificado")}%0A` +
                 `*Objetivo:* ${encodeURIComponent(goal)}%0A` +
@@ -392,4 +396,46 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1000);
         });
     }
+
+    // ==========================================
+    // 13. PLAN SPEC SHEET DOWNLOAD HANDLER (High-Resolution Cloudinary Assets)
+    // ==========================================
+    const downloadButtons = document.querySelectorAll(".btn-plan-download");
+    downloadButtons.forEach(btn => {
+        btn.addEventListener("click", async (e) => {
+            const url = btn.getAttribute("href");
+            const planName = btn.getAttribute("data-plan-name") || "FICHA-TECNICA";
+            const fileName = `LAGOSOLUTIONS-${planName}.png`;
+
+            try {
+                e.preventDefault();
+                const originalContent = btn.innerHTML;
+                btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Descargando...`;
+                btn.style.opacity = "0.75";
+                btn.style.pointerEvents = "none";
+
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Fetch failed");
+                const blob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                const tempLink = document.createElement("a");
+                tempLink.style.display = "none";
+                tempLink.href = blobUrl;
+                tempLink.download = fileName;
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                window.URL.revokeObjectURL(blobUrl);
+                document.body.removeChild(tempLink);
+
+                btn.innerHTML = originalContent;
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "auto";
+            } catch (err) {
+                // Fallback directo en caso de restricción CORS en navegador estricto
+                window.open(url, "_blank");
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "auto";
+            }
+        });
+    });
 });
