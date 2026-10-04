@@ -44,7 +44,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet with Cache Buster Version -->
-    <link rel="stylesheet" href="style.css?v=3.2.1">
+    <link rel="stylesheet" href="style.css?v=3.4.0">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -60,6 +60,7 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+56961996576",
+        "email": "info@lagosolutions.cl",
         "contactType": "Atención Comercial B2B",
         "availableLanguage": ["Spanish"]
       },
@@ -88,13 +89,11 @@
             </a>
             
             <ul class="nav-menu">
-                <li><a href="#reconocimiento">RECONOCIMIENTO</a></li>
-                <li><a href="#que-ocurre-diagnostico">EL DIAGNÓSTICO</a></li>
-                <li><a href="#proyectos">PROYECTOS REALES</a></li>
+                <li><a href="#que-podemos-hacer">SERVICIOS</a></li>
+                <li><a href="#proyectos">PROYECTOS</a></li>
                 <li><a href="#planes">PLANES</a></li>
-                <li><a href="#que-podria-encontrar">ESCENARIOS</a></li>
-                <li><a href="#que-podemos-hacer">SOLUCIONES</a></li>
-                <li><a href="#metodologia-10">RECORRIDO COMPLETO</a></li>
+                <li><a href="#que-ocurre-diagnostico">CÓMO TRABAJAMOS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
             </ul>
 
             <div class="nav-cta">
@@ -104,7 +103,7 @@
             </div>
 
             <!-- Botón Hamburguesa Móvil -->
-            <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-controls="mobile-menu-drawer" aria-label="Abrir menú de navegación" aria-expanded="false">
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
@@ -113,20 +112,17 @@
     </nav>
 
     <!-- Menú Desplegable Móvil -->
-    <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true" inert role="dialog" aria-modal="true" aria-label="Navegación">
         <div class="mobile-drawer-header">
             <img src="assets/brand/logo-light.svg" alt="LAGOSOLUTIONS" class="nav-logo-img" style="height: 32px; width: auto;">
             <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Cerrar menú">&times;</button>
         </div>
         <ul class="mobile-drawer-links">
-            <li><a href="#reconocimiento" class="mobile-link">Reconocimiento Previo</a></li>
-            <li><a href="#que-ocurre-diagnostico" class="mobile-link">Proceso de Diagnóstico</a></li>
-            <li><a href="#proyectos" class="mobile-link">Proyectos Reales</a></li>
-            <li><a href="#planes" class="mobile-link">Planes & Descarga de Fichas</a></li>
-            <li><a href="#que-podria-encontrar" class="mobile-link">Posibles Hallazgos</a></li>
-            <li><a href="#que-podemos-hacer" class="mobile-link">Qué Podemos Hacer</a></li>
-            <li><a href="#metodologia-10" class="mobile-link">Recorrido Completo (10 Etapas)</a></li>
-            <li><a href="#contacto" class="mobile-link">Contacto & Diagnóstico</a></li>
+            <li><a href="#que-podemos-hacer" class="mobile-link">Servicios</a></li>
+            <li><a href="#proyectos" class="mobile-link">Proyectos reales</a></li>
+            <li><a href="#planes" class="mobile-link">Comparar planes</a></li>
+            <li><a href="#que-ocurre-diagnostico" class="mobile-link">Cómo trabajamos</a></li>
+            <li><a href="#contacto" class="mobile-link">Contacto</a></li>
         </ul>
         <div class="mobile-drawer-footer">
             <button type="button" class="btn-pill-navy btn-full trigger-modal mobile-cta-trigger">
@@ -496,6 +492,64 @@
                         </div>
                     </article>
 
+                    <!-- Proyecto 4: Naty Entrenadora -->
+                    <article class="portfolio-card reveal" id="card-naty">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-badge-real">[ REAL — EN PRODUCCIÓN ]</span>
+                            <h3 class="portfolio-project-name">Naty Entrenadora</h3>
+                            <p class="portfolio-project-sub">Entrenamiento Online & Membresía Digital · Chile</p>
+                        </div>
+
+                        <!-- Conmutador Interactivo 4 Estados -->
+                        <div class="case-tabs" role="tablist" aria-label="Evolución de Naty Entrenadora">
+                            <button type="button" class="case-tab active" data-card="naty" data-state="antes" role="tab" aria-selected="true" aria-controls="naty-antes">SITUACIÓN</button>
+                            <button type="button" class="case-tab" data-card="naty" data-state="busco" role="tab" aria-selected="false" aria-controls="naty-busco">QUÉ NECESITABA</button>
+                            <button type="button" class="case-tab" data-card="naty" data-state="construyo" role="tab" aria-selected="false" aria-controls="naty-construyo">QUÉ SE CONSTRUYÓ</button>
+                            <button type="button" class="case-tab" data-card="naty" data-state="actual" role="tab" aria-selected="false" aria-controls="naty-actual">SISTEMA ACTUAL</button>
+                        </div>
+
+                        <div class="portfolio-card-body">
+                            <div class="case-state-panel active" id="naty-antes" role="tabpanel">
+                                <strong>CONTEXTO DEL PROYECTO:</strong>
+                                <p>Entrenamiento online para mujeres, con una propuesta de membresía que combina clases en vivo y contenido para entrenar a su propio ritmo.</p>
+                            </div>
+                            <div class="case-state-panel" id="naty-busco" role="tabpanel">
+                                <strong>QUÉ NECESITABA EL NEGOCIO:</strong>
+                                <p>Presentar la metodología de Natalia, explicar la membresía y facilitar el acceso al registro y al portal de alumnas desde una experiencia digital coherente.</p>
+                            </div>
+                            <div class="case-state-panel" id="naty-construyo" role="tabpanel">
+                                <strong>QUÉ SE CONSTRUYÓ:</strong>
+                                <p>Sitio de presentación de la entrenadora, estructura comercial de membresía, preguntas frecuentes y rutas de registro, inicio de sesión y acceso al portal de alumnas.</p>
+                            </div>
+                            <div class="case-state-panel" id="naty-actual" role="tabpanel">
+                                <strong>SISTEMA ACTUAL EN PRODUCCIÓN:</strong>
+                                <p>Proyecto entregado y sitio público disponible en natyentrenadora.com, con acceso a inscripción y presentación de la plataforma de entrenamiento.</p>
+                            </div>
+
+                            <div class="portfolio-detail-item" style="margin-top: 16px;">
+                                <strong>CAPACIDAD TÉCNICA (INFORMACIÓN SECUNDARIA):</strong>
+                                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">Experiencia web orientada a una membresía online, con contenido multimedia y navegación hacia registro y portal de alumnas.</p>
+                                <div class="portfolio-tech-tags">
+                                    <span class="tech-tag">Membresía Online</span>
+                                    <span class="tech-tag">Contenido Multimedia</span>
+                                    <span class="tech-tag">Registro de Alumnas</span>
+                                    <span class="tech-tag">Portal de Alumnas</span>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-evidence-box">
+                                <strong>ESTADO DE EVIDENCIA:</strong>
+                                <p>✓ Proyecto entregado y sitio público disponible.</p>
+                                <span class="unmeasured-note">* Resultados de inscripciones y retención no publicados.</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-footer">
+                            <a href="https://www.natyentrenadora.com/" target="_blank" rel="noopener" class="portfolio-link-btn">
+                                Visitar Sitio Real: natyentrenadora.com ↗
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -512,6 +566,34 @@
                 </div>
 
                 <!-- Banner Informativo de Descarga de Dossier -->
+                <div class="plan-learning" id="comparar-planes">
+                    <span class="opportunities-pretitle">ELIGE POR LO QUE NECESITA TU NEGOCIO</span>
+                    <h3>Una web se parece a un restaurante.</h3>
+                    <p class="plan-learning-intro">Lo que ve el cliente es solo una parte. El precio también depende de lo que tu negocio necesita organizar detrás: consultas, información, contenido y seguimiento.</p>
+                    <div class="restaurant-grid">
+                        <article><span>01 · EL SALÓN — FRONTEND</span><h4>Lo que tus visitantes ven y usan</h4><p>Diseño, servicios, fotos, navegación y botones de contacto. Una landing reúne todo en una página; una web comercial organiza la información en varias páginas.</p></article>
+                        <article><span>02 · LA COCINA — BACKEND</span><h4>Lo que procesa las solicitudes</h4><p>Recibe y valida datos, guarda contactos y controla quién puede acceder. Es la cocina que recibe un pedido y lo organiza; no se obtiene solo cambiando el diseño.</p></article>
+                        <article><span>03 · LA ADMINISTRACIÓN — DASHBOARD</span><h4>Lo que tú puedes gestionar</h4><p>Un panel privado para revisar consultas y su estado. En PRO se suma un editor de contenido: puedes publicar y actualizar las páginas acordadas.</p></article>
+                    </div>
+                    <p><strong>SEO y marketing:</strong> ayudan a que las personas adecuadas encuentren el restaurante y entiendan por qué elegirlo. El SEO prepara y estructura tu web; la analítica permite medir. Las campañas y el trabajo mensual se contratan aparte.</p>
+                    <h3>¿Qué cambia entre $200.000 y $400.000 CLP?</h3>
+                    <p><strong>START:</strong> una página enfocada en presentar una oferta y facilitar el contacto. <strong>COMERCIAL:</strong> hasta cinco páginas con estructura por servicios, investigación inicial de búsquedas y medición de acciones. El salto incorpora organización, SEO y medición; ambos incluyen diseño responsive.</p>
+                    <div class="plan-compare-selects">
+                        <label for="compare-plan-a">Primer plan<select id="compare-plan-a" disabled><option value="start" selected>START · $200.000 CLP</option><option value="comercial">COMERCIAL · $400.000 CLP</option><option value="growth">GROWTH · $700.000 CLP</option><option value="pro">PRO · $1.000.000 CLP</option><option value="medida">A MEDIDA · desde $1.500.000 CLP</option></select></label>
+                        <label for="compare-plan-b">Comparar con<select id="compare-plan-b" disabled><option value="start">START · $200.000 CLP</option><option value="comercial" selected>COMERCIAL · $400.000 CLP</option><option value="growth">GROWTH · $700.000 CLP</option><option value="pro">PRO · $1.000.000 CLP</option><option value="medida">A MEDIDA · desde $1.500.000 CLP</option></select></label>
+                    </div>
+                    <div class="plan-compare-grid" id="plan-comparison" aria-live="polite" aria-atomic="true">
+                        <article class="plan-compare-card"><h4>START · Presencia enfocada</h4><span class="plan-compare-price">$200.000 CLP · pago único</span><p>Para presentar un servicio o una oferta y facilitar consultas.</p><dl><dt>Web pública</dt><dd>Una landing responsive, con secciones dentro de la misma página.</dd><dt>SEO</dt><dd>Base técnica: título, descripción, estructura y preparación para indexación.</dd><dt>Contacto</dt><dd>WhatsApp y formulario de contacto con destino acordado.</dd><dt>Gestión interna</dt><dd>Sin base de datos propia, dashboard ni editor de contenido.</dd></dl><a href="#plan-start">Ver alcance de START ↓</a></article>
+                        <article class="plan-compare-card"><h4>COMERCIAL · Estructura y medición</h4><span class="plan-compare-price">$400.000 CLP · pago único</span><p>Para explicar varios servicios y medir cómo te contactan.</p><dl><dt>Web pública</dt><dd>Hasta cinco páginas independientes, con navegación entre ellas.</dd><dt>SEO</dt><dd>Investigación inicial de búsquedas, metadatos por página, schema y sitemap.</dd><dt>Contacto y medición</dt><dd>Formulario a email y WhatsApp; GA4/GTM y eventos de contacto.</dd><dt>Gestión interna</dt><dd>Sin base de datos propia, dashboard ni editor de contenido.</dd></dl><a href="#plan-comercial">Ver alcance de COMERCIAL ↓</a></article>
+                    </div>
+                    <noscript><p>La comparación inicial está disponible arriba. Puedes consultar el alcance de los cinco planes a continuación.</p></noscript>
+                    <details><summary>¿Cuándo necesito backend y dashboard?</summary><p>Cuando necesitas guardar consultas y darles seguimiento dentro de un panel. GROWTH incorpora captura de contactos con origen de campaña y un dashboard básico. PRO añade gestión comercial por estados y un editor de contenido. Reservas, pagos, múltiples roles e integraciones se cotizan a medida.</p></details>
+                    <details><summary>¿SEO y marketing significan que tendré clientes garantizados?</summary><p>El SEO técnico permite que los buscadores puedan interpretar tu web. La estrategia organiza páginas según lo que busca tu público y la medición registra acciones. Los resultados también dependen de demanda, competencia, tráfico y atención comercial. Ningún plan garantiza posiciones en Google ni ventas; publicidad, presupuesto de anuncios y SEO mensual se cotizan aparte.</p></details>
+                    <details><summary>¿Un formulario requiere una cocina propia?</summary><p>Puede usar un proveedor externo para entregar el mensaje sin que tengas un backend propio. En START y COMERCIAL acordamos el destino del contacto. En GROWTH y PRO, además, la solicitud queda guardada en la base de datos del sistema para gestionarla desde tu panel.</p></details>
+                    <details><summary>¿Qué ocurre después de los 12 meses de hosting?</summary><p>El alcance publicado incluye configuración y hosting durante los primeros 12 meses. Antes de contratar, la propuesta debe indicar renovación, dominio, soporte, límites de uso y costes de servicios externos. El desarrollo se paga una vez; los servicios que se renuevan tienen sus propias condiciones.</p></details>
+                    <p class="plan-scope-note"><strong>Elige capacidad, no complejidad innecesaria.</strong> Cada plan tiene un alcance concreto. Confirmamos páginas, funciones, contenido, plazo y costes externos en la propuesta antes de comenzar.</p>
+                </div>
+
                 <div class="dossier-download-banner reveal">
                     <div class="dossier-banner-content">
                         <div class="dossier-icon-badge">
@@ -530,16 +612,29 @@
                 </div>
 
                 <!-- Grid de los 5 Planes -->
-                <div class="plans-grid">
+                <div class="plans-carousel" role="region" aria-roledescription="carrusel" aria-label="Planes y fichas técnicas">
+                    <div class="plans-carousel-controls" hidden>
+                        <button type="button" class="carousel-arrow" id="plan-prev" aria-label="Ver plan anterior" aria-controls="plans-track">←</button>
+                        <p id="plan-slide-status" aria-live="polite" aria-atomic="true">1 de 5 · START</p>
+                        <button type="button" class="carousel-arrow" id="plan-next" aria-label="Ver plan siguiente" aria-controls="plans-track">→</button>
+                    </div>
+                    <div class="plans-carousel-tabs" aria-label="Elegir plan" hidden>
+                        <button type="button" data-slide="start" aria-pressed="true">START</button>
+                        <button type="button" data-slide="comercial" aria-pressed="false">COMERCIAL</button>
+                        <button type="button" data-slide="growth" aria-pressed="false">GROWTH</button>
+                        <button type="button" data-slide="pro" aria-pressed="false">PRO</button>
+                        <button type="button" data-slide="medida" aria-pressed="false">A MEDIDA</button>
+                    </div>
+                    <div class="plans-grid" id="plans-track">
                     
                     <!-- PLAN 1: START ($200.000) -->
-                    <article class="plan-card reveal" data-plan="start">
+                    <article class="plan-card reveal" data-plan="start" id="plan-start">
                         <div class="plan-card-header">
                             <div class="plan-badge-row">
                                 <span class="plan-badge plan-badge-start">PLAN START</span>
                                 <span class="plan-payment-type">PAGO ÚNICO</span>
                             </div>
-                            <h3 class="plan-name">Landing de Alta Conversión</h3>
+                            <h3 class="plan-name">Landing enfocada en contacto</h3>
                             <p class="plan-tagline">Tu negocio necesita estar online y empezar a recibir contactos desde el primer día.</p>
                             <div class="plan-price-box">
                                 <span class="plan-currency">$</span>
@@ -548,7 +643,13 @@
                             </div>
                         </div>
 
-                        <div class="plan-card-body">
+                        <a class="plan-sheet-preview" href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072493/Plan_Start__Tu_Negocio_Online_i2eewf.png" target="_blank" rel="noopener" aria-label="Ampliar ficha del plan START">
+                            <img src="https://res.cloudinary.com/dhgifjpkh/image/upload/f_auto,q_auto,w_480/v1791072493/Plan_Start__Tu_Negocio_Online_i2eewf.png" alt="Vista previa de la ficha del plan START" width="320" height="480" loading="lazy" decoding="async">
+                            <span>Ampliar ficha ↗</span>
+                        </a>
+
+                        <details class="plan-card-body plan-scope-details">
+                            <summary>Ver qué incluye y qué queda fuera</summary>
                             <div class="plan-scope-summary">
                                 <strong>1 PÁGINA · 1 OBJETIVO · 1 INVERSIÓN</strong>
                             </div>
@@ -563,8 +664,8 @@
                                 <ul>
                                     <li><span class="check-icon">✓</span> <strong>1 Landing completa:</strong> Todo tu negocio en una sola página optimizada.</li>
                                     <li><span class="check-icon">✓</span> <strong>Diseño personalizado:</strong> 100% responsive (móvil, tablet y desktop).</li>
-                                    <li><span class="check-icon">✓</span> <strong>WhatsApp + Formulario:</strong> Recibe contactos directos desde el primer día.</li>
-                                    <li><span class="check-icon">✓</span> <strong>SEO técnico inicial:</strong> Lista para ser indexada y encontrada en Google.</li>
+                                    <li><span class="check-icon">✓</span> <strong>WhatsApp + Formulario:</strong> Canal de contacto con destino acordado antes de publicar.</li>
+                                    <li><span class="check-icon">✓</span> <strong>SEO técnico inicial:</strong> Metadatos y estructura preparados para indexación.</li>
                                     <li><span class="check-icon">✓</span> <strong>Optimización de velocidad:</strong> Carga rápida y experiencia fluida.</li>
                                     <li><span class="check-icon">✓</span> <strong>Hosting incluido 12 meses:</strong> Nosotros nos encargamos de la configuración.</li>
                                 </ul>
@@ -572,15 +673,15 @@
 
                             <div class="plan-excludes-box">
                                 <span class="excludes-title">No incluye:</span>
-                                <p>Backend, base de datos, CRM, login, ecommerce, automatizaciones complejas, SEO mensual ni publicidad pagada.</p>
+                                <p>Backend propio, base de datos, CRM, login, ecommerce, automatizaciones complejas, SEO mensual ni publicidad pagada.</p>
                             </div>
-                        </div>
+                        </details>
 
                         <div class="plan-card-footer">
                             <a href="https://wa.me/56961996576?text=Hola%20Israel%2C%20estuve%20revisando%20lagosolutions.cl%20y%20me%20interesa%20contratar%20el%20PLAN%20START%20(%24200.000)%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-plan-cta btn-plan-primary">
                                 QUIERO MI LANDING ↗
                             </a>
-                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1789532378/PLAN_200_ufnjq9.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-START-200K">
+                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072493/Plan_Start__Tu_Negocio_Online_i2eewf.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-START-200K">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                 Descargar Ficha HD
                             </a>
@@ -588,7 +689,7 @@
                     </article>
 
                     <!-- PLAN 2: COMERCIAL ($400.000) -->
-                    <article class="plan-card reveal" data-plan="comercial">
+                    <article class="plan-card reveal" data-plan="comercial" id="plan-comercial">
                         <div class="plan-card-header">
                             <div class="plan-badge-row">
                                 <span class="plan-badge plan-badge-comercial">PLAN COMERCIAL</span>
@@ -603,7 +704,13 @@
                             </div>
                         </div>
 
-                        <div class="plan-card-body">
+                        <a class="plan-sheet-preview" href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072493/Plan_Comercial__Web_para_Crecer_tkewfv.png" target="_blank" rel="noopener" aria-label="Ampliar ficha del plan COMERCIAL">
+                            <img src="https://res.cloudinary.com/dhgifjpkh/image/upload/f_auto,q_auto,w_480/v1791072493/Plan_Comercial__Web_para_Crecer_tkewfv.png" alt="Vista previa de la ficha del plan COMERCIAL" width="320" height="480" loading="lazy" decoding="async">
+                            <span>Ampliar ficha ↗</span>
+                        </a>
+
+                        <details class="plan-card-body plan-scope-details">
+                            <summary>Ver qué incluye y qué queda fuera</summary>
                             <div class="plan-scope-summary">
                                 <strong>MÁS OPORTUNIDADES · MÁS CONFIANZA · MÁS CRECIMIENTO</strong>
                             </div>
@@ -629,13 +736,13 @@
                                 <span class="excludes-title">No incluye:</span>
                                 <p>Dashboard interno, usuarios, base de datos propia, CRM, automatizaciones avanzadas ni integraciones complejas.</p>
                             </div>
-                        </div>
+                        </details>
 
                         <div class="plan-card-footer">
                             <a href="https://wa.me/56961996576?text=Hola%20Israel%2C%20estuve%20revisando%20lagosolutions.cl%20y%20me%20interesa%20el%20PLAN%20COMERCIAL%20(%24400.000)%20para%20mi%20empresa." target="_blank" rel="noopener" class="btn-plan-cta btn-plan-primary">
                                 QUIERO MI WEB COMERCIAL ↗
                             </a>
-                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1789532378/PLAN_400_rfqxku.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-COMERCIAL-400K">
+                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072493/Plan_Comercial__Web_para_Crecer_tkewfv.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-COMERCIAL-400K">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                 Descargar Ficha HD
                             </a>
@@ -643,7 +750,7 @@
                     </article>
 
                     <!-- PLAN 3: GROWTH ($700.000) -->
-                    <article class="plan-card reveal" data-plan="growth">
+                    <article class="plan-card reveal" data-plan="growth" id="plan-growth">
                         <div class="plan-card-header">
                             <div class="plan-badge-row">
                                 <span class="plan-badge plan-badge-growth">PLAN GROWTH</span>
@@ -658,7 +765,13 @@
                             </div>
                         </div>
 
-                        <div class="plan-card-body">
+                        <a class="plan-sheet-preview" href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072492/Plan_Growth__Sistema_Web_Para_Negocios_hv7cmg.png" target="_blank" rel="noopener" aria-label="Ampliar ficha del plan GROWTH">
+                            <img src="https://res.cloudinary.com/dhgifjpkh/image/upload/f_auto,q_auto,w_480/v1791072492/Plan_Growth__Sistema_Web_Para_Negocios_hv7cmg.png" alt="Vista previa de la ficha del plan GROWTH" width="320" height="480" loading="lazy" decoding="async">
+                            <span>Ampliar ficha ↗</span>
+                        </a>
+
+                        <details class="plan-card-body plan-scope-details">
+                            <summary>Ver qué incluye y qué queda fuera</summary>
                             <div class="plan-scope-summary">
                                 <strong>EMBUDO: VISITA → EXPLORA → FORMULARIO → LEAD EN DASHBOARD</strong>
                             </div>
@@ -672,7 +785,7 @@
                                 <span class="features-header">QUÉ INCLUYE ESTE SISTEMA:</span>
                                 <ul>
                                     <li><span class="check-icon">✓</span> <strong>Estrategia comercial inicial:</strong> Buyer persona, propuesta de valor y arquitectura.</li>
-                                    <li><span class="check-icon">✓</span> <strong>Hasta 8–10 páginas:</strong> Inicio, servicios, nosotros, casos, blog, FAQ y contacto.</li>
+                                    <li><span class="check-icon">✓</span> <strong>Hasta 10 páginas:</strong> Inicio, servicios, nosotros, casos, blog, FAQ y contacto.</li>
                                     <li><span class="check-icon">✓</span> <strong>SEO estratégico:</strong> Estructura por intención de búsqueda y schema avanzado.</li>
                                     <li><span class="check-icon">✓</span> <strong>Analítica avanzada:</strong> Medición de conversiones, eventos de botón y canales.</li>
                                     <li><span class="check-icon">✓</span> <strong>Backend ligero + Base de datos:</strong> Captura y almacenamiento de leads con UTMs.</li>
@@ -685,13 +798,13 @@
                                 <span class="excludes-title">No incluye:</span>
                                 <p>Pasarela de pago ecommerce, CRM multi-usuario con roles, automatizaciones complejas de correo ni pauta publicitaria.</p>
                             </div>
-                        </div>
+                        </details>
 
                         <div class="plan-card-footer">
                             <a href="https://wa.me/56961996576?text=Hola%20Israel%2C%20estuve%20revisando%20lagosolutions.cl%20y%20me%20interesa%20el%20PLAN%20GROWTH%20(%24700.000)%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-plan-cta btn-plan-primary">
                                 QUIERO MI SISTEMA WEB ↗
                             </a>
-                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1789532384/PLAN_700_msu6sy.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-GROWTH-700K">
+                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072492/Plan_Growth__Sistema_Web_Para_Negocios_hv7cmg.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-GROWTH-700K">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                 Descargar Ficha HD
                             </a>
@@ -699,7 +812,7 @@
                     </article>
 
                     <!-- PLAN 4: PRO (DESTACADO / RECOMENDADO) -->
-                    <article class="plan-card plan-card-featured reveal" data-plan="pro">
+                    <article class="plan-card plan-card-featured reveal" data-plan="pro" id="plan-pro">
                         <div class="plan-featured-ribbon">SISTEMA COMPLETO RECOMENDADO</div>
                         <div class="plan-card-header">
                             <div class="plan-badge-row">
@@ -707,7 +820,7 @@
                                 <span class="plan-payment-type">PAGO ÚNICO</span>
                             </div>
                             <h3 class="plan-name">Plataforma Web Comercial</h3>
-                            <p class="plan-tagline">Todo lo que necesitas para atraer, convertir y gestionar oportunidades con CMS y control de leads.</p>
+                            <p class="plan-tagline">Una web con panel comercial y editor de contenido para gestionar consultas y publicar con autonomía.</p>
                             <div class="plan-price-box">
                                 <span class="plan-currency">$</span>
                                 <span class="plan-amount">1.000.000</span>
@@ -715,9 +828,15 @@
                             </div>
                         </div>
 
-                        <div class="plan-card-body">
+                        <a class="plan-sheet-preview" href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072492/Plataforma_Pro_para_negocios_digitales_jsmfeg.png" target="_blank" rel="noopener" aria-label="Ampliar ficha del plan PRO">
+                            <img src="https://res.cloudinary.com/dhgifjpkh/image/upload/f_auto,q_auto,w_480/v1791072492/Plataforma_Pro_para_negocios_digitales_jsmfeg.png" alt="Vista previa de la ficha del plan PRO" width="320" height="480" loading="lazy" decoding="async">
+                            <span>Ampliar ficha ↗</span>
+                        </a>
+
+                        <details class="plan-card-body plan-scope-details">
+                            <summary>Ver qué incluye y qué queda fuera</summary>
                             <div class="plan-scope-summary plan-scope-featured">
-                                <strong>MÁS CONTROL · MÁS CLIENTES · MÁS CRECIMIENTO</strong>
+                                <strong>GESTIÓN DE CONSULTAS · CONTENIDO · TRAZABILIDAD</strong>
                             </div>
 
                             <div class="plan-ideal-for">
@@ -729,12 +848,12 @@
                                 <span class="features-header">QUÉ INCLUYE ESTE SISTEMA:</span>
                                 <ul>
                                     <li><span class="check-icon">✓</span> <strong>Estrategia comercial completa:</strong> Propuesta de valor, customer journey y arquitectura.</li>
-                                    <li><span class="check-icon">✓</span> <strong>Hasta 8–10 páginas:</strong> Estructura integral optimizada para conversión.</li>
+                                    <li><span class="check-icon">✓</span> <strong>Hasta 10 páginas:</strong> Estructura integral optimizada para conversión.</li>
                                     <li><span class="check-icon">✓</span> <strong>SEO estratégico avanzado:</strong> Intención de búsqueda y optimización técnica profunda.</li>
                                     <li><span class="check-icon">✓</span> <strong>Analítica avanzada:</strong> Formularios, WhatsApp, llamadas y trazabilidad de origen (Google, Instagram, UTM).</li>
                                     <li><span class="check-icon">✓</span> <strong>Backend + Base de datos:</strong> Almacenamiento seguro con registro y trazabilidad de campañas.</li>
                                     <li><span class="check-icon">✓</span> <strong>Dashboard comercial:</strong> Login privado, gestión de leads con estados (Nuevo, Contactado, Cotizado, Ganado).</li>
-                                    <li><span class="check-icon">✓</span> <strong>Panel de contenido (CMS):</strong> Publica y edita artículos/páginas sin depender de nadie.</li>
+                                    <li><span class="check-icon">✓</span> <strong>Panel de contenido (CMS):</strong> Publica y edita los contenidos definidos en el alcance.</li>
                                     <li><span class="check-icon">✓</span> <strong>Seguridad, testing & hosting 12 meses:</strong> Backups automáticos y dominio a tu nombre.</li>
                                 </ul>
                             </div>
@@ -743,13 +862,13 @@
                                 <span class="excludes-title">No incluye:</span>
                                 <p>Pasarela de venta online compleja (ecommerce multi-producto), usuarios ilimitados ni pauta publicitaria.</p>
                             </div>
-                        </div>
+                        </details>
 
                         <div class="plan-card-footer">
                             <a href="https://wa.me/56961996576?text=Hola%20Israel%2C%20estuve%20revisando%20lagosolutions.cl%20y%20quiero%20cotizar%20el%20PLAN%20PRO%20(%241.000.000)%20con%20CMS%20y%20Dashboard." target="_blank" rel="noopener" class="btn-plan-cta btn-plan-featured">
                                 QUIERO MI PLATAFORMA WEB ↗
                             </a>
-                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1789532379/PLAN_1000_pfhnsa.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-PRO-1M">
+                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072492/Plataforma_Pro_para_negocios_digitales_jsmfeg.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PLAN-PRO-1M">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                 Descargar Ficha HD
                             </a>
@@ -757,14 +876,14 @@
                     </article>
 
                     <!-- PLAN 5: A MEDIDA (DESDE $1.500.000) -->
-                    <article class="plan-card plan-card-custom reveal" data-plan="medida">
+                    <article class="plan-card plan-card-custom reveal" data-plan="medida" id="plan-medida">
                         <div class="plan-card-header">
                             <div class="plan-badge-row">
                                 <span class="plan-badge plan-badge-custom">PROYECTO A MEDIDA</span>
                                 <span class="plan-payment-type">COTIZACIÓN</span>
                             </div>
                             <h3 class="plan-name">Software & Plataformas</h3>
-                            <p class="plan-tagline">Soluciones sin límites para requerimientos operativos complejos: CRM, reservas, integraciones API o SaaS.</p>
+                            <p class="plan-tagline">Soluciones a medida para requerimientos operativos complejos: CRM, reservas, integraciones API o SaaS.</p>
                             <div class="plan-price-box">
                                 <span class="plan-custom-prefix">DESDE</span>
                                 <span class="plan-amount">$1.500.000</span>
@@ -772,7 +891,13 @@
                             </div>
                         </div>
 
-                        <div class="plan-card-body">
+                        <a class="plan-sheet-preview" href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072492/Soluciones_Digitales_a_Medida_dhwyyn.png" target="_blank" rel="noopener" aria-label="Ampliar ficha del plan A MEDIDA">
+                            <img src="https://res.cloudinary.com/dhgifjpkh/image/upload/f_auto,q_auto,w_480/v1791072492/Soluciones_Digitales_a_Medida_dhwyyn.png" alt="Vista previa de la ficha del plan A MEDIDA" width="320" height="480" loading="lazy" decoding="async">
+                            <span>Ampliar ficha ↗</span>
+                        </a>
+
+                        <details class="plan-card-body plan-scope-details">
+                            <summary>Ver qué incluye y qué queda fuera</summary>
                             <div class="plan-scope-summary">
                                 <strong>ESCALABLE · SEGURO · ORIENTADO A RESULTADOS</strong>
                             </div>
@@ -800,19 +925,20 @@
                                 <span class="process-mini-title">Proceso de 5 etapas:</span>
                                 <p>1. Analizamos → 2. Diseñamos → 3. Desarrollamos → 4. Probamos → 5. Lanzamos</p>
                             </div>
-                        </div>
+                        </details>
 
                         <div class="plan-card-footer">
                             <a href="https://wa.me/56961996576?text=Hola%20Israel%2C%20tengo%20un%20proyecto%20a%20medida%20que%20quisiera%20evaluar%20con%20LAGOSOLUTIONS." target="_blank" rel="noopener" class="btn-plan-cta btn-plan-custom-cta">
                                 HABLEMOS DE TU PROYECTO ↗
                             </a>
-                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1789532378/PLAN_1500_xteata.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PROYECTO-A-MEDIDA-1.5M">
+                            <a href="https://res.cloudinary.com/dhgifjpkh/image/upload/v1791072492/Soluciones_Digitales_a_Medida_dhwyyn.png" target="_blank" rel="noopener" class="btn-plan-cta btn-plan-download" data-plan-name="PROYECTO-A-MEDIDA-1.5M">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                 Descargar Ficha HD
                             </a>
                         </div>
                     </article>
 
+                    </div>
                 </div>
             </div>
         </section>
@@ -981,7 +1107,7 @@
                     <p class="process-lead-text">
                         Para quienes desean conocer nuestro proceso en detalle, mostramos la metodología completa de 10 etapas.
                     </p>
-                    <button type="button" id="toggle-10-steps-btn" class="btn-pill-outline" style="margin-top: 16px;">
+                    <button type="button" id="toggle-10-steps-btn" aria-expanded="false" aria-controls="ten-steps-container" class="btn-pill-outline" style="margin-top: 16px;">
                         Ver / Ocultar el Proceso Completo de 10 Etapas
                     </button>
                 </div>
@@ -1348,6 +1474,12 @@
                     <a href="#contacto">Solicitar Diagnóstico</a>
                 </div>
                 
+                <p class="footer-contact">
+                    <a href="mailto:info@lagosolutions.cl">info@lagosolutions.cl</a>
+                    <span aria-hidden="true"> · </span>
+                    <a href="tel:+56961996576">+56 9 6199 6576</a>
+                </p>
+
                 <p style="opacity: 0.6;">&copy; 2026 LAGOSOLUTIONS. Todos los derechos reservados.</p>
             </div>
         </div>
@@ -1372,12 +1504,12 @@
         <form class="lead-form" id="real-diagnostic-form" action="#" method="POST">
             <div class="input-wrapper">
                 <label for="modal-name" class="sr-only">Nombre Completo</label>
-                <input type="text" id="modal-name" name="name" placeholder="Nombre completo" required>
+                <input type="text" id="modal-name" name="name" placeholder="Nombre completo" autocomplete="name" maxlength="120" required>
             </div>
 
             <div class="input-wrapper">
                 <label for="modal-company" class="sr-only">Nombre de la Empresa</label>
-                <input type="text" id="modal-company" name="company" placeholder="Nombre de su empresa" required>
+                <input type="text" id="modal-company" name="company" placeholder="Nombre de su empresa" autocomplete="organization" maxlength="150" required>
             </div>
 
             <div class="input-wrapper">
@@ -1387,14 +1519,14 @@
 
             <div class="input-wrapper">
                 <label for="modal-email" class="sr-only">Email / WhatsApp de Contacto</label>
-                <input type="text" id="modal-email" name="email" placeholder="Email o WhatsApp de contacto" required>
+                <input type="text" id="modal-email" name="email" placeholder="Email o WhatsApp de contacto" maxlength="150" required>
             </div>
 
             <div class="input-wrapper">
                 <label for="modal-plan" class="form-label-bold">Plan o solución de interés preliminar:</label>
                 <select id="modal-plan" name="plan" class="b2b-select">
                     <option value="Sin definir / Necesito evaluación previa" selected>⭐ Sin definir / Necesito evaluación y diagnóstico previo</option>
-                    <option value="PLAN START ($200.000) — Landing de Alta Conversión">PLAN START ($200.000) — Landing de Alta Conversión</option>
+                    <option value="PLAN START ($200.000) — Landing enfocada en contacto">PLAN START ($200.000) — Landing enfocada en contacto</option>
                     <option value="PLAN COMERCIAL ($400.000) — Web Corporativa (Hasta 5 págs)">PLAN COMERCIAL ($400.000) — Web Corporativa (Hasta 5 págs)</option>
                     <option value="PLAN GROWTH ($700.000) — Sistema Web + Leads">PLAN GROWTH ($700.000) — Sistema Web + Base de Datos Leads</option>
                     <option value="PLAN PRO ($1.000.000) — Plataforma Comercial + CMS + Dashboard">PLAN PRO ($1.000.000) — Plataforma Comercial + CMS + Dashboard</option>
@@ -1405,8 +1537,8 @@
             <div class="input-wrapper">
                 <label for="modal-channel" class="form-label-bold">Canal preferido de contacto:</label>
                 <select id="modal-channel" name="channel" class="b2b-select" required>
-                    <option value="WhatsApp" selected>WhatsApp (Abriremos el canal oficial para coordinar)</option>
-                    <option value="Email">Email Corporativo (Le responderemos por correo con información previa)</option>
+                    <option value="WhatsApp" selected>WhatsApp (Prepararemos el mensaje para enviar)</option>
+                    <option value="Email">Email (Prepararemos un correo para que lo envíes)</option>
                 </select>
             </div>
 
@@ -1438,7 +1570,7 @@
             <!-- Mensaje de Feedback Real -->
             <div id="form-feedback-msg" class="form-feedback-msg hidden" aria-live="polite"></div>
         </form>
-        <p class="modal-footer-text">✓ Conversación inicial confidencial y sin compromiso comercial.</p>
+        <p class="modal-footer-text">El formulario prepara tu mensaje. Debes enviarlo desde WhatsApp o tu aplicación de correo. Conversación inicial sin compromiso.</p>
     </dialog>
 
     <!-- GSAP & ScrollTrigger CDN (Capa de Mejora Progresiva Opcional) -->
@@ -1446,12 +1578,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
     <!-- MÓDULOS INDEPENDIENTES V3.1 -->
-    <script src="js/hero-system-canvas.js?v=3.1.0" defer></script>
+    <script src="js/hero-system-canvas.js?v=3.3.0" defer></script>
     <script src="js/kinetic-type.js?v=3.1.0" defer></script>
     <script src="js/causal-chain-draw.js?v=3.1.0" defer></script>
 
+    <script src="js/plan-comparison.js?v=1.0.0" defer></script>
+    <script src="js/plan-carousel.js?v=1.0.0" defer></script>
+
     <!-- SCRIPT PRINCIPAL CORE -->
-    <script src="script.js?v=3.1.0" defer></script>
+    <script src="script.js?v=3.3.0" defer></script>
 </body>
 
 </html>

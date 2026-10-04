@@ -367,7 +367,7 @@ svg {
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
     gap: 48px;
     align-items: center;
 }
@@ -2078,9 +2078,10 @@ dialog {
     background-color: var(--bg-white);
     color: var(--color-navy);
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    margin: auto;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
     z-index: 2000;
 }
 
@@ -2220,8 +2221,8 @@ input:focus, .b2b-select:focus, .b2b-textarea:focus {
 
 /* 20. ANIMACIONES REVEAL AL SCROLL */
 .reveal {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2233,16 +2234,16 @@ input:focus, .b2b-select:focus, .b2b-textarea:focus {
 /* Modal Entry Animations */
 dialog[open] {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
     @starting-style {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(0.95);
+        transform: scale(0.95);
     }
 }
 
 dialog {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.95);
+    transform: scale(0.95);
     transition: opacity 0.3s, transform 0.3s, display 0.3s allow-discrete, overlay 0.3s allow-discrete;
 }
 
@@ -2308,7 +2309,7 @@ dialog {
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
     .nav-menu, .nav-cta {
         display: none;
     }
@@ -2464,4 +2465,65 @@ dialog {
     .causal-chain-flow {
         font-size: 0.72rem;
     }
+}
+
+/* Plan education and first-delivery usability fixes */
+.hero-container > *, .hero-visual-wrapper, .hero-system-canvas-box { min-width: 0; }
+#hero-system-canvas { max-width: 100%; }
+.hero-title, .hero-subtitle { overflow-wrap: break-word; }
+.modal-header { padding-right: 24px; }
+.modal-close-btn { width: 44px; height: 44px; top: 8px; right: 8px; }
+:where(a, button, select, input, textarea, summary):focus-visible { outline: 3px solid #2d6bff; outline-offset: 4px; }
+.footer-contact a { color: #cbd5e1; }
+.form-feedback-msg a { display: inline-block; padding: 10px 14px; margin-top: 8px; color: #060f22; background: #fff; border: 1px solid currentColor; border-radius: 8px; }
+.form-feedback-msg.error { background: #fff1f2; color: #9f1239; }
+.plan-learning { margin: 28px 0 36px; padding: clamp(20px, 4vw, 36px); border: 1px solid var(--border-light); border-radius: 20px; background: #fff; color: #060f22; }
+.plan-learning h3 { font-family: var(--font-serif); font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.3; margin-bottom: 12px; }
+.plan-learning h4 { margin-bottom: 8px; }
+.plan-learning p { margin-bottom: 12px; }
+.plan-learning-intro { max-width: 760px; }
+.restaurant-grid, .plan-compare-grid, .plan-compare-selects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 20px 0; }
+.restaurant-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.restaurant-grid article, .plan-compare-card { padding: 20px; border-radius: 12px; background: #f1f5f9; min-width: 0; }
+.restaurant-grid span, .plan-compare-price { display: block; font-weight: 800; color: #137752; margin-bottom: 8px; }
+.plan-compare-selects label { font-weight: 700; display: grid; gap: 8px; }
+.plan-compare-selects select { width: 100%; padding: 12px; font: inherit; border: 1px solid #94a3b8; background: #fff; border-radius: 8px; }
+.plan-compare-card dl { margin: 16px 0; }
+.plan-compare-card dt { font-weight: 700; margin-top: 14px; }
+.plan-compare-card dd { margin: 4px 0 0; color: #334155; }
+.plan-learning details { border-top: 1px solid #cbd5e1; padding: 16px 0; }
+.plan-learning summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+.plan-learning details p { margin-top: 12px; }
+.plan-scope-note { padding: 16px; border-left: 3px solid #137752; background: #e8f4f0; }
+@media (max-width: 640px) {
+    .restaurant-grid, .plan-compare-grid, .plan-compare-selects { grid-template-columns: minmax(0, 1fr); }
+    .plan-learning { padding: 20px 16px; }
+    .footer-contact { display: grid; gap: 8px; }
+    .footer-contact span { display: none; }
+}
+
+/* One plan at a time; all cards remain available if JavaScript is disabled. */
+.plans-carousel [hidden] { display: none !important; }
+.plans-carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 24px 0 12px; }
+.plans-carousel-controls p { font-weight: 700; color: var(--color-navy); }
+.carousel-arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #cbd5e1; background: #fff; font-size: 1.5rem; color: #060f22; cursor: pointer; }
+.plans-carousel-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.plans-carousel-tabs button { padding: 12px 18px; border: 1px solid #cbd5e1; border-radius: 30px; background: #fff; color: #060f22; font: inherit; font-weight: 700; cursor: pointer; }
+.plans-carousel-tabs button[aria-pressed="true"] { background: #060f22; color: #fff; border-color: #060f22; }
+.plans-carousel.is-carousel .plans-grid { display: block; }
+.plans-carousel.is-carousel .plan-card { display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: start; column-gap: 36px; row-gap: 24px; }
+.plans-carousel .plan-card:hover { transform: none; }
+.plan-sheet-preview { display: grid; justify-items: center; gap: 12px; color: #2d6bff; font-weight: 700; text-decoration: none; }
+.plan-sheet-preview img { width: 100%; max-width: 250px; height: 330px; object-fit: contain; border-radius: 12px; background: #eef2f7; }
+.plan-sheet-preview span { padding: 8px; }
+.plans-carousel.is-carousel .plan-scope-details, .plans-carousel.is-carousel .plan-card-footer { grid-column: 1 / -1; }
+.plan-scope-details summary { padding: 16px 0; font-weight: 700; cursor: pointer; color: #060f22; }
+.plan-scope-details[open] summary { margin-bottom: 16px; }
+.plans-carousel.is-carousel .plan-card-footer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.plan-card[id] { scroll-margin-top: 100px; }
+@media (max-width: 640px) {
+    .plans-carousel.is-carousel .plan-card { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .plans-carousel.is-carousel .plan-card-footer { grid-template-columns: minmax(0, 1fr); }
+    .plan-sheet-preview img { height: 240px; max-width: 180px; }
+    .plans-carousel-tabs button { padding: 10px 12px; font-size: 0.8rem; }
 }

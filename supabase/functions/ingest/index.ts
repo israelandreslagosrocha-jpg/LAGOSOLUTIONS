@@ -132,7 +132,7 @@ async function sendAlertEmail(lead: IngestPayload, resendApiKey: string | undefi
             },
             body: JSON.stringify({
                 from: "LAGOSOLUTIONS Alertas <alertas@lagosolutions.cl>",
-                to: [Deno.env.get("INTERNAL_ALERT_EMAIL") || "contacto@lagosolutions.cl"],
+                to: [Deno.env.get("INTERNAL_ALERT_EMAIL") || "info@lagosolutions.cl"],
                 subject: `[NUEVO LEAD B2B] ${lead.company} — ${lead.name}`,
                 html: `
                     <h2>Nueva Solicitud de Diagnóstico</h2>

@@ -168,7 +168,12 @@ export async function handleIngestRequest(req, dbClient = null, emailClient = nu
     }
 
     // 3. Validación de Esquema con Zod/Sanitizer
-    const bodyData = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
+    let bodyData;
+    try {
+        bodyData = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
+    } catch {
+        return { status: 400, body: { success: false, error: 'JSON malformado.' } };
+    }
     const validation = validateLeadPayload(bodyData);
     if (!validation.isValid) {
         return {
@@ -177,11 +182,18 @@ export async function handleIngestRequest(req, dbClient = null, emailClient = nu
         };
     }
 
+    if (!dbClient || typeof dbClient.rpc !== 'function') {
+        return {
+            status: 503,
+            body: { success: false, error: 'El registro de solicitudes no está disponible en este momento.' }
+        };
+    }
+
     const clean = validation.sanitizedData;
     const idempotencyHash = generateIdempotencyHash(clean.company, clean.email, clean.goal);
 
     try {
-        let leadId = `lead_mock_${Date.now()}`;
+        let leadId;
         let status = 'LEAD_CREATED';
 
         // 4. Inserción en Base de Datos PostgreSQL si existe cliente conectado
@@ -214,7 +226,7 @@ export async function handleIngestRequest(req, dbClient = null, emailClient = nu
         if (emailClient && status === 'LEAD_CREATED') {
             const alert = buildAlertEmailContent(clean);
             await emailClient.send({
-                to: process.env.INTERNAL_ALERT_EMAIL || 'consultor@lagosolutions.cl',
+                to: process.env.INTERNAL_ALERT_EMAIL || 'info@lagosolutions.cl',
                 subject: alert.subject,
                 html: alert.html
             }).catch(err => console.error('[EMAIL_ALERT_ERROR]', err));

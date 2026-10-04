@@ -3,18 +3,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================
-    // 1. INPUT SANITIZATION UTILITY (XSS Prevention)
+    // 1. INPUT NORMALIZATION (encode when constructing contact URLs)
     // ==========================================
-    const sanitizeInput = (str) => {
-        if (typeof str !== 'string') return '';
-        return str.trim()
-                  .replace(/&/g, "&amp;")
-                  .replace(/</g, "&lt;")
-                  .replace(/>/g, "&gt;")
-                  .replace(/"/g, "&quot;")
-                  .replace(/'/g, "&#x27;")
-                  .replace(/\//g, "&#x2F;");
-    };
+    const normalizeInput = (str) => typeof str === 'string' ? str.trim() : '';
 
     // ==========================================
     // 2. NATIVE MODAL DIALOG MANAGER & STICKY CTA HIDING
@@ -91,19 +82,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const openMobileDrawer = () => {
         if (mobileDrawer) {
+            mobileDrawer.inert = false;
             mobileDrawer.classList.add("active");
             mobileDrawer.setAttribute("aria-hidden", "false");
             if (mobileMenuBtn) mobileMenuBtn.setAttribute("aria-expanded", "true");
             document.body.style.overflow = "hidden";
+            document.querySelector("main").inert = true;
+            document.querySelector(".navbar").inert = true;
+            document.querySelector("footer").inert = true;
+            if (stickyCta) stickyCta.inert = true;
+            mobileDrawerClose?.focus();
         }
     };
 
     const closeMobileDrawer = () => {
         if (mobileDrawer && mobileDrawer.classList.contains("active")) {
             mobileDrawer.classList.remove("active");
+            mobileDrawer.inert = true;
+            document.querySelector("main").inert = false;
+            document.querySelector(".navbar").inert = false;
+            document.querySelector("footer").inert = false;
+            if (stickyCta) stickyCta.inert = false;
             mobileDrawer.setAttribute("aria-hidden", "true");
             if (mobileMenuBtn) mobileMenuBtn.setAttribute("aria-expanded", "false");
             document.body.style.overflow = "";
+            mobileMenuBtn?.focus();
         }
     };
 
@@ -122,6 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("keydown", (e) => {
+        if (e.key === 'Tab' && mobileDrawer?.classList.contains('active')) {
+            const targets = [...mobileDrawer.querySelectorAll('button, a[href]')];
+            const first = targets[0], last = targets[targets.length - 1];
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
         if (e.key === "Escape") {
             closeMobileDrawer();
         }
@@ -137,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggle10StepsBtn.addEventListener("click", () => {
             tenStepsContainer.classList.toggle("hidden-steps");
             const isHidden = tenStepsContainer.classList.contains("hidden-steps");
+            toggle10StepsBtn.setAttribute("aria-expanded", String(!isHidden));
             toggle10StepsBtn.textContent = isHidden ? 
                 "Ver / Ocultar el Proceso Completo de 10 Etapas" : 
                 "Ocultar el Proceso de 10 Etapas";
@@ -149,6 +159,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const caseTabs = document.querySelectorAll(".case-tab");
     if (caseTabs.length > 0) {
         caseTabs.forEach(tab => {
+            tab.tabIndex = tab.classList.contains('active') ? 0 : -1;
+            tab.addEventListener('keydown', (e) => {
+                const siblings = [...tab.parentElement.querySelectorAll('.case-tab')];
+                const index = siblings.indexOf(tab);
+                let next;
+                if (e.key === 'ArrowRight') next = siblings[(index + 1) % siblings.length];
+                if (e.key === 'ArrowLeft') next = siblings[(index - 1 + siblings.length) % siblings.length];
+                if (e.key === 'Home') next = siblings[0];
+                if (e.key === 'End') next = siblings[siblings.length - 1];
+                if (next) { e.preventDefault(); next.click(); next.focus(); }
+            });
             tab.addEventListener("click", () => {
                 const cardId = tab.getAttribute("data-card");
                 const state = tab.getAttribute("data-state");
@@ -157,9 +178,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 siblingTabs.forEach(t => {
                     t.classList.remove("active");
                     t.setAttribute("aria-selected", "false");
+                    t.tabIndex = -1;
                 });
                 tab.classList.add("active");
                 tab.setAttribute("aria-selected", "true");
+                tab.tabIndex = 0;
 
                 const cardElement = document.getElementById(`card-${cardId}`);
                 if (cardElement) {
@@ -299,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const feedbackMsg = document.getElementById("form-feedback-msg");
 
     if (realForm) {
-        realForm.addEventListener("submit", (e) => {
+        realForm.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             const nameInput = realForm.querySelector('input[name="name"]');
@@ -311,15 +334,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const problemInput = realForm.querySelector('textarea[name="problem"]');
             const submitBtn = document.getElementById("submit-form-btn");
 
-            const name = sanitizeInput(nameInput ? nameInput.value : "");
-            const company = sanitizeInput(companyInput ? companyInput.value : "");
-            const website = sanitizeInput(websiteInput ? websiteInput.value : "");
-            const email = sanitizeInput(emailInput ? emailInput.value : "");
+            const name = normalizeInput(nameInput ? nameInput.value : "");
+            const company = normalizeInput(companyInput ? companyInput.value : "");
+            const website = normalizeInput(websiteInput ? websiteInput.value : "");
+            const email = normalizeInput(emailInput ? emailInput.value : "");
             const planInput = document.getElementById("modal-plan");
-            const plan = sanitizeInput(planInput ? planInput.value : "Sin definir / Necesito evaluación previa");
-            const channel = sanitizeInput(channelInput ? channelInput.value : "WhatsApp");
-            const goal = sanitizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro. Quiero entender primero qué necesita mi empresa");
-            const problem = sanitizeInput(problemInput ? problemInput.value : "");
+            const plan = normalizeInput(planInput ? planInput.value : "Sin definir / Necesito evaluación previa");
+            const channel = normalizeInput(channelInput ? channelInput.value : "WhatsApp");
+            const goal = normalizeInput(goalInput ? goalInput.value : "⭐ No estoy seguro. Quiero entender primero qué necesita mi empresa");
+            const problem = normalizeInput(problemInput ? problemInput.value : "");
 
             // Captura de UTMs y fuente de la URL
             const urlParams = new URLSearchParams(window.location.search);
@@ -332,68 +355,62 @@ document.addEventListener("DOMContentLoaded", () => {
                 channel,
                 goal,
                 problem,
-                source: urlParams.get('source') || (document.referrer ? 'GOOGLE_ORGANIC_SEO' : 'UNKNOWN'),
+                source: urlParams.get('source') || 'UNKNOWN',
                 utm_source: urlParams.get('utm_source') || '',
                 utm_medium: urlParams.get('utm_medium') || '',
                 utm_campaign: urlParams.get('utm_campaign') || ''
             };
 
-            // Ingesta Asíncrona Segura (No bloquea la experiencia del usuario)
-            if (window.LAGOSOLUTIONS_API_URL) {
-                fetch(window.LAGOSOLUTIONS_API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(leadPayload)
-                }).catch(err => console.warn('[INGEST_FALLBACK] Registro local continuado.', err));
-            }
+            const message = `SOLICITUD DE DIAGNÓSTICO Y COTIZACIÓN — LAGOSOLUTIONS\n\nNombre: ${name}\nEmpresa: ${company}\nContacto: ${email}\nPlan: ${plan}\nCanal: ${channel}\nSitio web: ${website || 'No especificado'}\nObjetivo: ${goal}\nContexto: ${problem}`;
+            const contactUrl = channel === 'Email'
+                ? `mailto:info@lagosolutions.cl?subject=${encodeURIComponent('Consulta de proyecto — LAGOSOLUTIONS')}&body=${encodeURIComponent(message)}`
+                : `https://wa.me/56961996576?text=${encodeURIComponent(message)}`;
 
-            const messageBody = `*SOLICITUD DE DIAGNÓSTICO & COTIZACIÓN - LAGOSOLUTIONS*%0A%0A` +
-                `*Nombre:* ${encodeURIComponent(name)}%0A` +
-                `*Empresa:* ${encodeURIComponent(company)}%0A` +
-                `*Contacto:* ${encodeURIComponent(email)}%0A` +
-                `*Plan de Interés:* ${encodeURIComponent(plan)}%0A` +
-                `*Canal Preferido:* ${encodeURIComponent(channel)}%0A` +
-                `*Sitio Web:* ${encodeURIComponent(website || "No especificado")}%0A` +
-                `*Objetivo:* ${encodeURIComponent(goal)}%0A` +
-                `*Contexto Actual:* ${encodeURIComponent(problem)}`;
+            const showFeedback = (text, kind, linkText) => {
+                if (!feedbackMsg) return;
+                feedbackMsg.className = `form-feedback-msg ${kind}`;
+                feedbackMsg.replaceChildren(document.createTextNode(text));
+                const link = document.createElement('a');
+                link.href = contactUrl;
+                link.textContent = linkText;
+                if (channel === 'WhatsApp') {
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                }
+                feedbackMsg.append(document.createElement('br'), link);
+            };
+
+            if (!window.LAGOSOLUTIONS_API_URL) {
+                showFeedback('Mensaje preparado. Aún no se ha enviado: abre tu canal y confirma el envío. Tus datos permanecen aquí.', 'success', channel === 'Email' ? 'Abrir correo a info@lagosolutions.cl' : 'Abrir WhatsApp y enviar');
+                feedbackMsg?.scrollIntoView({ block: 'nearest' });
+                return;
+            }
 
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerText = "PROCESANDO SOLICITUD...";
-                submitBtn.style.opacity = "0.75";
+                submitBtn.textContent = 'ENVIANDO SOLICITUD…';
             }
-
-            if (feedbackMsg) {
-                feedbackMsg.classList.remove("hidden");
-                feedbackMsg.classList.add("success");
-                if (channel === "Email") {
-                    feedbackMsg.innerHTML = "✓ <strong>Solicitud registrada.</strong> Revisaremos su contexto y le responderemos vía Email Corporativo a la brevedad.<br><span style='font-size: 0.8rem;'>[REVISAREMOS SU CONSULTA POR EMAIL]</span>";
-                } else {
-                    feedbackMsg.innerHTML = "✓ <strong>Solicitud preparada.</strong> Abriendo canal de WhatsApp para coordinar la conversación...<br><span style='font-size: 0.8rem;'>[ABRIENDO WHATSAPP]</span>";
+            try {
+                const response = await fetch(window.LAGOSOLUTIONS_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(leadPayload),
+                    signal: AbortSignal.timeout(15000)
+                });
+                const result = await response.json();
+                if (!response.ok || result.success !== true || !result.lead_id) {
+                    throw new Error('No se confirmó el registro');
                 }
-            }
-
-            setTimeout(() => {
-                if (channel === "WhatsApp") {
-                    const whatsappNumber = "56961996576";
-                    const waUrl = `https://wa.me/${whatsappNumber}?text=${messageBody}`;
-                    window.open(waUrl, "_blank");
-                }
-
-                realForm.reset();
+                showFeedback('Solicitud recibida y registrada. Puedes continuar la conversación por tu canal preferido.', 'success', channel === 'Email' ? 'Continuar por correo' : 'Continuar por WhatsApp');
+            } catch {
+                showFeedback('No pudimos confirmar la recepción. Conservamos tus datos para reintentar; también puedes enviarnos el mensaje directamente.', 'error', channel === 'Email' ? 'Enviar por correo' : 'Enviar por WhatsApp');
+            } finally {
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.innerText = "SOLICITAR DIAGNÓSTICO";
-                    submitBtn.style.opacity = "1";
+                    submitBtn.textContent = 'SOLICITAR DIAGNÓSTICO';
                 }
+            }
 
-                setTimeout(() => {
-                    if (feedbackMsg) feedbackMsg.classList.add("hidden");
-                    if (dialog && dialog.open) {
-                        dialog.close();
-                    }
-                }, 2500);
-            }, 1000);
         });
     }
 
