@@ -171,3 +171,7 @@ Revisar semanalmente captación y fallos del embudo. Evaluar evolución orgánic
 ## Límites del análisis
 
 Sin datos históricos de Search Console, Bing, analítica, CRM, ingresos, backlinks o pruebas con compradores, no se pueden atribuir tasas de conversión ni cuantificar retorno. No se realizó un pentest ni una medición válida de Core Web Vitals. La guía privada RANKEAR no pudo leerse. La investigación justifica las prioridades propuestas; los resultados deben validarse con datos reales.
+
+## Actualización después de comenzar la implementación
+
+Se verificó la propiedad en Search Console y se envió el sitemap correctamente. La inspección ya confirma «Descubierta: actualmente sin indexar», con último rastreo N/D. La prueba publicada permite indexación y Google aceptó la solicitud de rastreo prioritario. Los datos agregados siguen procesándose. Véase IMPLEMENTACION_02_INDEXACION_Y_MEDICION.md para el estado real de la medición, aún sin proveedor conectado.

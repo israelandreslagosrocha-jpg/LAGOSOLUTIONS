@@ -380,7 +380,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 feedbackMsg.append(document.createElement('br'), link);
             };
 
+            const measurementChannel = channel === 'Email' ? 'email' : 'whatsapp';
             if (!window.LAGOSOLUTIONS_API_URL) {
+                window.LagoAnalytics?.track('inquiry_prepared', {channel: measurementChannel});
                 showFeedback('Mensaje preparado. Aún no se ha enviado: abre tu canal y confirma el envío. Tus datos permanecen aquí.', 'success', channel === 'Email' ? 'Abrir correo a info@lagosolutions.cl' : 'Abrir WhatsApp y enviar');
                 feedbackMsg?.scrollIntoView({ block: 'nearest' });
                 return;
@@ -401,8 +403,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!response.ok || result.success !== true || !result.lead_id) {
                     throw new Error('No se confirmó el registro');
                 }
+                window.LagoAnalytics?.track('generate_lead', {channel: measurementChannel});
                 showFeedback('Solicitud recibida y registrada. Puedes continuar la conversación por tu canal preferido.', 'success', channel === 'Email' ? 'Continuar por correo' : 'Continuar por WhatsApp');
             } catch {
+                window.LagoAnalytics?.track('inquiry_error', {channel: measurementChannel});
                 showFeedback('No pudimos confirmar la recepción. Conservamos tus datos para reintentar; también puedes enviarnos el mensaje directamente.', 'error', channel === 'Email' ? 'Enviar por correo' : 'Enviar por WhatsApp');
             } finally {
                 if (submitBtn) {
