@@ -2,6 +2,11 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     
+    const education = document.querySelector('details#comparar-planes');
+    const revealComparison = () => { if (education && window.location.hash === '#comparar-planes') education.open = true; };
+    revealComparison();
+    window.addEventListener('hashchange', revealComparison);
+
     // ==========================================
     // 1. INPUT NORMALIZATION (encode when constructing contact URLs)
     // ==========================================
@@ -335,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const submitBtn = document.getElementById("submit-form-btn");
 
             const name = normalizeInput(nameInput ? nameInput.value : "");
-            const company = normalizeInput(companyInput ? companyInput.value : "");
+            const company = normalizeInput(companyInput ? companyInput.value : "") || "No informada";
             const website = normalizeInput(websiteInput ? websiteInput.value : "");
             const email = normalizeInput(emailInput ? emailInput.value : "");
             const planInput = document.getElementById("modal-plan");
@@ -361,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 utm_campaign: urlParams.get('utm_campaign') || ''
             };
 
-            const message = `SOLICITUD DE DIAGNÓSTICO Y COTIZACIÓN — LAGOSOLUTIONS\n\nNombre: ${name}\nEmpresa: ${company}\nContacto: ${email}\nPlan: ${plan}\nCanal: ${channel}\nSitio web: ${website || 'No especificado'}\nObjetivo: ${goal}\nContexto: ${problem}`;
+            const message = `CONSULTA DE PROYECTO — LAGOSOLUTIONS\n\nNombre: ${name}\nEmpresa: ${company}\nContacto: ${email}\nPlan: ${plan}\nCanal: ${channel}\nSitio web: ${website || 'No especificado'}\nObjetivo: ${goal}\nContexto: ${problem}`;
             const contactUrl = channel === 'Email'
                 ? `mailto:info@lagosolutions.cl?subject=${encodeURIComponent('Consulta de proyecto — LAGOSOLUTIONS')}&body=${encodeURIComponent(message)}`
                 : `https://wa.me/56961996576?text=${encodeURIComponent(message)}`;
@@ -411,7 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } finally {
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'SOLICITAR DIAGNÓSTICO';
+                    submitBtn.textContent = 'PREPARAR MI CONSULTA';
                 }
             }
 
