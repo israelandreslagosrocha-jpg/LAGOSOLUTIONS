@@ -28,7 +28,7 @@ jobs:
       - name: Prepare public site
         run: |
           mkdir -p _site
-          cp index.html style.css script.js favicon.svg robots.txt sitemap.xml _site/
+          cp index.html privacidad.html style.css script.js favicon.svg robots.txt sitemap.xml _site/
           cp -R assets js _site/
           if [ -f CNAME ]; then cp CNAME _site/; fi
           touch _site/.nojekyll

@@ -1,0 +1,40 @@
+import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
+import assert from 'node:assert/strict';
+const source = readFileSync(new URL('../../js/analytics.js', import.meta.url), 'utf8');
+function fixture(saved = null) {
+    const listeners = {}, appended = [], writtenCookies = [];
+    const nodes = Object.fromEntries(['measurement-banner','measurement-accept','measurement-reject','measurement-status'].map(id => [id, {hidden: true, focus() {}, addEventListener(type, fn) { this[type] = fn; }}]));
+    const settings = {addEventListener(type, fn) { this[type] = fn; }, focus() {}};
+    const store = new Map(saved ? [['lagos.analytics-choice.v1', JSON.stringify(saved)]] : []);
+    const window = {location: {origin: 'https://www.lagosolutions.cl', pathname: '/', hostname: 'www.lagosolutions.cl', search: '?email=PRIVATE_EMAIL', hash: '#PRIVATE_CONTEXT'},
+        localStorage: {getItem: k => store.get(k) ?? null, setItem: (k,v) => store.set(k,v)}, addEventListener: (n,fn) => { listeners[n] = fn; }};
+    const document = {title: 'LagoSolutions', referrer: 'https://google.com/search?q=PRIVATE_QUERY', getElementById: id => nodes[id], querySelectorAll: () => [settings], createElement: () => ({}), head: {append: el => appended.push(el)}};
+    Object.defineProperty(document, 'cookie', {get: () => '_ga=TEST; unrelated=KEEP', set: v => writtenCookies.push(v)});
+    runInNewContext(source, {window,document,URL,Date,Set,JSON,Object});
+    return {window,nodes,listeners,appended,writtenCookies,settings};
+}
+const fresh = fixture();
+assert.equal(fresh.appended.length, 0, 'No Google script before a choice');
+fresh.listeners['lagos:measurement']({detail: {name:'inquiry_open',properties:{email:'PRIVATE_EMAIL'}}});
+assert.equal(fresh.window.dataLayer.length, 0);
+fresh.nodes['measurement-reject'].click();
+assert.equal(fresh.appended.length, 0, 'Rejecting must not load the collector');
+fresh.settings.click();fresh.nodes['measurement-accept'].click();
+assert.equal(fresh.appended.length, 1);
+fresh.listeners['lagos:measurement']({detail:{name:'inquiry_prepared',properties:{channel:'email',email:'PRIVATE_EMAIL',url:'PRIVATE_MESSAGE',plan:'PRIVATE_PLAN'}}});
+const payload = JSON.stringify(fresh.window.dataLayer);
+assert.ok(payload.includes('inquiry_prepared'));
+assert.ok(!payload.includes('PRIVATE_'), 'No query/hash/referrer query/form data in queued analytics');
+assert.equal(fresh.window.dataLayer.filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);
+fresh.settings.click();fresh.nodes['measurement-reject'].click();
+const before = fresh.window.dataLayer.length;
+fresh.listeners['lagos:measurement']({detail:{name:'generate_lead',properties:{channel:'email'}}});
+assert.equal(fresh.window.dataLayer.length,before,'Revoking must block further commercial events');
+assert.equal(fresh.window['ga-disable-G-6FWR3QW9Q2'],true);
+assert.ok(fresh.writtenCookies.some(v=>v.startsWith('_ga=;')));
+assert.ok(!fresh.writtenCookies.some(v=>v.startsWith('unrelated=')));
+assert.equal(fixture({value:'denied',at:Date.now()}).appended.length,0);
+assert.equal(fixture({value:'granted',at:Date.now()-181*86400000}).appended.length,0,'Expired consent must not load Google');
+assert.equal(fixture({value:'granted',at:Date.now()}).appended.length,1);
+console.log('Analytics: consentimiento previo, rechazo/revocación, caducidad y exclusión de datos privados comprobados.');

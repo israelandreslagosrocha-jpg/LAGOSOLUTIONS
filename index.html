@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheet with Cache Buster Version -->
-    <link rel="stylesheet" href="style.css?v=3.5.0">
+    <link rel="stylesheet" href="style.css?v=3.6.0">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -1495,7 +1495,7 @@
                     <a href="tel:+56961996576">+56 9 6199 6576</a>
                 </p>
 
-                <p style="opacity: 0.6;">&copy; 2026 LAGOSOLUTIONS. Todos los derechos reservados.</p>
+                <p style="opacity: 0.6;">&copy; 2026 LAGOSOLUTIONS. Todos los derechos reservados. <a href="privacidad.html">Privacidad</a> · <button type="button" class="measurement-settings" data-measurement-settings aria-controls="measurement-banner">Preferencias de medición</button></p>
             </div>
         </div>
     </footer>
@@ -1588,6 +1588,12 @@
         <p class="modal-footer-text">El formulario prepara tu mensaje. Debes enviarlo desde WhatsApp o tu aplicación de correo. Conversación inicial sin compromiso.</p>
     </dialog>
 
+    <aside id="measurement-banner" class="measurement-banner" role="region" aria-labelledby="measurement-title" hidden>
+        <div><strong id="measurement-title">Medición de visitas</strong><p>Con tu permiso usamos Google Analytics para conocer las visitas y los clics de contacto. Puedes cambiar tu elección al pie de la página. <a href="privacidad.html">Ver privacidad</a>.</p></div>
+        <div class="measurement-actions"><button type="button" id="measurement-reject">Rechazar</button><button type="button" id="measurement-accept">Aceptar medición</button></div>
+    </aside>
+    <p id="measurement-status" class="sr-only" role="status"></p>
+
     <!-- GSAP & ScrollTrigger CDN (Capa de Mejora Progresiva Opcional) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
@@ -1601,6 +1607,7 @@
     <script src="js/plan-carousel.js?v=1.0.0" defer></script>
     <script src="js/projects-carousel.js?v=1.0.0" defer></script>
 
+    <script src="js/analytics.js?v=1.0.0" defer></script>
     <script src="js/commercial-events.js?v=1.0.0" defer></script>
 
     <!-- SCRIPT PRINCIPAL CORE -->
