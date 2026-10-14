@@ -15,14 +15,15 @@
         plan: new Set(['start', 'comercial', 'growth', 'pro', 'medida']),
         project: new Set(['harmonigrid-com', 'harmonigrid-app', 'bandabruna', 'logos', 'sforzato', 'naty'])
     };
-    let granted = false, loaded = false, previousFocus;
+    let granted = false, loaded = false, pageViewed = false, previousFocus;
     window.dataLayer = window.dataLayer || [];
-    const gtag = (...args) => window.dataLayer.push(args);
+    function gtag() { window.dataLayer.push(arguments); }
     const cleanPage = () => window.location.origin + window.location.pathname;
     const referrer = () => {
         try { return new URL(document.referrer).origin; } catch { return ''; }
     };
     function enable() {
+        if (!['www.lagosolutions.cl', 'lagosolutions.cl'].includes(window.location.hostname)) return;
         granted = true;
         window[`ga-disable-${ID}`] = false;
         if (!loaded) {
@@ -38,7 +39,10 @@
         } else {
             gtag('consent', 'update', {analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
         }
-        gtag('event', 'page_view', {send_to: ID, page_location: cleanPage(), page_referrer: referrer(), page_title: document.title});
+        if (!pageViewed) {
+            pageViewed = true;
+            gtag('event', 'page_view', {send_to: ID, page_location: cleanPage(), page_referrer: referrer(), page_title: document.title});
+        }
     }
     function disable() {
         granted = false;
