@@ -45,3 +45,23 @@ Se abrió el asistente de Google Analytics. La revisión automática bloqueó cr
 2. Completar Bing Webmaster Tools con el acceso autorizado correspondiente.
 3. Registrar la línea base de impresiones, clics y contactos cuando los servicios dispongan de datos.
 4. Continuar con el nuevo mensaje principal, portada breve y páginas de servicios/casos conforme a la auditoría.
+
+## Actualización: GA4 conectado y recepción confirmada
+
+La cuenta oficial info@lagosolutions.cl ya fue creada por el titular y verificada en Search Console mediante su propia etiqueta. El titular completó el registro y la aceptación de términos de Analytics.
+
+- Cuenta de Analytics: Lagosolutions (411959197).
+- Propiedad: Lagosolutions Web (558907933).
+- Flujo web: LAGOSOLUTIONS (16124520988), URL ajustada a https://www.lagosolutions.cl.
+- ID público de medición: G-6FWR3QW9Q2.
+- Moneda CLP; zona horaria corregida desde Isla de Pascua a hora de Chile continental.
+- Cuatro opciones de compartición adicional de la cuenta desactivadas y guardadas.
+- Medición mejorada desactivada. Las interacciones se envían por la integración controlada del sitio.
+- js/analytics.js carga la etiqueta únicamente tras aceptar la medición; permite rechazar y cambiar la elección desde el pie de página. No activa señales de Google ni personalización publicitaria. Excluye el servidor local.
+- URLs de página sin query ni fragmento; referencia limitada al origen. No se envían UTMs arbitrarios: la atribución de campañas detalladas requiere una configuración específica posterior.
+- Preferencia guardada como máximo 180 días. Revocar bloquea los eventos y elimina las cookies _ga que se pueden gestionar desde el sitio.
+- Nueva privacidad.html con descripción operativa; incluida en despliegue y sitemap.
+- Pruebas de consentimiento: ausencia de carga antes de elegir y tras rechazar, revocación, caducidad, exclusión de datos privados, exclusión de localhost y ausencia de duplicación de la vista al cambiar preferencias.
+- Prueba real en producción: Analytics mostró una vista de la portada y eventos first_visit, session_start, page_view e inquiry_open. Es tráfico de comprobación, no clientes adquiridos.
+
+La medición ya está conectada: el pendiente de autorización de cuenta descrito anteriormente queda resuelto. Los informes históricos aún requieren acumular datos. generate_lead seguirá sin registrarse mientras no exista una confirmación real del backend.
