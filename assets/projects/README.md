@@ -11,3 +11,5 @@ Se convierten a WebP para reducir el peso y se sirven desde el propio sitio.
 - naty.webp: https://www.natyentrenadora.com/
 
 Son vistas de referencia fechadas; para reflejar cambios futuros hay que renovar la captura.
+
+Actualización 17 de octubre de 2026: logos-2026-10-17.jpg y sforzato-2026-10-17.jpg sustituyen sus vistas anteriores en la web; capturas directas de la portada pública, sin datos privados.
