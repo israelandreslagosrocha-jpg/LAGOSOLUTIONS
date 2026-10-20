@@ -6,7 +6,7 @@
     const events = new Set(['inquiry_open', 'inquiry_prepared', 'contact_channel_open', 'plan_sheet_open', 'project_open', 'generate_lead', 'inquiry_error']);
     const channels = new Set(['whatsapp', 'email', 'phone']);
     const plans = new Set(['start', 'comercial', 'growth', 'pro', 'medida']);
-    const projects = new Set(['harmonigrid-com', 'harmonigrid-app', 'bandabruna', 'logos', 'sforzato', 'naty']);
+    const projects = new Set(['harmonigrid-com', 'harmonigrid-app', 'bandabruna', 'logos', 'sforzato', 'naty', 'ross']);
     function track(name, properties = {}) {
         if (!events.has(name)) return;
         const safe = {};

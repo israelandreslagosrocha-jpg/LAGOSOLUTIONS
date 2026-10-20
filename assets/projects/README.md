@@ -13,3 +13,5 @@ Se convierten a WebP para reducir el peso y se sirven desde el propio sitio.
 Son vistas de referencia fechadas; para reflejar cambios futuros hay que renovar la captura.
 
 Actualización 17 de octubre de 2026: logos-2026-10-17.jpg y sforzato-2026-10-17.jpg sustituyen sus vistas anteriores en la web; capturas directas de la portada pública, sin datos privados.
+
+- ross-2026-10-20.jpg: https://rossagencia.cl/ — captura pública del 20 de octubre de 2026. Entrega inicial operativa, en desarrollo según el propietario.

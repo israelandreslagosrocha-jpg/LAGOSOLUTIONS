@@ -13,7 +13,7 @@
     const values = {
         channel: new Set(['whatsapp', 'email', 'phone']),
         plan: new Set(['start', 'comercial', 'growth', 'pro', 'medida']),
-        project: new Set(['harmonigrid-com', 'harmonigrid-app', 'bandabruna', 'logos', 'sforzato', 'naty'])
+        project: new Set(['harmonigrid-com', 'harmonigrid-app', 'bandabruna', 'logos', 'sforzato', 'naty', 'ross'])
     };
     let granted = false, loaded = false, pageViewed = false, previousFocus;
     window.dataLayer = window.dataLayer || [];
